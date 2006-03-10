@@ -3473,8 +3473,85 @@
     by DCT, <with|mode|math|u<rsub|\<varepsilon\>><rsup|k>> is convergent in
     <with|mode|math|L<rsup|1>(\<Omega\>)>.
 
-    \;
+    We also have the estimate
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\|u(x)-u<rsub|\<varepsilon\>>(x)\|>|<cell|=>|<cell|<left|\|><frac|1|\<varepsilon\><rsup|n>><big|int><rsub|\<bbb-R\><rsup|n>>\<psi\><left|(><frac|<with|color|red|1?>|\<varepsilon\>><right|)>(u(x)-u(x-y))\<mathd\>y>>|<row|<cell|>|<cell|<above|=|z=y/\<varepsilon\>,supp(\<psi\>)\<subset\>B(0,1)>>|<cell|<left|\|><big|int><rsub|B(0,1)>\<psi\>(z)(u(x)-u(x-\<varepsilon\>z))\<mathd\>z<right|\|>>>>>
+    </eqnarray*>
+
+    By the fundamental theorem of calculus, the subterm
+
+    <\equation*>
+      u(x)-u(x-\<varepsilon\>z)=<big|int><rsub|0><rsup|1><frac|\<mathd\>|\<mathd\>t>u(x-e*t*z)\<mathd\>t\<leqslant\><big|int><rsub|0><rsup|1>D
+      u(x-\<varepsilon\>t*z)\<cdot\>z*\<mathd\>t.
+    </equation*>
+
+    Then
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\|u(x)-u<rsub|\<varepsilon\>>(x)\|>|<cell|\<leqslant\>>|<cell|<big|int><rsub|B(0,1)>\<psi\>(z)<big|int><rsub|0><rsup|\<varepsilon\>\|z\|>\|D
+      u(x-t\<omega\>)\|\<mathd\>t*\<mathd\>z,<space|1em>\<omega\>=<frac|z|\|z\|>.>>>>
+    </eqnarray*>
+
+    (We use <with|mode|math|\<psi\>\<geqslant\>0> and differentiability on a
+    line.) Therefore,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>\|u(x)-u<rsub|\<varepsilon\>>(x)\|\<mathd\>x>|<cell|\<leqslant\>>|<cell|<big|int><rsub|B(0,1)>\<psi\>(z)<big|int><rsub|0><rsup|\<varepsilon\>\|z\|><wide*|<big|int><rsub|\<Omega\>>\|D
+      u(x-t\<omega\>)\|\<mathd\>x|\<wide-underbrace\>><rsub|*(\<ast\>)>*\<mathd\>t
+      \<mathd\>z>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<norm|D
+      u|L<rsup|1>(\<Omega\>)|><big|int><rsub|B(0,1)>\<psi\>(z)<big|int><rsub|0><rsup|\<varepsilon\>\|z\|>\<mathd\>t
+      \<mathd\>z>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<varepsilon\><norm|D
+      u|L<rsup|1>(\<Omega\>)|>\<leqslant\>\<varepsilon\>M\|\<Omega\>\|<rsup|1-1/p>,>>>>
+    </eqnarray*>
+
+    where
+
+    <\equation*>
+      (\<ast\>)=<big|int><rsub|\<Omega\>>\|D
+      u(x-t\<omega\>)\|\<mathd\>x\<leqslant\><big|int><rsub|\<Omega\>>\|D
+      u(x)\|\<mathd\>x.
+    </equation*>
+
+    using <with|mode|math|u\<in\>C<rsup|1><rsub|c>+<with|mode|text|zero
+    extension>>. Summary:
+
+    <\itemize>
+      <item><with|mode|math|A<rsub|\<varepsilon\>>> precompact in
+      <with|mode|math|L<rsup|1>(\<Omega\>)><with|mode|math|\<Leftrightarrow\>>totally
+      bounded,
+
+      <item>Every <with|mode|math|u\<in\>A> is
+      <with|mode|math|\<varepsilon\>>-close to
+      <with|mode|math|u<rsub|\<varepsilon\>>\<in\>A<rsub|\<varepsilon\>>>.
+    </itemize>
+
+    Therefore <with|mode|math|A> is totally bounded in
+    <with|mode|math|L<rsup|1>>.
+
+    This shows that <with|mode|math|A> is precompact in
+    <with|mode|math|L<rsup|1>(\<Omega\>)>. If
+    <with|mode|math|1\<leqslant\>q\<less\>p<rsup|\<ast\>>>, we have
+
+    <\equation*>
+      <norm|u-u<rsub|\<varepsilon\>>|L<rsup|q>|>\<leqslant\><norm|u-u<rsup|\<varepsilon\>>|L<rsup|1>(\<Omega\>)|><norm|u-u<rsup|\<varepsilon\>>|L<rsup|p<rsup|\<ast\>>>(\<Omega\>)|>\<leqslant\><wide*|\<varepsilon\><rsup|\<theta\>>|\<wide-underbrace\>><rsub|<with|mode|text|just
+      proved>>\<cdot\><wide*|(2M)<rsup|1-\<theta\>>|\<wide-underbrace\>><rsub|<with|mode|text|Sobolev's>>,
+    </equation*>
+
+    where
+
+    <\equation*>
+      <frac|1|q>=<frac|\<theta\>|1>+<frac|1-\<theta\>|p<rsup|\<ast\>>>.
+    </equation*>
+
+    Therefore <with|mode|math|A> is totally bounded in
+    <with|mode|math|L<rsup|q>(\<Omega\>)>.
   </proof>
+
+  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.3gh>>|gr-geometry|<tuple|geometry|0.576018par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|BV\<subset\>W<rsup|1,1>>|<point|-3|2.3>>|<text-at|<with|mode|math|W<rsup|1,n>>|<point|0.2|2.3>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|2.3|2.4>>|<text-at|<with|mode|math|W<rsup|1,\<infty\>>>|<point|4.4|2.4>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|-1.1|2.3>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|2>|<point|-0.8|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|2>|<point|0.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.6|2>|<point|2.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|4.8|2>|<point|4.8|1.2>>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>>|<point|-1.1|0.7>>|<text-at|BMO|<point|0.5|0.8>>|<text-at|<with|mode|math|C<rsup|0,1-n/p>>|<point|2.4|0.8>>|<text-at|<with|mode|math|Lip(\<Omega\>)>|<point|4.7|0.8>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|0.4>|<point|0.9|0.5>|<point|0.7|0.5>|<point|0.7|-0.5>>>|<text-at|<with|mode|math|C<rsup|0>(<wide|\<Omega\>|\<bar\>>>)|<point|0.4|-0.9>>|<text-at|Also
+  <with|mode|math|\<hookrightarrow\>L<rsup|q>>|<point|-1.5|0.1>>>>|>
+
+  \;
 </body>
 
 <\initial>
@@ -3523,6 +3600,7 @@
     <associate|auto-41|<tuple|3.1.2|34>>
     <associate|auto-42|<tuple|3.1.3|37>>
     <associate|auto-43|<tuple|3.1|?>>
+    <associate|auto-44|<tuple|3.2|?>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
@@ -3611,6 +3689,8 @@
       <tuple|normal||<pageref|auto-37>>
 
       <tuple|normal||<pageref|auto-43>>
+
+      <tuple|normal||<pageref|auto-44>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table

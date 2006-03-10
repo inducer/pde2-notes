@@ -1,0 +1,2 @@
+#! /bin/sh
+scp pde2.tm pde2.pdf pdestyle.ts u36612815@tiker.net:data/site-codes/tiker.net/files/pde2
