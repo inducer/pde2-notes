@@ -82,6 +82,18 @@
     <with|par-left|3fn|3.1.3<space|2spc>The Sobolev Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-42>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>Scalar
+    Elliptic Equations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-45><vspace|0.5fn>
+
+    <with|par-left|1.5fn|4.1<space|2spc>Weak Formulation
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-46>>
+
+    <with|par-left|3fn|4.1.1<space|2spc>The Weak Maximum Principle
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-47>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -3551,6 +3563,177 @@
   <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.3gh>>|gr-geometry|<tuple|geometry|0.576018par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|BV\<subset\>W<rsup|1,1>>|<point|-3|2.3>>|<text-at|<with|mode|math|W<rsup|1,n>>|<point|0.2|2.3>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|2.3|2.4>>|<text-at|<with|mode|math|W<rsup|1,\<infty\>>>|<point|4.4|2.4>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|-1.1|2.3>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|2>|<point|-0.8|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|2>|<point|0.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.6|2>|<point|2.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|4.8|2>|<point|4.8|1.2>>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>>|<point|-1.1|0.7>>|<text-at|BMO|<point|0.5|0.8>>|<text-at|<with|mode|math|C<rsup|0,1-n/p>>|<point|2.4|0.8>>|<text-at|<with|mode|math|Lip(\<Omega\>)>|<point|4.7|0.8>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|0.4>|<point|0.9|0.5>|<point|0.7|0.5>|<point|0.7|-0.5>>>|<text-at|<with|mode|math|C<rsup|0>(<wide|\<Omega\>|\<bar\>>>)|<point|0.4|-0.9>>|<text-at|Also
   <with|mode|math|\<hookrightarrow\>L<rsup|q>>|<point|-1.5|0.1>>>>|>
 
+  <section|Scalar Elliptic Equations>
+
+  Reference: Gilbarg/Trudinger, Chapter 3 and 8
+
+  The basic setup in divergence form:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|L u>|<cell|=>|<cell|div(A*D u+b u)+c\<cdot\>D
+    u+d*u>>|<row|<cell|>|<cell|=>|<cell|D<rsub|i>(a<rsub|i,j>D<rsub|j>u+b<rsub|i>u)+c<rsub|i>D<rsub|i>u+d*u,>>>>
+  </eqnarray*>
+
+  where <with|mode|math|A:\<Omega\>\<rightarrow\>\<bbb-M\><rsup|n\<times\>n>>,
+  <with|mode|math|b,c:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|n>>,
+  <with|mode|math|d:\<Omega\>\<rightarrow\>\<bbb-R\>>. Main assumptions:
+
+  <\enumerate-numeric>
+    <item>Strict ellipticity: There exists
+    <with|mode|math|\<lambda\>\<gtr\>0> such that
+
+    <\equation*>
+      \<xi\><rsup|T>A(x)\<xi\>\<geqslant\>\<lambda\>\|\<xi\>\|<rsup|2>
+    </equation*>
+
+    for every <with|mode|math|x\<in\>\<Omega\>>,
+    <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>.
+
+    <item><with|mode|math|A,b,c,d\<in\>L<rsup|\<infty\>>(\<Omega\>)>.
+  </enumerate-numeric>
+
+  There exists <with|mode|math|\<Lambda\>\<gtr\>0>,
+  <with|mode|math|\<nu\>\<gtr\>0> such that
+
+  <\equation*>
+    <norm|A|L<rsup|\<infty\>>(\<Omega\>)|><above|=|def><norm|<sqrt|Tr(A<rsup|T>A)>|L<rsup|\<infty\>>(\<Omega\>)|>\<leqslant\>\<Lambda\>
+  </equation*>
+
+  and
+
+  <\equation*>
+    <frac|1|\<lambda\>><left|(><norm|b|\<infty\>|>+<norm|c|\<infty\>|>+<norm|d|\<infty\>|><right|)>\<leqslant\>\<nu\>.
+  </equation*>
+
+  <em|Motivation:> Typical problem is to minimize
+
+  <\equation*>
+    I[u]=<big|int><rsub|\<Omega\>>E(D u)\<mathd\>x,
+  </equation*>
+
+  where <with|mode|math|E> is ``energy''. If <with|mode|math|u> is a
+  minimizer, we obtain the Euler-Lagrange equations as follows:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t>I[u+t*v]\|<rsub|t=0>>|<cell|=>|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<Omega\>>E(D(u+t*v))\<mathd\>x\|<rsub|t=0>=<big|int><rsub|\<Omega\>>D
+    E(D(u+t*v))\<cdot\>D v*\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>D
+    E(D*u)\<cdot\>D v*\<mathd\>x.>>>>
+  </eqnarray*>
+
+  Necessary condition for minimum:
+
+  <\equation*>
+    <big|int><rsub|\<Omega\>>D E(D u)\<cdot\>D v*\<mathd\>x=0
+  </equation*>
+
+  for all test functions <with|mode|math|v>. This ``means'' that
+
+  <\equation*>
+    <big|int><rsub|\<Omega\>>D(D E(D u))\<cdot\>v*\<mathd\>x,
+  </equation*>
+
+  which is the term that we had in the first place--namely the
+  <em|Euler-Lagrange equations>:
+
+  <\equation*>
+    div(D E(D u))=0
+  </equation*>
+
+  with <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|n>> and
+  <with|mode|math|E:\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\>> is a given
+  smooth function, for example <with|mode|math|E(u)=\|D u\|<rsup|p>> for
+  <with|mode|math|p\<gtr\>1>. In coordinates,
+
+  <\equation*>
+    D<rsub|i><left|[>D<rsub|p<rsub|i>>E(D<rsub|j>u)]=0\<Rightarrow\>D<rsub|p<rsub|i>,p<rsub|j>>E(D<rsub|j>u)\<cdot\>D<rsub|i,j>u=0<space|1em><with|mode|text|or><space|1em>tr(A*D<rsup|2>u)=0,
+  </equation*>
+
+  where <with|mode|math|A(x)=D<rsup|2>E(D u(x))>, which is the unknown as
+  yet.\ 
+
+  <em|Regularity problem:> Assuming <with|mode|math|u> solves the above
+  problem. Show that <with|mode|math|u> is regular. A priori, we only know
+  that <with|mode|math|A\<in\>L<rsup|\<infty\>>><with|mode|math|\<rightarrow\>>DeGiorgi
+  and Nash<with|mode|math|\<Rightarrow\>>classical regularity.
+
+  <subsection|Weak Formulation>
+
+  Formally multiply <with|mode|math|L u=0> by
+  <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)> and integrate by
+  parts:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|>|<cell|>|<cell|<big|int><rsub|\<Omega\>>(div(A*D
+    u+b*u)+(c\<cdot\>D u+d*u))\<cdot\>v*\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>(D
+    v<rsup|T>A*D u+b\<cdot\>D v*u)+(c\<cdot\>D
+    u+d*u)v*\<mathd\>x>>|<row|<cell|>|<cell|=:>|<cell|B[u,v].>>>>
+  </eqnarray*>
+
+  Basic assumption: <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)>. Then
+  <with|mode|math|B[u,v]> is well-defined for all
+  <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)> and by Cauchy-Schwarz
+  for all <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>.
+
+  Now consider the classical Dirichlet problem:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|L u>|<cell|=>|<cell|f<space|1em><with|mode|text|on>
+    \<Omega\>,>>|<row|<cell|u>|<cell|=>|<cell|g<space|1em><with|mode|text|on>
+    \<partial\>\<Omega\>.>>>>
+  </eqnarray*>
+
+  <\definition>
+    <em|(Generalized Dirichlet Problem)> Given
+    <with|mode|math|g\<in\>L<rsup|2>(\<Omega\>)>,
+    <with|mode|math|f\<in\>L<rsup|2>(\<Omega\>)>,
+    <with|mode|math|\<varphi\>\<in\>W<rsup|1,2>(\<Omega\>)>.
+
+    <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> is a solution to
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|L u>|<cell|=>|<cell|g+div
+      f<space|1em><with|mode|text|in> \<Omega\>,>>|<row|<cell|u>|<cell|=>|<cell|\<varphi\><space|1em><with|mode|text|on>
+      \<partial\>\<Omega\>>>>>
+    </eqnarray*>
+
+    if
+
+    <\enumerate>
+      <item><with|mode|math|B[u,v]=F[v]\<assign\><big|int><rsub|\<Omega\>>[g*v-f*\<cdot\>D
+      v]\<mathd\>x> for <with|mode|math|v\<in\>C<rsub|0><rsup|1>(\<Omega\>)>
+
+      <item><with|mode|math|u-\<varphi\>\<in\>W<rsup|1,2>(\<Omega\>)>.
+    </enumerate>
+  </definition>
+
+  <subsubsection|The Weak Maximum Principle>
+
+  We want <with|mode|math|L u\<geqslant\>0\<Rightarrow\>sup<rsub|\<Omega\>>u\<leqslant\>sup<rsub|\<partial\>\<Omega\>>u>.
+  <em|Catch:> How do we define <with|mode|math|sup<rsub|\<partial\>\<Omega\>>u>?
+
+  <\definition>
+    Suppose <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)>. We say
+    <with|mode|math|u\<leqslant\>0> on <with|mode|math|\<partial\>\<Omega\>>
+    if
+
+    <\equation*>
+      u<rsup|+>=max(u,0)\<in\>W<rsup|1,2><rsub|0>(\<Omega\>).
+    </equation*>
+
+    Similarly, <with|mode|math|u\<leqslant\>v> on
+    <with|mode|math|\<partial\>\<Omega\>> if
+
+    <\equation*>
+      (u-v)<rsup|+>\<in\>W<rsub|0><rsup|1,2>(\<Omega\>).
+    </equation*>
+  </definition>
+
+  <\definition>
+    <\equation*>
+      sup<rsub|\<partial\>\<Omega\>>u=inf<left|{>k\<in\>\<bbb-R\>:u\<leqslant\>k<right|}>=inf<left|{>k\<in\>\<bbb-R\>:(u-k)<rsup|+>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)<right|}>.
+    </equation*>
+  </definition>
+
   \;
 </body>
 
@@ -3599,8 +3782,11 @@
     <associate|auto-40|<tuple|3.1.1|33>>
     <associate|auto-41|<tuple|3.1.2|34>>
     <associate|auto-42|<tuple|3.1.3|37>>
-    <associate|auto-43|<tuple|3.1|?>>
-    <associate|auto-44|<tuple|3.2|?>>
+    <associate|auto-43|<tuple|3.1|40>>
+    <associate|auto-44|<tuple|3.2|42>>
+    <associate|auto-45|<tuple|4|42>>
+    <associate|auto-46|<tuple|4.1|43>>
+    <associate|auto-47|<tuple|4.1.1|?>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
@@ -3608,7 +3794,7 @@
     <associate|auto-9|<tuple|1.2|6>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
-    <associate|eq:fundamental-sobolev|<tuple|3.1|?>>
+    <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
     <associate|eq:hamiltons|<tuple|2.2|23>>
@@ -3769,6 +3955,18 @@
       <with|par-left|<quote|3fn>|3.1.3<space|2spc>The Sobolev Inequality
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-42>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Scalar
+      Elliptic Equations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-45><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|4.1<space|2spc>Weak Formulation
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-46>>
+
+      <with|par-left|<quote|3fn>|4.1.1<space|2spc>The Weak Maximum Principle
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-47>>
     </associate>
   </collection>
 </auxiliary>
