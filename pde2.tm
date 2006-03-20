@@ -3734,7 +3734,209 @@
     </equation*>
   </definition>
 
-  \;
+  (Fri Mar 17: Gap)
+
+  <\proof>
+    (of weak maximum principle) If
+
+    <\equation*>
+      l=sup<rsub|\<partial\>\<Omega\>>u<rsup|\<upl\>>=inf{k\<geqslant\>0:(u-k)<rsup|+>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)}.
+    </equation*>
+
+    Assume <with|mode|math|l\<leqslant\>k\<less\>sup<rsub|\<Omega\>>u=:m>,
+    <with|mode|math|v\<assign\>(u-k)<rsup|\<upl\>>>. Then
+
+    <\equation*>
+      D v=<choice|<tformat|<table|<row|<cell|D
+      u>|<cell|u\<gtr\>k,>>|<row|<cell|0>|<cell|u\<leqslant\>k.>>>>>
+    </equation*>
+
+    And if <with|mode|math|\<Gamma\>={D v\<neq\>0}>,
+
+    <\equation*>
+      <norm|D v|L<rsup|2>(\<Omega\>)|>\<leqslant\>2\<nu\><norm|v|L<rsup|2>(\<Omega\>)|>.
+    </equation*>
+
+    By Sobolev's Inequality,
+
+    <\equation*>
+      <norm|v|L<rsup|2<rsup|\<ast\>>>(\<Omega\>)|>\<leqslant\>C<rsub|n><norm|D
+      v|L<rsup|2>(\<Omega\>)|>\<leqslant\>C<rsub|n>2\<nu\><norm|v|L<rsup|2>(\<Gamma\>)|>\<leqslant\>C<rsub|n>2\<nu\>\|\<Gamma\>\|<rsup|1/n><norm|v|L<rsup|2<rsup|\<ast\>>>(\<Omega\>)|>.
+    </equation*>
+
+    Thus
+
+    <\equation>
+      <label|eq:maxprinciple-proof>\|\<Gamma\>\|\<geqslant\><frac|1|C<rsub|n>2\<nu\>>\<gtr\>0,
+    </equation>
+
+    independent of <with|mode|math|k>. Letting
+    <with|mode|math|k\<rightarrow\>m>, we obtain that
+    <with|mode|math|m\<less\>\<infty\>> (else
+    <with|mode|math|u\<nin\>W<rsup|1,2>(\<Omega\>)>. Choosing
+    <with|mode|math|k=m>, obtain <with|mode|math|D v=0> a.e. contradicting
+    (<reference|eq:maxprinciple-proof>).
+  </proof>
+
+  <subsubsection|Existence Theory>
+
+  <\definition>
+    A continuous operator <with|mode|math|T:B<rsub|1>\<rightarrow\>B<rsub|2>>,
+    where <with|mode|math|B<rsub|1>> and <with|mode|math|B<rsub|2>> are
+    Banach spaces, is called <em|compact> if <with|mode|math|T(A)> is
+    precompact in <with|mode|math|B<rsub|2>> for every bounded set
+    <with|mode|math|A\<subset\>B<rsub|1>>.
+  </definition>
+
+  <\theorem>
+    <em|(Fredholm \ Alternative)> Assume <with|mode|math|T:B\<rightarrow\>B>
+    is linear, continuous and <em|compact>. Then either
+
+    <\enumerate>
+      <item><with|mode|math|(I-T)*x=0> has a solution
+      <with|mode|math|x\<neq\>0>
+
+      <\with|par-first|0>
+        or
+      </with>
+
+      <item><with|mode|math|(I-T)<rsup|-1>> exists and is a bounded linear
+      operator from <with|mode|math|B\<rightarrow\>B>.
+    </enumerate>
+  </theorem>
+
+  Read this as ``Uniqueness and Compactness<with|mode|math|\<Rightarrow\>>Existence''
+
+  <\theorem>
+    <dueto|Lax-Milgram>Let <with|mode|math|B:\<cal-H\>\<times\>\<cal-H\>\<rightarrow\>\<bbb-F\>>
+    be bilinear form on a Hilbert space <with|mode|math|>such that
+
+    <\enumerate>
+      <item><with|mode|math|\|B[u,v]\|\<leqslant\>K<norm|u||><norm|v||>> for
+      some <with|mode|math|K\<gtr\>0>,
+
+      <item><with|mode|math|B[u,u]\<geqslant\>k<norm|u||2>> for some
+      <with|mode|math|k\<gtr\>0>.
+    </enumerate>
+
+    Then for every <with|mode|math|F\<in\>\<cal-H\><rsup|\<ast\>>> there
+    exists a <with|mode|math|g\<in\>\<cal-H\>> such that
+    <with|mode|math|B[u,g]=F(u)> for every <with|mode|math|u\<in\>\<cal-H\>>.
+  </theorem>
+
+  Assumption 2 above is called <em|coercivity>.
+
+  <\proof>
+    1) Riesz representation theorem. For any
+    <with|mode|math|v\<in\>\<cal-H\>> the map
+    <with|mode|math|u\<mapsto\>B[u,v]> defines a bounded linear functional on
+    <with|mode|math|\<cal-H\>>. By the Riesz Representation Theorem, there is
+    <with|mode|math|T v\<in\>\<cal-H\>> such that
+
+    <\equation*>
+      B[u,v]=T v(u)
+    </equation*>
+
+    for every <with|mode|math|u\<in\>\<cal-H\>>. Thus we obtain a linear map
+    <with|mode|math|\<cal-H\>\<rightarrow\>\<cal-H\>>,
+    <with|mode|math|v\<mapsto\>T v>.
+
+    2) <with|mode|math|\|T v(u)\|=\|B[u,v]\|\<leqslant\>K<norm|u||><norm|v||>>,
+    so <with|mode|math|<norm|T||>\<leqslant\>K>. Moreover,
+
+    <\equation*>
+      k<norm|v||2>\<leqslant\>B[v,v]=T v(v)\<leqslant\><norm|T
+      v||><norm|v||>.
+    </equation*>
+
+    Thus
+
+    <\equation*>
+      0\<less\>k\<leqslant\><frac|<norm|T v||>|<norm|v||>>\<leqslant\>K.
+    </equation*>
+
+    Claim: <with|mode|math|T> is one-to-one. <with|mode|math|T
+    v=0\<Rightarrow\>k<norm|v||>\<leqslant\><norm|T
+    v||>=0\<Rightarrow\><norm|v||>=0>.
+
+    Claim: <with|mode|math|T> is onto. If not, there exists
+    <with|mode|math|z\<neq\>0> such that <with|mode|math|T(\<cal-H\>)\<perp\>z>.
+    Now use that <with|mode|math|T(\<cal-H\>)> is closed. Choose
+    <with|mode|math|v=z>. Then
+
+    <\equation*>
+      0=<ip|z|T z||>=T z(z)\<geqslant\>k<norm|z||2>
+    </equation*>
+  </proof>
+
+  <\theorem>
+    Let <with|mode|math|\<Omega\>> be bounded, assume
+    <with|mode|math|E<rsub|1>>, <with|mode|math|E<rsub|2>>,
+    <with|mode|math|E<rsub|3>>. Then the Generalized Dirichlet Problem has a
+    solution for every <with|mode|math|f,g\<in\>L<rsup|2>(\<Omega\>)> and
+    <with|mode|math|\<varphi\>\<in\>W<rsup|1,2>(\<Omega\>)>.
+  </theorem>
+
+  Then Generalized Dirichlet Problem can be stated as finding a
+  <with|mode|math|u\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)> such that
+
+  <\equation*>
+    B[u,v]=F(v)<space|1em><with|mode|text|for every
+    <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>>.
+  </equation*>
+
+  using
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|F(v)>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>(f\<cdot\>D
+    v-g*v)\<mathd\>x.>>>>
+  </eqnarray*>
+
+  <\proof>
+    (Step 1) Reduce to the case <with|mode|math|\<varphi\>=0>. Consider
+    <with|mode|math|<wide|u|~>=u-\<varphi\>>.
+
+    (Step 2)
+
+    <\lemma>
+      <em|(Coercivity)> Assume (<with|mode|math|E<rsub|1>>),
+      (<with|mode|math|E<rsub|2>>) <with|color|red|???> hold. Then
+
+      <\equation*>
+        B[u,u]\<geqslant\><frac|\<lambda\>|2><big|int><rsub|\<Omega\>>\|D
+        u\|<rsup|2>-\<lambda\>\<nu\><rsup|2><big|int><rsub|\<Omega\>>\|u\|<rsup|2>\<mathd\>x.
+      </equation*>
+    </lemma>
+
+    <\proof>
+      \;
+
+      <\eqnarray*>
+        <tformat|<table|<row|<cell|B[u,u]>|<cell|=>|<cell|<big|int><rsub|\<Omega\>><wide*|D
+        u<rsup|t>[A\<cdot\>D u|\<wide-underbrace\>><rsub|(1)>+<wide*|b
+        u]-[c\<cdot\>D u|\<wide-underbrace\>><rsub|(2)>+<wide*|d*u]u*|\<wide-underbrace\>><rsub|(3)>\<mathd\>x.>>|<row|<cell|(1)>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>D
+        u<rsup|t>A*D u\<mathd\>x<below|\<geqslant\>|(E<rsub|1>)>\<lambda\><big|int><rsub|\<Omega\>>\|D
+        u\|<rsup|2>\<mathd\>x.>>|<row|<cell|(2)>|<cell|\<leqslant\>>|<cell|(<norm|b|\<infty\>|>+<norm|c|\<infty\>|>)<big|int><rsub|\<Omega\>>\|u\|*\|D
+        u\|\<mathd\>x\<leqslant\><frac|\<lambda\>|2><norm|D
+        u|L<rsup|2>(\<Omega\>)|2>+<frac|1|2\<lambda\>>(<norm|b|\<infty\>|>+<norm|c|\<infty\>|>)<rsup|2><norm|u|L<rsup|2>(\<Omega\>)|2>>>>>
+      </eqnarray*>
+
+      using the elementary inequality
+
+      <\equation*>
+        2a*b\<leqslant\>\<lambda\>a<rsup|2>+<frac|b<rsup|2>|l>
+      </equation*>
+
+      for <with|mode|math|\<lambda\>\<gtr\>0>. By assumption
+      (<with|mode|math|E<rsub|2>>),
+
+      <\equation*>
+        <frac|<norm|b|\<infty\>|2>+<norm|c|\<infty\>|2>|2\<lambda\>>+<frac|<norm|d|\<infty\>|>|2>\<leqslant\>\<lambda\>\<nu\><rsup|2>.
+      </equation*>
+
+      Now combine these estimates.
+    </proof>
+  </proof>
 </body>
 
 <\initial>
@@ -3787,6 +3989,8 @@
     <associate|auto-45|<tuple|4|42>>
     <associate|auto-46|<tuple|4.1|43>>
     <associate|auto-47|<tuple|4.1.1|?>>
+    <associate|auto-48|<tuple|4.1.2|?>>
+    <associate|auto-49|<tuple|5|?>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
@@ -3807,6 +4011,7 @@
     <associate|eq:kruzkov-convex-cond-2|<tuple|1.4|15>>
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
+    <associate|eq:maxprinciple-proof|<tuple|4.1|?>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
     <associate|lem:hj-semigroup|<tuple|2.14|24>>
