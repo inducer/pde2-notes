@@ -67,19 +67,19 @@
     Spaces> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-38><vspace|0.5fn>
 
-    <with|par-left|1.5fn|3.1<space|2spc>Basic Inequalities
+    <with|par-left|1.5fn|3.1<space|2spc>Campanato's Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-39>>
 
-    <with|par-left|3fn|3.1.1<space|2spc>Campanato's Inequality
+    <with|par-left|1.5fn|3.2<space|2spc>Poincaré's and Morrey's Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-40>>
 
-    <with|par-left|3fn|3.1.2<space|2spc>Poincaré's and Morrey's Inequality
+    <with|par-left|1.5fn|3.3<space|2spc>The Sobolev Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-41>>
 
-    <with|par-left|3fn|3.1.3<space|2spc>The Sobolev Inequality
+    <with|par-left|1.5fn|3.4<space|2spc>Imbeddings
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-42>>
 
@@ -91,9 +91,13 @@
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-46>>
 
-    <with|par-left|3fn|4.1.1<space|2spc>The Weak Maximum Principle
+    <with|par-left|1.5fn|4.2<space|2spc>The Weak Maximum Principle
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-47>>
+
+    <with|par-left|1.5fn|4.3<space|2spc>Existence Theory
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-48>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -2486,8 +2490,8 @@
     in <with|mode|math|L<rsup|p>(\<Omega\><rprime|'>)>.
   </proof>
 
-  Typical idea in the theory: We want to find a representation of equivalence
-  class that has classical properties. <em|Example:> If
+  Typical idea in the theory: We want to find a representation of an
+  equivalence class that has classical properties. <em|Example:> If
   <with|mode|math|f\<in\>L<rsup|1>(\<bbb-R\><rsup|n>)>, set
 
   <\equation*>
@@ -2507,7 +2511,7 @@
       line parallel to the coordinate axes almost everywhere, and
 
       <\equation*>
-        \<partial\><rsub|x<rsub|i>>u<rsub|\<ast\>>=D<rsub|x>u<space|1em><with|mode|text|a.e.
+        \<partial\><rsub|x<rsub|i>>u<rsub|\<ast\>>=D<rsub|x<rsub|i>>u<space|1em><with|mode|text|a.e.
         for any <with|mode|math|i=1,\<ldots\>,n>>.
       </equation*>
 
@@ -2667,13 +2671,13 @@
   </theorem>
 
   <\remark>
-    The above theorem is stronger than the previous approximation of Theorem
-    <reference|thm:c8-approx-compact>, which was only compactly contained
-    subsets <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>>.
+    The above theorem is stronger than the previous approximation theorem
+    <reference|thm:c8-approx-compact>, which was only concerned with
+    compactly contained subsets <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>>.
   </remark>
 
   <\proof>
-    (Sketch, cf. Evans for details) Use partition of unity +previous
+    (Sketch, cf. Evans for details) Use partition of unity and previous
     approximation theorem. The idea is to exhaust <with|mode|math|\<Omega\>>
     by <with|mode|math|<wide|\<Omega\>|\<bar\>><rsub|k>\<subset\>\<Omega\><rsub|k+1>>
     for which <with|mode|math|<big|cup><rsub|k=1><rsup|\<infty\>>\<Omega\><rsub|k>>,
@@ -2692,19 +2696,7 @@
     and previous theorem on mollification.
   </proof>
 
-  <subsection|Basic Inequalities>
-
-  <\enumerate>
-    <item>Campanato's Inequality
-
-    <item>Poincaré's Inequality
-
-    <item>Morrey's Inequality
-
-    <item>Gagliardo-Nirenberg-Sobolev Inequality
-  </enumerate>
-
-  <subsubsection|Campanato's Inequality>
+  <subsection|Campanato's Inequality>
 
   <\theorem>
     <dueto|Campanato>Suppose <with|mode|math|u\<in\>L<rsup|1><rsub|loc>(\<Omega\>)>
@@ -2791,7 +2783,7 @@
     This shows <with|mode|math|u\<in\>C<rsup|0,\<alpha\>>>.
   </proof>
 
-  <subsubsection|Poincaré's and Morrey's Inequality>
+  <subsection|Poincaré's and Morrey's Inequality>
 
   To obtain Poincaré's and Morrey's Inequalities, first consider some
   potential estimates. Consider the Riesz kernels
@@ -3057,7 +3049,7 @@
     </equation*>
   </proof>
 
-  <subsubsection|The Sobolev Inequality>
+  <subsection|The Sobolev Inequality>
 
   The desire to make Poincaré's Inequality scale-invariant leads to
 
@@ -3322,6 +3314,8 @@
     Now apply Campanato's Inequality.
   </proof>
 
+  <subsection|Imbeddings>
+
   What have we obtained?
 
   <big-figure|<with|gr-mode|<tuple|edit|line>|gr-frame|<tuple|scale|1cm|<tuple|0.300002gw|0.5gh>>|gr-geometry|<tuple|geometry|0.485164par|0.206302par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|W<rsup|1,p>(\<bbb-R\><rsup|n>)>|<point|-2.3|-0.1>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>
@@ -3357,7 +3351,6 @@
     </equation*>
 
     and <with|mode|math|BMO(\<bbb-R\><rsup|n>)\<assign\>{[u]<rsub|BMO>\<less\>\<infty\>}>.
-    (<with|color|red|Verify this.>) <with|color|red|>
   </theorem>
 
   For a compact domain,
@@ -3372,7 +3365,7 @@
   <\definition>
     A Banach space <with|mode|math|B<rsub|1>> is <em|imbedded> into a Banach
     space <with|mode|math|B<rsub|2>> (written
-    <with|mode|math|B<rsub|1>\<rightarrow\>B<rsub|2>>), there is a
+    <with|mode|math|B<rsub|1>\<rightarrow\>B<rsub|2>>) if there is a
     continuous, linear one-to-one mapping
     <with|mode|math|T:B<rsub|1>\<rightarrow\>B<rsub|2>>.
   </definition>
@@ -3488,13 +3481,13 @@
     We also have the estimate
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|\|u(x)-u<rsub|\<varepsilon\>>(x)\|>|<cell|=>|<cell|<left|\|><frac|1|\<varepsilon\><rsup|n>><big|int><rsub|\<bbb-R\><rsup|n>>\<psi\><left|(><frac|<with|color|red|1?>|\<varepsilon\>><right|)>(u(x)-u(x-y))\<mathd\>y>>|<row|<cell|>|<cell|<above|=|z=y/\<varepsilon\>,supp(\<psi\>)\<subset\>B(0,1)>>|<cell|<left|\|><big|int><rsub|B(0,1)>\<psi\>(z)(u(x)-u(x-\<varepsilon\>z))\<mathd\>z<right|\|>>>>>
+      <tformat|<table|<row|<cell|\|u(x)-u<rsub|\<varepsilon\>>(x)\|>|<cell|=>|<cell|<left|\|><frac|1|\<varepsilon\><rsup|n>><big|int><rsub|\<bbb-R\><rsup|n>>\<psi\><left|(><frac|y|\<varepsilon\>><right|)>(u(x)-u(x-y))\<mathd\>y<right|\|>>>|<row|<cell|>|<cell|<above|=|z=y/\<varepsilon\>,supp(\<psi\>)\<subset\>B(0,1)>>|<cell|<left|\|><big|int><rsub|B(0,1)>\<psi\>(z)(u(x)-u(x-\<varepsilon\>z))\<mathd\>z<right|\|>>>>>
     </eqnarray*>
 
     By the fundamental theorem of calculus, the subterm
 
     <\equation*>
-      u(x)-u(x-\<varepsilon\>z)=<big|int><rsub|0><rsup|1><frac|\<mathd\>|\<mathd\>t>u(x-e*t*z)\<mathd\>t\<leqslant\><big|int><rsub|0><rsup|1>D
+      u(x)-u(x-\<varepsilon\>z)=<big|int><rsub|0><rsup|1><frac|\<mathd\>|\<mathd\>t>u(x-\<varepsilon\>*t*z)\<mathd\>t\<leqslant\><big|int><rsub|0><rsup|1>D
       u(x-\<varepsilon\>t*z)\<cdot\>z*\<mathd\>t.
     </equation*>
 
@@ -3560,8 +3553,10 @@
     <with|mode|math|L<rsup|q>(\<Omega\>)>.
   </proof>
 
-  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.3gh>>|gr-geometry|<tuple|geometry|0.576018par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|BV\<subset\>W<rsup|1,1>>|<point|-3|2.3>>|<text-at|<with|mode|math|W<rsup|1,n>>|<point|0.2|2.3>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|2.3|2.4>>|<text-at|<with|mode|math|W<rsup|1,\<infty\>>>|<point|4.4|2.4>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|-1.1|2.3>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|2>|<point|-0.8|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|2>|<point|0.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.6|2>|<point|2.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|4.8|2>|<point|4.8|1.2>>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>>|<point|-1.1|0.7>>|<text-at|BMO|<point|0.5|0.8>>|<text-at|<with|mode|math|C<rsup|0,1-n/p>>|<point|2.4|0.8>>|<text-at|<with|mode|math|Lip(\<Omega\>)>|<point|4.7|0.8>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|0.4>|<point|0.9|0.5>|<point|0.7|0.5>|<point|0.7|-0.5>>>|<text-at|<with|mode|math|C<rsup|0>(<wide|\<Omega\>|\<bar\>>>)|<point|0.4|-0.9>>|<text-at|Also
-  <with|mode|math|\<hookrightarrow\>L<rsup|q>>|<point|-1.5|0.1>>>>|>
+  <big-figure|<with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.3gh>>|gr-geometry|<tuple|geometry|0.576018par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|BV\<subset\>W<rsup|1,1>>|<point|-3|2.3>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|-1.1|2.3>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|2>|<point|-0.8|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|2>|<point|0.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.6|2>|<point|2.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|4.8|2>|<point|4.8|1.2>>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>>|<point|-1.1|0.7>>|<text-at|BMO|<point|0.5|0.8>>|<text-at|<with|mode|math|C<rsup|0,1-n/p>>|<point|2.4|0.8>>|<text-at|<with|mode|math|Lip(\<Omega\>)>|<point|4.7|0.8>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|0.4>|<point|0.9|0.5>|<point|0.7|0.5>|<point|0.7|-0.5>>>|<text-at|<with|mode|math|C<rsup|0>(<wide|\<Omega\>|\<bar\>>>)|<point|0.4|-0.9>>|<text-at|Also
+  <with|mode|math|\<hookrightarrow\>L<rsup|q>>|<point|-1.5|0.1>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|2.3|2.3>>|<text-at|<with|mode|math|W<rsup|1,\<infty\>>>|<point|4.4|2.3>>|<text-at|<with|mode|math|W<rsup|1,n>>|<point|0.3|2.3>>>>|>
+
+  (<with|color|red|Contradicts HW4???>)
 
   <section|Scalar Elliptic Equations>
 
@@ -3706,7 +3701,7 @@
     </enumerate>
   </definition>
 
-  <subsubsection|The Weak Maximum Principle>
+  <subsection|The Weak Maximum Principle>
 
   We want <with|mode|math|L u\<geqslant\>0\<Rightarrow\>sup<rsub|\<Omega\>>u\<leqslant\>sup<rsub|\<partial\>\<Omega\>>u>.
   <em|Catch:> How do we define <with|mode|math|sup<rsub|\<partial\>\<Omega\>>u>?
@@ -3778,7 +3773,7 @@
     (<reference|eq:maxprinciple-proof>).
   </proof>
 
-  <subsubsection|Existence Theory>
+  <subsection|Existence Theory>
 
   <\definition>
     A continuous operator <with|mode|math|T:B<rsub|1>\<rightarrow\>B<rsub|2>>,
@@ -3981,16 +3976,16 @@
     <associate|auto-38|<tuple|3|31>>
     <associate|auto-39|<tuple|3.1|33>>
     <associate|auto-4|<tuple|1.2|3>>
-    <associate|auto-40|<tuple|3.1.1|33>>
-    <associate|auto-41|<tuple|3.1.2|34>>
-    <associate|auto-42|<tuple|3.1.3|37>>
+    <associate|auto-40|<tuple|3.2|34>>
+    <associate|auto-41|<tuple|3.3|37>>
+    <associate|auto-42|<tuple|3.4|39>>
     <associate|auto-43|<tuple|3.1|40>>
     <associate|auto-44|<tuple|3.2|42>>
     <associate|auto-45|<tuple|4|42>>
     <associate|auto-46|<tuple|4.1|43>>
-    <associate|auto-47|<tuple|4.1.1|?>>
-    <associate|auto-48|<tuple|4.1.2|?>>
-    <associate|auto-49|<tuple|5|?>>
+    <associate|auto-47|<tuple|4.2|43>>
+    <associate|auto-48|<tuple|4.3|44>>
+    <associate|auto-49|<tuple|4.3|?>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
@@ -4011,7 +4006,7 @@
     <associate|eq:kruzkov-convex-cond-2|<tuple|1.4|15>>
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
-    <associate|eq:maxprinciple-proof|<tuple|4.1|?>>
+    <associate|eq:maxprinciple-proof|<tuple|4.1|44>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
     <associate|lem:hj-semigroup|<tuple|2.14|24>>
@@ -4145,19 +4140,19 @@
       Spaces> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-38><vspace|0.5fn>
 
-      <with|par-left|<quote|1.5fn>|3.1<space|2spc>Basic Inequalities
+      <with|par-left|<quote|1.5fn>|3.1<space|2spc>Campanato's Inequality
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-39>>
 
-      <with|par-left|<quote|3fn>|3.1.1<space|2spc>Campanato's Inequality
-      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <with|par-left|<quote|1.5fn>|3.2<space|2spc>Poincaré's and Morrey's
+      Inequality <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-40>>
 
-      <with|par-left|<quote|3fn>|3.1.2<space|2spc>Poincaré's and Morrey's
-      Inequality <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <with|par-left|<quote|1.5fn>|3.3<space|2spc>The Sobolev Inequality
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-41>>
 
-      <with|par-left|<quote|3fn>|3.1.3<space|2spc>The Sobolev Inequality
+      <with|par-left|<quote|1.5fn>|3.4<space|2spc>Imbeddings
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-42>>
 
@@ -4169,9 +4164,13 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-46>>
 
-      <with|par-left|<quote|3fn>|4.1.1<space|2spc>The Weak Maximum Principle
+      <with|par-left|<quote|1.5fn>|4.2<space|2spc>The Weak Maximum Principle
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-47>>
+
+      <with|par-left|<quote|1.5fn>|4.3<space|2spc>Existence Theory
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-48>>
     </associate>
   </collection>
 </auxiliary>
