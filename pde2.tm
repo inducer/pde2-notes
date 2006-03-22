@@ -98,6 +98,14 @@
     <with|par-left|1.5fn|4.3<space|2spc>Existence Theory
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-48>>
+
+    <with|par-left|1.5fn|4.4<space|2spc>Elliptic Regularity
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-49>>
+
+    <with|par-left|3fn|4.4.1<space|2spc>Finite Differences and Sobolev Spaces
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-50>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -3872,7 +3880,7 @@
     <with|mode|math|\<varphi\>\<in\>W<rsup|1,2>(\<Omega\>)>.
   </theorem>
 
-  Then Generalized Dirichlet Problem can be stated as finding a
+  Then the Generalized Dirichlet Problem can be stated as finding a
   <with|mode|math|u\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)> such that
 
   <\equation*>
@@ -3894,8 +3902,8 @@
     (Step 2)
 
     <\lemma>
-      <em|(Coercivity)> Assume (<with|mode|math|E<rsub|1>>),
-      (<with|mode|math|E<rsub|2>>) <with|color|red|???> hold. Then
+      <label|lem:coercivity><em|(Coercivity)> Assume
+      (<with|mode|math|E<rsub|1>>), (<with|mode|math|E<rsub|2>>) hold. Then
 
       <\equation*>
         B[u,u]\<geqslant\><frac|\<lambda\>|2><big|int><rsub|\<Omega\>>\|D
@@ -3931,7 +3939,182 @@
 
       Now combine these estimates.
     </proof>
+
+    <em|Notation:> <with|mode|math|\<cal-H\>\<assign\>W<rsup|1,2><rsub|0>(\<Omega\>)>,
+    a Hilbert space. <with|mode|math|\<cal-H\><rsup|\<ast\>>=<with|mode|text|dual
+    of <with|mode|math|\<cal-H\>>>>.
+
+    <em|Aside:> Isn't <with|mode|math|\<cal-H\><rsup|\<ast\>>=\<cal-H\>> by
+    reflexivity of Hilbert spaces? No, only
+    <with|mode|math|\<cal-H\><wide|=|~>\<cal-H\><rsup|\<ast\>>>. In
+    <with|mode|math|\<bbb-R\><rsup|n>>, we denote
+
+    <\equation*>
+      H<rsup|s>(\<bbb-R\><rsup|n>)\<assign\><left|{>u\<in\>\<cal-S\><rprime|'>:<big|int>(1+\|k<rsup|2>\|)<rsup|s/2>\|<wide|u|^>(\<xi\>)\|<rsup|2>\<mathd\>\<xi\>\<less\>\<infty\><right|}>.
+    </equation*>
+
+    This works for every <with|mode|math|s\<in\>\<bbb-R\>>. If
+    <with|mode|math|s=1>, we have
+
+    <\equation*>
+      <big|int><rsub|\<bbb-R\><rsup|n>>(1+\|k<rsup|2>\|)<rsup|1/2>\|<wide|u|^>(\<xi\>)\|<rsup|2>\<mathd\>\<xi\>=C<rsub|n><big|int><rsub|\<bbb-R\><rsup|n>>(\|u\|<rsup|2>+\|D
+      u\|<rsup|2>)\<mathd\>x=C<rsub|n><norm|u|W<rsup|1,2>(\<Omega\>)|2>.
+    </equation*>
+
+    By Parseval's Equation
+
+    <\equation*>
+      <big|int><rsub|\<bbb-R\><rsup|n>>u(x)v<rsup|\<ast\>>(x)\<mathd\>x=C<rsub|n><big|int><rsub|\<bbb-R\><rsup|n>><wide|u|^>(k)<wide|v|^><rsup|\<ast\>>(k)\<mathd\>k.
+    </equation*>
+
+    If <with|mode|math|u\<in\>H<rsup|s>>, <with|mode|math|v\<in\>H<rsup|-s>>,
+    then RHS is
+
+    <\equation*>
+      <ip|u|v|L<rsup|2>|>=<big|int><rsub|\<bbb-R\><rsup|n>>(1+\|k\|<rsup|2>)<rsup|s/2><wide|u|^>(k)(1+\|k\|<rsup|2>)<rsup|-s/2><wide|v|^><rsup|\<ast\>>(k)\<mathd\>k\<leqslant\><norm|u|H<rsup|s>|><norm|v|H<rsup|-s>|>
+    </equation*>
+
+    by Cauchy-Schwarz. (cf. a 1-page paper by
+    Meyer-Serrin<with|color|red|??>, PNAS, 1960s, the title is
+    <with|mode|math|H=W>.) <em|End aside.>
+
+    Every <with|mode|math|u\<in\>\<cal-H\>> also defines an element of
+    <with|mode|math|\<cal-H\><rsup|\<ast\>>> as follows: Define
+
+    <\equation*>
+      I(u)(v)=<big|int><rsub|\<Omega\>>u(x)v(x)\<mathd\>x<space|1em><with|mode|text|for
+      every> v\<in\>H.
+    </equation*>
+
+    Recall that the first step in the proof of our Theorem is to reduce to
+    <with|mode|math|\<varphi\>=0> by setting
+    <with|mode|math|<wide|u|~>=u-\<varphi\>> if
+    <with|mode|math|\<varphi\>\<neq\>0>.
+
+    <\lemma>
+      <em|(Compactness)> <with|mode|math|\<cal-I\>:\<cal-H\>\<rightarrow\>\<cal-H\><rsup|\<ast\>>>
+      is compact.
+    </lemma>
+
+    <\proof>
+      <with|mode|math|I=I<rsub|1>I<rsub|2>>, where
+      <with|mode|math|I<rsub|2>:\<cal-H\>\<rightarrow\>L<rsup|2>> is compact
+      by Rellich and <with|mode|math|I<rsub|1>:L<rsup|2>\<rightarrow\>\<cal-H\><rsup|\<ast\>>>
+      is continuous.
+    </proof>
+
+    We are trying to solve
+
+    <\equation>
+      <label|eq:elliptic-equation-hstar>L u=<wide*|g+div
+      f|\<wide-underbrace\>><rsub|\<in\>\<cal-H\><rsup|\<ast\>>>
+    </equation>
+
+    Indeed, given <with|mode|math|g>, <with|mode|math|f>, we have defined
+
+    <\equation*>
+      F(v)=<big|int><rsub|\<Omega\>>(D v\<cdot\>f-g*v)\<mathd\>x.
+    </equation*>
+
+    We treat (<reference|eq:elliptic-equation-hstar>) as an equation in
+    <with|mode|math|\<cal-H\><rsup|\<ast\>>>. Define
+
+    <\equation*>
+      L<rsub|\<sigma\>>=L-\<sigma\>I
+    </equation*>
+
+    for <with|mode|math|\<sigma\>\<in\>\<bbb-R\>> and the associated bilinear
+    form
+
+    <\equation*>
+      B<rsub|\<sigma\>>[u,v]=B[u,v]+\<sigma\><big|int><rsub|\<Omega\>>u(x)v(x)\<mathd\>x.
+    </equation*>
+
+    Thus,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|B<rsub|\<sigma\>>[u,u]>|<cell|=>|<cell|B[u,u]+\<sigma\><big|int><rsub|\<Omega\>>u(x)v(x)\<mathd\>x>>|<row|<cell|>|<cell|<above|\<geqslant\>|Lemma
+      <reference|lem:coercivity>>>|<cell|<frac|\<lambda\>|2><big|int><rsub|\<Omega\>>\|D
+      u\|<rsup|2>\<mathd\>x-\<lambda\>\<nu\><rsup|2><big|int><rsub|\<Omega\>>\|u\|<rsup|2>\<mathd\>x+\<sigma\><big|int><rsub|\<Omega\>>\|u\|<rsup|2>\<mathd\>x>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<frac|\<lambda\>|2><left|[><big|int><rsub|\<Omega\>>\|D
+      u\|<rsup|2>\<mathd\>x+<big|int><rsub|\<Omega\>>\|u\|<rsup|2>\<mathd\>x<right|]>=\<lambda\><norm|u|\<cal-H\>|2>.>>|<row|<cell|\<sigma\>>|<cell|\<geqslant\>>|<cell|\<lambda\>\<nu\><rsup|2>+\<lambda\>/2.>>>>
+    </eqnarray*>
+
+    So <with|mode|math|B<rsub|\<sigma\>>> is coercive.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|>|<cell|>|<cell|L u=g+div
+      f<space|1em><with|mode|text|in> \<cal-H\><rsup|\<ast\>>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|L<rsub|\<sigma\>>u+\<sigma\>I(u)=g+div
+      f<space|1em><with|mode|text|in> \<cal-H\><rsup|\<ast\>>.>>>>
+    </eqnarray*>
+
+    Lax-Milgram: <with|mode|math|L<rsup|-1><rsub|\<sigma\>>:\<cal-H\><rsup|\<ast\>>\<rightarrow\>\<cal-H\>>
+    is bounded<with|mode|math|\<Leftrightarrow\>>
+
+    <\equation*>
+      u+\<sigma\><wide*|<wide*|L<rsub|\<sigma\>><rsup|-1>|\<wide-underbrace\>><rsub|<with|mode|text|continuous>>*<wide*|I(u)|\<wide-underbrace\>><rsub|<with|mode|text|compact>>|\<wide-underbrace\>><rsub|<with|mode|text|compact>>=L<rsup|-1><rsub|\<sigma\>>(g+div
+      f)<space|1em><with|mode|text|in> \<cal-H\>.
+    </equation*>
+
+    Weak maximum principle<with|mode|math|\<Rightarrow\>>if
+    <with|mode|math|g=0,f=0>, then <with|mode|math|u=0>. By the Fredholm
+    alternative, using <with|mode|math|T=L<rsub|\<sigma\>><rsup|-1>I><with|mode|math|\<Rightarrow\>\<exists\>!u>
+    for every <with|mode|math|g+div f>.
   </proof>
+
+  <\remark>
+    <with|mode|math|L<rsup|-1><rsub|\<sigma\>>> is the abstract Green's
+    function.
+  </remark>
+
+  <subsection|Elliptic Regularity>
+
+  <\itemize>
+    <item>Bootstrap arguments: Finite differences and Sobolev spaces
+
+    <item>Weak Harnack Inequalities: Measurable<with|mode|math|\<rightarrow\>>Hölder
+    continuous (deGiorgi, Nash, Moser)
+  </itemize>
+
+  <subsubsection|Finite Differences and Sobolev Spaces>
+
+  Let
+
+  <\equation*>
+    \<Delta\><rsub|i><rsup|h>u=<frac|u(x+h*e<rsub|i>)-u(x)|h>,
+  </equation*>
+
+  where <with|mode|math|e<rsub|i>> is the <with|mode|math|i>th coordinate
+  vector w.r.t. the standard basis of <with|mode|math|\<bbb-R\><rsup|n>>.
+  <with|mode|math|\<Delta\><rsup|h>u> is well-defined on
+  <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>> provided
+  <with|mode|math|h\<less\>dist(\<Omega\><rprime|'>,\<partial\>\<Omega\>)>.
+
+  <\theorem>
+    <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>>,
+    <with|mode|math|h\<less\>dist(\<Omega\><rprime|'>,\<partial\>\<Omega\>)>,
+
+    <\enumerate-alpha>
+      <item>Let <with|mode|math|1\<leqslant\>p\<leqslant\>\<infty\>> and
+      <with|mode|math|u\<in\>W<rsup|1,p>(\<Omega\>)>. Then
+      <with|mode|math|\<Delta\><rsup|h>u\<in\>L<rsup|p>(\<Omega\><rprime|'>)>
+      and
+
+      <\equation*>
+        <norm|\<Delta\><rsup|h>u|L<rsup|p>(\<Omega\><rprime|'>)|>\<leqslant\><norm|D
+        u|L<rsup|p>(\<Omega\>)|>.
+      </equation*>
+
+      <item>Let <with|mode|math|1\<less\>p\<leqslant\>\<infty\>>. Suppose
+      <with|mode|math|u\<in\>L<rsup|p>(\<Omega\>)> and
+
+      <\equation*>
+        <norm|\<Delta\><rsup|h>u|L<rsup|p>(\<Omega\><rprime|'>)|>\<leqslant\>M,
+      </equation*>
+
+      for all <with|mode|math|h\<less\>dist(\<Omega\><rprime|'>,\<partial\>\<Omega\>)><with|mode|math|\<Rightarrow\>><with|mode|math|u\<in\>W<rsup|1,p>(\<Omega\><rprime|'>)>
+      and <with|mode|math|<norm|D u|L<rsup|p>(\<Omega\><rprime|'>)|>\<leqslant\>M>.
+    </enumerate-alpha>
+  </theorem>
 </body>
 
 <\initial>
@@ -3985,14 +4168,16 @@
     <associate|auto-46|<tuple|4.1|43>>
     <associate|auto-47|<tuple|4.2|43>>
     <associate|auto-48|<tuple|4.3|44>>
-    <associate|auto-49|<tuple|4.3|?>>
+    <associate|auto-49|<tuple|4.4|47>>
     <associate|auto-5|<tuple|1.3|3>>
+    <associate|auto-50|<tuple|4.4.1|47>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
+    <associate|eq:elliptic-equation-hstar|<tuple|4.2|46>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -4008,6 +4193,7 @@
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|44>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
+    <associate|lem:coercivity|<tuple|4.8|45>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
     <associate|lem:hj-semigroup|<tuple|2.14|24>>
     <associate|lem:lagrangian-props|<tuple|1.5|7>>
@@ -4171,6 +4357,14 @@
       <with|par-left|<quote|1.5fn>|4.3<space|2spc>Existence Theory
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-48>>
+
+      <with|par-left|<quote|1.5fn>|4.4<space|2spc>Elliptic Regularity
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-49>>
+
+      <with|par-left|<quote|3fn>|4.4.1<space|2spc>Finite Differences and
+      Sobolev Spaces <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-50>>
     </associate>
   </collection>
 </auxiliary>
