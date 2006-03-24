@@ -4115,6 +4115,178 @@
       and <with|mode|math|<norm|D u|L<rsup|p>(\<Omega\><rprime|'>)|>\<leqslant\>M>.
     </enumerate-alpha>
   </theorem>
+
+  Ell. regularity started over.
+
+  <em|Goal:> Existence of weak solutions<with|mode|math|+>smoothness of
+  <with|mode|math|A,b,c,d,f,g>
+
+  <\itemize>
+    <item><with|mode|math|\<Rightarrow\>>Regularity of weak solutions
+
+    <item><with|mode|math|\<Rightarrow\>>Uniqueness of classical
+    solutions+Existence.
+  </itemize>
+
+  Basic assumptions: <with|mode|math|E<rsub|1>,E<rsub|2>,E<rsub|3>> as
+  before, <with|mode|math|L u=g+div f> (assume <with|mode|math|f=0>).
+
+  <\theorem>
+    Assume <with|mode|math|L u=g>, <with|mode|math|E<rsub|1>>
+    <with|mode|math|E<rsub|2>>, <with|mode|math|E<rsub|3>>. Moreover, assume
+    <with|mode|math|A>, <with|mode|math|b> Lipschitz functions. Then for any
+    <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>> we have
+
+    <\equation*>
+      <norm|u|W<rsup|2,2>(\<Omega\><rprime|'>)|>\<leqslant\>C<left|(><norm|u|W<rsup|1,2>(\<Omega\>)|>+<norm|g|L<rsup|2>(\<Omega\>)|><right|)>,
+    </equation*>
+
+    where <with|mode|math|C=C(n,\<lambda\>,d<rprime|'>,K)>, where
+    <with|mode|math|K=max(Lip(A),Lip(b),<norm|c|\<infty\>|>,<norm|d|\<infty\>|>)>
+    and <with|mode|math|d<rprime|'>=dist(\<Omega\><rprime|'>,\<partial\>\<Omega\>)>.
+    In particular, <with|mode|math|L u=g> a.e. in <with|mode|math|\<Omega\>>.
+  </theorem>
+
+  <\proof>
+    Uses finite differences <with|mode|math|\<Delta\><rsup|h><rsub|k>> for
+    <with|mode|math|0\<less\>\|h\|\<less\>d<rprime|'>>. It suffices to show
+    <with|mode|math|<norm|\<Delta\><rsub|k><rsup|h>D<rsub|i>u|L<rsup|2>(\<Omega\><rprime|'>)|>>
+    uniformly bounded for <with|mode|math|0\<less\>\|h\|\<less\>d<rprime|'>/2>.\ 
+
+    Definition of weak solutions is: for every
+    <with|mode|math|v\<in\>C<rsub|c><rsup|1>(\<Omega\>)>
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>><left|[>D v<rsup|T>(A*D u+b*u)-(c\<cdot\>D
+      u+d*u)v<right|]>\<mathd\>x=<big|int><rsub|\<Omega\>>g*v*\<mathd\>x.
+    </equation*>
+
+    Rewrite as
+
+    <\equation>
+      <label|eq:reg-rewritten-weak><big|int><rsub|\<Omega\>>D v<rsup|T>(A*D
+      u)\<mathd\>x=<big|int><rsub|\<Omega\>><wide|g|~>*v*\<mathd\>x
+    </equation>
+
+    for all <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>, where
+
+    <\equation*>
+      <wide|g|~>=g+(c+b)\<cdot\>D u+d*u.
+    </equation*>
+
+    By <with|mode|math|(E<rsub|2>)> we know that
+    <with|mode|math|<wide|g|~><rsub|2>\<in\>L<rsup|2>(\<Omega\>)>. Now think
+    about ``discrete integration by parts'':
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>(\<Delta\><rsub|k><rsup|h>v)f(x)\<mathd\>x>|<cell|=>|<cell|-<big|int><rsub|\<Omega\>>v(x)\<Delta\><rsub|k><rsup|-h>f(x)\<mathd\>x>>>>
+    </eqnarray*>
+
+    for every <with|mode|math|f\<in\>L<rsup|2>(\<Omega\>)>. We may replace
+    <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)> by
+    <with|mode|math|\<Delta\><rsub|k><rsup|h>v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>
+    in (<reference|eq:reg-rewritten-weak>), provided
+    <with|mode|math|0\<less\>h\<less\>d<rprime|'>/2>. Then we have
+
+    <\equation>
+      <label|eq:reg-rewritten-fd><big|int><rsub|\<Omega\>>D
+      v<rsup|T><wide*|\<Delta\><rsub|k><rsup|h>(A\<cdot\>D
+      u)|\<wide-underbrace\>><rsub|(\<ast\>)>\<mathd\>x=-<big|int><rsub|\<Omega\>>(D\<Delta\><rsub|k><rsup|-h>v)<rsup|T>A*D
+      u\<mathd\>x<above|=|(\<ast\>)>-<big|int><rsub|\<Omega\>><wide|g|~>\<Delta\><rsub|k><rsup|-h>v*\<mathd\>x.
+    </equation>
+
+    In coordinates, <with|mode|math|(\<ast\>)> is
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<Delta\><rsub|k><rsup|h>(a<rsub|i,j>(x)D<rsub|j>u(x))>|<cell|=>|<cell|<frac|a<rsub|i,j>(x+h*e<rsub|k>)D<rsub|j>u(x+h*e<rsub|k>)-a<rsub|i,j>(x)D<rsub|j>u(x)|h>>>|<row|<cell|>|<cell|=>|<cell|a<rsub|i,j>(x+h*e<rsub|k>)(\<Delta\><rsub|k><rsup|h>D<rsub|j>u)(x)+(\<Delta\><rsub|k><rsup|h>a<rsub|i,j>)(x)D<rsub|j>u(x).>>>>
+    </eqnarray*>
+
+    By assumption, <with|mode|math|a<rsub|i,j>(x)> is Lipschitz, therefore
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\|\<Delta\><rsub|k><rsup|h>a<rsub|i,j>(x)\|>|<cell|=>|<cell|<frac|\|a<rsub|i,j>(x+h*e<rsub|k>)-a<rsub|i,j>(x)\||h>\<leqslant\><frac|Lip(a<rsub|i,j>)\<cdot\>\|h\||\|h\|>=Lip(a<rsub|i,j>),>>>>
+    </eqnarray*>
+
+    where
+
+    <\equation*>
+      Lip(a<rsub|i,j>)=sup<rsub|x,y\<in\>\<Omega\>><frac|\|a<rsub|i,j>(x)-a<rsub|i,j>(y)\||\|x-y\|>.
+    </equation*>
+
+    <\equation*>
+      \;
+    </equation*>
+
+    We may rewrite (<reference|eq:reg-rewritten-fd>) as
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>(D
+      v<rsup|T>A(x+h*e<rsub|k>)D\<Delta\><rsup|h><rsub|k>u\<mathd\>x>|<cell|=>|<cell|-<big|int><rsub|\<Omega\>>(<wide|g|~>\<Delta\><rsup|h><rsub|k>v+\<alpha\>D
+      v)\<mathd\>x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<norm|g|L<rsup|2>|><norm|\<Delta\><rsup|h><rsub|k>v|L<rsup|2>|>+<norm|\<alpha\>|L<rsup|2>|><norm|D
+      v|L<rsup|2>|>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(<norm|<wide|g|~>|L<rsup|2>|>+<norm|\<alpha\>|L<rsup|2>|>)<norm|D
+      v|L<rsup|2>|>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C(K,n)<left|(><norm|u|W<rsup|1,2>(\<Omega\>)|>+<norm|g|L<rsup|2>(\<Omega\>)|><right|)><norm|D
+      v|L<rsup|2>|>.>>>>
+    </eqnarray*>
+
+    This holds for all <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>
+    and by density for all <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>.
+    So we may choose
+
+    <\equation*>
+      v=\<eta\>\<Delta\><rsub|k><rsup|h>u,
+    </equation*>
+
+    where <with|mode|math|\<eta\>\<in\>C<rsup|1><rsub|c>(\<Omega\>)> and
+
+    <\equation*>
+      dist(supp(\<eta\>),\<partial\>\<Omega\>)\<gtr\><frac|d<rprime|'>|2>.
+    </equation*>
+
+    By strict ellipticity <with|mode|math|(E<rsub|1>)>, we have
+
+    <\equation*>
+      \<xi\><rsup|T>A\<xi\>\<geqslant\>\<lambda\>\|\<xi\>\|<rsup|2><space|1em><with|mode|text|for
+      all> \<xi\>\<in\>\<bbb-R\><rsup|n>, x\<in\>\<Omega\>.
+    </equation*>
+
+    If <with|mode|math|\<eta\>\<geqslant\>0>, we have
+
+    <\equation*>
+      \<eta\>(\<Delta\><rsub|k><rsup|h>D u)<rsup|T>A(x+h*e<rsub|k>)(\<Delta\><rsub|k><rsup|h>D
+      u)\<geqslant\>\<lambda\>\<eta\>\|\<Delta\><rsub|k><rsup|h>D
+      u\|<rsup|2>.
+    </equation*>
+
+    Therefore, <with|mode|math|v=\<eta\>\<Delta\><rsub|k><rsup|h>u> in the
+    estimate of rewritten (<reference|eq:reg-rewritten-fd>)
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<lambda\><big|int><rsub|\<Omega\>>\<eta\>\|\<Delta\><rsub|k><rsup|h>D
+      u\|<rsup|2>\<mathd\>x>|<cell|<above|\<leqslant\>|(E<rsub|1>)>>|<cell|<big|int><rsub|\<Omega\>>\<eta\>(\<Delta\><rsub|k><rsup|h>D
+      u)<rsup|T>A\<Delta\><rsub|k><rsup|h>D
+      u>>|<row|<cell|>|<cell|<above|=|<with|mode|text|product
+      rule>>>|<cell|<big|int><rsub|\<Omega\>>D
+      v<rsup|T>A\<Delta\><rsub|k><rsup|h>D
+      u-<big|int><rsub|\<Omega\>>(v*D\<eta\>)<rsup|T>A*\<Delta\><rsub|k><rsup|h>D
+      u>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C<left|(><norm|u|W<rsup|1,2>|>+<norm|g|L<rsup|2>|>)<norm|D
+      v||>-(\<downarrow\>)???.>>>>
+    </eqnarray*>
+
+    <\equation*>
+      D v=D(\<eta\>\<Delta\><rsub|k><rsup|h>u)=D
+      \<eta\>\<Delta\><rsub|k><rsup|h>u+\<eta\>D\<Delta\><rsub|k><rsup|h>u.
+    </equation*>
+
+    Observe that we may choose <with|mode|math|\<eta\>=1> on
+    <with|mode|math|\<Omega\><rprime|'>> and
+    <with|mode|math|\<eta\>\<in\>C<rsup|1><rsub|c>(\<Omega\><rprime|'>)> such
+    that <with|mode|math|<norm|D\<eta\>|L<rsup|\<infty\>>|>\<leqslant\>C(n)/d<rprime|'>>.
+    Estimate RHS using this to find
+
+    <\equation*>
+      \<lambda\><big|int><rsub|\<Omega\>>\|D\<Delta\><rsub|k><rsup|h>u\|<rsup|2>\<mathd\>x\<leqslant\>\<lambda\><big|int><rsub|\<Omega\>>\<eta\>\|D\<Delta\><rsub|k><rsup|h>u\|<rsup|2>\<mathd\>x\<leqslant\>C<left|(><norm|u|W<rsup|1,2>(\<Omega\>)|>+<norm|g|L<rsup|2>(\<Omega\>)|><right|)>.
+    </equation*>
+  </proof>
 </body>
 
 <\initial>
@@ -4192,6 +4364,8 @@
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|44>>
+    <associate|eq:reg-rewritten-fd|<tuple|4.4|?>>
+    <associate|eq:reg-rewritten-weak|<tuple|4.3|?>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
     <associate|lem:coercivity|<tuple|4.8|45>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
