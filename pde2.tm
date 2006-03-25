@@ -3737,10 +3737,190 @@
     </equation*>
   </definition>
 
-  (Fri Mar 17: Gap)
+  <em|Basic assumptions:>
+
+  <\description>
+    <item*|<with|mode|math|(E<rsub|1>)>>There is a
+    <with|mode|math|\<lambda\>\<gtr\>0> such that
+    <with|mode|math|\<xi\><rsup|T>A(x)\<xi\>\<geqslant\>\<lambda\>\|\<xi\>\|<rsup|2>>
+    for all <with|mode|math|x\<in\>\<Omega\>>,
+    <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>.
+
+    <item*|<with|mode|math|(E<rsub|2>)>>There is
+    <with|mode|math|\<Lambda\>\<gtr\>0>, <with|mode|math|\<nu\>\<gtr\>0> such
+    that
+
+    <\equation*>
+      <frac|1|\<lambda\><rsup|2>>(<norm|b|\<infty\>|>+<norm|c|\<infty\>|>)<rsup|2>+<frac|1|\<lambda\>><norm|d|\<infty\>|>\<leqslant\>\<nu\><rsup|2>,<space|1em><norm|tr(A<rsup|T>A)|\<infty\>|>\<leqslant\>\<Lambda\><rsup|2>.
+    </equation*>
+  </description>
+
+  <\definition>
+    <em|(The Generalized Dirichlet Problem)> Given
+    <with|mode|math|f,g,\<varphi\>>, find
+    <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> such that
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|(\<ast\>)<space|1em>L
+      u>|<cell|=>|<cell|g+div f<space|1em><with|mode|text|in
+      <with|mode|math|\<Omega\>>>,>>|<row|<cell|(#)<space|1em>u>|<cell|=>|<cell|\<varphi\><space|1em><with|mode|text|on
+      <with|mode|math|\<partial\>\<Omega\>>>,>>>>
+    </eqnarray*>
+
+    where <with|mode|math|(\<ast\>)> means <with|mode|math|B[u,v]=F[v]> and
+    <with|mode|math|(#)> means <with|mode|math|u-\<varphi\>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>
+    with
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|B[u,v]>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>D
+      v<rsup|T>(A*D u-b*u)-(c\<cdot\>D u+b)v*\<mathd\>x,>>|<row|<cell|F(v)>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>D
+      v\<cdot\>f-g*v*\<mathd\>x.>>>>
+    </eqnarray*>
+  </definition>
+
+  <em|Classical Maximum Principle:> If <with|mode|math|L> is <em|not> in
+  divergence form, say
+
+  <\equation*>
+    0=A D<rsup|2>u+b*\<cdot\>D u+d*u,
+  </equation*>
+
+  where we need <with|mode|math|d\<leqslant\>0> to obtain a maximum principle
+  (see Evans or Gilbarg&Trudinger, Chapter 3).
+
+  <em|Additional Assumption for Maximum Principle:>
+
+  <\description>
+    <item*|<with|mode|math|(E<rsub|3>)>><with|mode|math|div b+d\<leqslant\>0>
+    in the weak sense, that is
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>(div b+d)v*\<mathd\>x\<leqslant\>0<space|1em>\<forall\>v\<in\>C<rsup|1><rsub|c>(\<Omega\>),
+      v\<geqslant\>0.
+    </equation*>
+
+    Precisely,
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>d*v-b\<cdot\>D
+      v*\<mathd\>x\<leqslant\>0<space|1em>\<forall\>v\<in\>C<rsup|1><rsub|c>(\<Omega\>),
+      v\<geqslant\>0.
+    </equation*>
+  </description>
+
+  <\definition>
+    <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> is a <em|subsolution> to
+    the Generalized Dirichlet Problem if <with|mode|math|B[u,v]\<leqslant\>F(v)>
+    for all <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)> with
+    <with|mode|math|v\<geqslant\>0>, which is
+
+    <\equation*>
+      L u\<geqslant\>g+div f
+    </equation*>
+
+    read in a weak sense.
+  </definition>
+
+  <\theorem>
+    <em|(Weak Maximum Principle)> Suppose <with|mode|math|L u\<geqslant\>0>
+    and <with|mode|math|(E<rsub|1>)>, <with|mode|math|(E<rsub|2>)>,
+    <with|mode|math|(E<rsub|3>)> hold. Then
+
+    <\equation*>
+      sup<rsub|\<Omega\>>u\<leqslant\>sup<rsub|\<partial\>W>u<rsup|+>.
+    </equation*>
+  </theorem>
+
+  <\remark>
+    Recall
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|sup<rsub|\<partial\>\<Omega\>>u<rsup|+>>|<cell|=>|<cell|inf{k\<in\>\<bbb-R\>:(u<rsup|+>-k)<rsup|+>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)}>>|<row|<cell|>|<cell|=>|<cell|inf{k\<geqslant\>0:(u-k)<rsup|+>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)}.>>>>
+    </eqnarray*>
+  </remark>
+
+  <\remark>
+    There are no assumptions of boundedness or connectnes or smoothness on
+    <with|mode|math|\<Omega\>>.
+  </remark>
+
+  Compare the above theorem with the classical maximum principle for
+  <with|mode|math|\<Delta\>u\<geqslant\>0>.
+
+  <\corollary>
+    <with|mode|math|W<rsup|1,2>(\<Omega\>)> solutions to the Generalized
+    Dirichlet Problem are unique if they exist.
+  </corollary>
+
+  <\remark>
+    Nonuniqueness of the extension problem. Consider the ball
+    <with|mode|math|B(0,1)> and
+
+    <\equation*>
+      u(x)=a+(1-a)\|x\|<rsup|2-n>
+    </equation*>
+
+    for <with|mode|math|a\<in\>\<bbb-R\><rsup|n>>.
+
+    <\equation*>
+      <big|int>\|D u(x)\|<rsup|2>\<less\>\<infty\><space|1em>\<Leftrightarrow\><space|1em>a=0,n\<geqslant\>3.
+    </equation*>
+
+    (<with|color|red|What's going on here?>)
+  </remark>
 
   <\proof>
-    (of weak maximum principle) If
+    (of weak maximum principle) Step 1) The inequality
+    <with|mode|math|(E<rsub|3>)>
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>(d v-D v\<cdot\>b)\<mathd\>x\<leqslant\>0
+    </equation*>
+
+    for <with|mode|math|v\<geqslant\>0>, <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>
+    holds for all <with|mode|math|v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>
+    (since by <with|mode|math|(E<rsub|2>)>,
+    <with|mode|math|d,b\<in\>L<rsup|\<infty\>>>).
+
+    Step 2) Basic inequality:
+
+    <\equation*>
+      B[u,v]\<leqslant\>0
+    </equation*>
+
+    for <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)> and
+    <with|mode|math|v\<geqslant\>0>.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>D v<rsup|T>(A*D u+b
+      u)-(c\<cdot\>D u+d*u)v*\<mathd\>x>|<cell|\<leqslant\>>|<cell|0>>|<row|<cell|\<Rightarrow\><big|int><rsub|\<Omega\>>D
+      v<rsup|T>A\<cdot\>D u-(b+c)D u\<cdot\>v>|<cell|\<leqslant\>>|<cell|<big|int><rsub|\<Omega\>>d(u*v)-b\<cdot\>D(u*v)\<mathd\>x\<leqslant\>0.>>>>
+    </eqnarray*>
+
+    Now choose test functions cleverly such that
+    <with|mode|math|u*v\<geqslant\>0> and
+    <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>.
+
+    (applying step 1) But <with|mode|math|D(u*v)=u*D v+v*D u> holds for
+    <with|color|red|??> and <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>
+    holds for <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> and
+    <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>, which is OK. (See
+    the chain rule for <with|mode|math|W<rsup|1,p>> in Evans.)
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>D v<rsup|T>A*D
+      u*\<mathd\>x\<leqslant\><big|int>(b+c)D u\<cdot\>v*\<mathd\>x,
+    </equation*>
+
+    provided <with|mode|math|u*v\<geqslant\>0>,
+    <with|mode|math|v\<geqslant\>0>, <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>.
+
+    Step 3) Let <with|mode|math|l\<assign\>sup<rsub|\<partial\>\<Omega\>>u>.
+    Suppose <with|mode|math|sup<rsub|\<Omega\>>u\<gtr\>l> (else there is
+    nothing to prove). Choose <with|mode|math|l\<leqslant\>k\<less\>sup<rsub|\<Omega\>>u>
+    and <with|mode|math|v=(u-k)<rsup|+>>. We know that
+    <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)> by the definition
+    of <with|mode|math|l>.
 
     <\equation*>
       l=sup<rsub|\<partial\>\<Omega\>>u<rsup|\<upl\>>=inf{k\<geqslant\>0:(u-k)<rsup|+>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)}.
@@ -3754,7 +3934,22 @@
       u>|<cell|u\<gtr\>k,>>|<row|<cell|0>|<cell|u\<leqslant\>k.>>>>>
     </equation*>
 
-    And if <with|mode|math|\<Gamma\>={D v\<neq\>0}>,
+    And if <with|mode|math|\<Gamma\>={D v\<neq\>0}>, we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<lambda\><big|int><rsub|\<Omega\>>\|D
+      v\|<rsup|2>\<mathd\>x<above|\<leqslant\>|<with|mode|text|strict
+      ellip.>><big|int><rsub|\<Omega\>>D v<rsup|T>A*D
+      v\<mathd\>x>|<cell|<above|\<leqslant\>|(E<rsub|2>)>>|<cell|2\<nu\>\<lambda\><big|int><rsub|\<Gamma\>>v\|D
+      v(x)\|\<mathd\>x.>>>>
+    </eqnarray*>
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\|D v\|<rsup|2>\<leqslant\>2\<nu\><left|(><big|int><rsub|\<Gamma\>>\|v\|<rsup|2>\<mathd\>x<right|)><rsup|1/2><left|(><big|int><rsub|\<Omega\>>\|D
+      v\|<rsup|2>\<mathd\>x<right|)><rsup|1/2>.
+    </equation*>
+
+    Thus we obtain
 
     <\equation*>
       <norm|D v|L<rsup|2>(\<Omega\>)|>\<leqslant\>2\<nu\><norm|v|L<rsup|2>(\<Omega\>)|>.
@@ -4339,17 +4534,17 @@
     <associate|auto-45|<tuple|4|42>>
     <associate|auto-46|<tuple|4.1|43>>
     <associate|auto-47|<tuple|4.2|43>>
-    <associate|auto-48|<tuple|4.3|44>>
-    <associate|auto-49|<tuple|4.4|47>>
+    <associate|auto-48|<tuple|4.3|46>>
+    <associate|auto-49|<tuple|4.4|48>>
     <associate|auto-5|<tuple|1.3|3>>
-    <associate|auto-50|<tuple|4.4.1|47>>
+    <associate|auto-50|<tuple|4.4.1|48>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
-    <associate|eq:elliptic-equation-hstar|<tuple|4.2|46>>
+    <associate|eq:elliptic-equation-hstar|<tuple|4.2|47>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -4363,11 +4558,11 @@
     <associate|eq:kruzkov-convex-cond-2|<tuple|1.4|15>>
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
-    <associate|eq:maxprinciple-proof|<tuple|4.1|44>>
-    <associate|eq:reg-rewritten-fd|<tuple|4.4|?>>
-    <associate|eq:reg-rewritten-weak|<tuple|4.3|?>>
+    <associate|eq:maxprinciple-proof|<tuple|4.1|45>>
+    <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
+    <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
-    <associate|lem:coercivity|<tuple|4.8|45>>
+    <associate|lem:coercivity|<tuple|4.15|47>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
     <associate|lem:hj-semigroup|<tuple|2.14|24>>
     <associate|lem:lagrangian-props|<tuple|1.5|7>>
