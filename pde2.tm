@@ -4482,6 +4482,178 @@
       \<lambda\><big|int><rsub|\<Omega\>>\|D\<Delta\><rsub|k><rsup|h>u\|<rsup|2>\<mathd\>x\<leqslant\>\<lambda\><big|int><rsub|\<Omega\>>\<eta\>\|D\<Delta\><rsub|k><rsup|h>u\|<rsup|2>\<mathd\>x\<leqslant\>C<left|(><norm|u|W<rsup|1,2>(\<Omega\>)|>+<norm|g|L<rsup|2>(\<Omega\>)|><right|)>.
     </equation*>
   </proof>
+
+  <space|0.2spc>
+
+  <\theorem>
+    <dueto|Ladyzhenskaya & Valtseva>Assume <with|mode|math|(E<rsub|1>)> and
+    <with|mode|math|(E<rsub|2>)>. Assume <with|mode|math|f\<in\>L<rsup|q>(\<Omega\>)>,
+    <with|mode|math|g\<in\>L<rsup|q/2>> for some <with|mode|math|q\<gtr\>n>.
+    Then if <with|mode|math|u> is a <with|mode|math|W<rsup|1,2>> subsolution
+    with <with|mode|math|u\<leqslant\>0> on
+    <with|mode|math|\<partial\>\<Omega\>>, we have
+
+    <\equation*>
+      sup<rsub|\<Omega\>>u\<leqslant\>C<left|(><norm|u<rsup|+>|L<rsup|2>(\<Omega\>)|>+k<right|)>,
+    </equation*>
+
+    where
+
+    <\equation*>
+      k=<frac|1|\<lambda\>><left|(><norm|f|L<rsup|q>|>+<norm|g|L<rsup|q/2>|><right|)><space|1em><with|mode|text|and><space|1em>C=(n,\<nu\>,q,\|\<Omega\>\|).
+    </equation*>
+  </theorem>
+
+  <\proof>
+    <dueto|Moser>To expose the main idea, assume that
+
+    <\equation*>
+      f=0,g=0<space|1em>\<Rightarrow\><space|1em>k=0
+    </equation*>
+
+    and <with|mode|math|c=0>, <with|mode|math|d=0>. We need to show
+
+    <\equation*>
+      sup<rsub|\<Omega\>>u\<leqslant\>C<norm|u<rsup|+>|L<rsup|2>|>.
+    </equation*>
+
+    Recall that (1) <with|mode|math|u\<leqslant\>0> on
+    <with|mode|math|\<partial\>\<Omega\>> means that
+
+    <\equation*>
+      u<rsup|+>=max{u,0}\<in\>W<rsup|1,2><rsub|0>(\<Omega\>).
+    </equation*>
+
+    (2) <with|mode|math|u> is a subsolution if
+
+    <\equation*>
+      B[u,v]\<leqslant\>F(v)
+    </equation*>
+
+    for <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)> and
+    <with|mode|math|v\<geqslant\>0>, which means that
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>D v<rsup|T>(A*D u+b u)\<mathd\>x\<leqslant\>0
+    </equation*>
+
+    for <with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)> and
+    <with|mode|math|v\<geqslant\>0>.
+
+    <em|Main idea:> Choose <em|nonlinear> test functions of the form
+    <with|mode|math|v=(u<rsup|+>)<rsup|\<beta\>>> for some
+    <with|mode|math|\<beta\>\<geqslant\>1>. Let
+    <with|mode|math|w\<assign\>u<rsup|+>> for brevity. We know that
+    <with|mode|math|w\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>. Let
+
+    <\equation*>
+      H(z)=<choice|<tformat|<table|<row|<cell|z<rsup|\<beta\>>>|<cell|0\<leqslant\>z\<leqslant\>N,>>|<row|<cell|<with|mode|text|linear>>|<cell|z\<gtr\>N,>>>>>
+    </equation*>
+
+    i.e.
+
+    <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.100002gw|0.100002gh>>|gr-geometry|<tuple|geometry|0.364026par|0.266871par|center>|gr-line-arrows|none|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-0.2>|<point|0|3.7>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.2|0>|<point|5.3|0>>>|<line|<point|0|0>|<point|0.2|0>|<point|0.5|0>|<point|1.3|0.1>|<point|1.6|0.3>|<point|2.1|1>|<point|4|3.9>>|<point|2.1|1>|<text-at|<with|mode|math|z<rsup|\<beta\>>>|<point|0.5|0.4>>|<text-at|linear|<point|3.3|2.1>>|<text-at|<with|mode|math|N>|<point|1.9|-0.4>>>>|>
+
+    Let
+
+    <\equation*>
+      v(x)=<big|int><rsub|0><rsup|W(x)>\|H<rprime|'>(z)\|<rsup|2>\<mathd\>z.
+    </equation*>
+
+    Then
+
+    <\equation>
+      <label|eq:moser-test-deriv>D v(x)=\|H<rprime|'>(w)\|<rsup|2>D w(x).
+    </equation>
+
+    Note that <with|mode|math|v\<geqslant\>0> by construction. Moreover,
+    <with|mode|math|\|H<rprime|'>(w)\|<rsup|2>\<in\>L<rsup|\<infty\>>> and
+    <with|mode|math|w\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)><with|mode|math|\<Rightarrow\>><with|mode|math|v\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>.
+    We have from (<reference|eq:moser-test-deriv>) that
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>D v<rsup|T>A*D
+      u\<mathd\>x>|<cell|\<leqslant\>>|<cell|-<big|int><rsub|\<Omega\>>(D
+      v<rsup|T>b)u(x)\<mathd\>x>>|<row|<cell|\<\|\|\><space|2em>>|<cell|>|<cell|>>|<row|<cell|<big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>D
+      w<rsup|T>A*D u*\<mathd\>x>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>D
+      w<rsup|T>A*D w*\<mathd\>x>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|\<lambda\><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|D
+      w\|<rsup|2>\<mathd\>x.>>>>
+    </eqnarray*>
+
+    On the other hand,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<left|\|>-<big|int><rsub|\<Omega\>>(D
+      v<rsup|T>b)u(x)\<mathd\>x<right|\|>>|<cell|=>|<cell|<left|\|><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>D
+      w<rsup|T>b*u*\<mathd\>x<right|\|>>>|<row|<cell|>|<cell|<above|=|w=u<rsup|+>>>|<cell|<left|\|><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>D
+      w<rsup|T>b*w\<mathd\>x<right|\|>>>|<row|<cell|>|<cell|<above|\<leqslant\>|CS>>|<cell|<left|(><big|int><rsub|\<Omega\>><wide*|\|H<rprime|'>(w)\|<rsup|2>\|D
+      w\|<rsup|2>|\<wide-underbrace\>><rsub|\|D
+      H(w)\|<rsup|2>>\<mathd\>x<right|)><rsup|1/2><left|(><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|b\|<rsup|2>\|w\|<rsup|2>\<mathd\>x<right|)><rsup|1/2>.>>>>
+    </eqnarray*>
+
+    Thus we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<lambda\><big|int><rsub|\<Omega\>>\|D
+      H(w)\|<rsup|2>\<mathd\>x>|<cell|\<leqslant\>>|<cell|<left|(><big|int><rsub|\<Omega\>>\|D
+      H(w)\|<rsup|2>\<mathd\>x<right|)><rsup|1/2><left|(><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|b\|<rsup|2>\|w\|<rsup|2>\<mathd\>x<right|)><rsup|1/2>>>|<row|<cell|>|<cell|<above|\<leqslant\>|<with|mode|text|AM-GM>>>|<cell|<frac|1|2><left|[>\<lambda\><big|int><rsub|\<Omega\>>\|D
+      H(w)\|<rsup|2>\<mathd\>x+<frac|<norm|b|\<infty\>|>|\<lambda\>><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|w\|<rsup|2>\<mathd\>x.>>>>
+    </eqnarray*>
+
+    Therefore
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\|D H(w)\|<rsup|2>\<mathd\>x\<leqslant\><frac|<norm|b|\<infty\>|>|\<lambda\><rsup|2>><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|w\|<rsup|2>\<mathd\>x<above|\<leqslant\>|(E<rsub|2>)>\<nu\><rsup|2><big|int><rsub|\<Omega\>>\|H<rprime|'>(w)\|<rsup|2>\|w\|<rsup|2>\<mathd\>x.
+    </equation*>
+
+    By Sobolev's Inequality
+
+    <\equation*>
+      <norm|H(w)|L<rsup|2<rsup|\<ast\>>>(\<Omega\>)|>\<leqslant\>C(n)<norm|D
+      H(w)|L<rsup|2>(\<Omega\>)|>\<leqslant\>\<nu\>C(n)<norm|H<rprime|'>(w)w|L<rsup|2>(\<Omega\>)|>.
+    </equation*>
+
+    This inequality is independent of <with|mode|math|N>, so take
+    <with|mode|math|N\<uparrow\>\<infty\>>. Then
+    <with|mode|math|H(w)=w<rsup|\<beta\>>>,
+    <with|mode|math|H<rprime|'>(\<omega\>)=\<beta\>w<rsup|\<beta\>-1>>, so
+
+    <\equation*>
+      w*H<rprime|'>(w)=\<beta\>\<omega\><rsup|\<beta\>>.
+    </equation*>
+
+    Then
+
+    <\equation*>
+      <left|(><big|int><rsub|\<Omega\>>\|w\|<rsup|\<beta\>2<rsup|\<ast\>>>\<mathd\>x<right|)><rsup|1/2<rsup|\<ast\>>>\<leqslant\>\<nu\>C(n)\<beta\><left|(><big|int><rsub|\<Omega\>>\|w\|<rsup|2\<beta\>>\<mathd\>x<right|)><rsup|1/2>.
+    </equation*>
+
+    Thus we have
+
+    <\equation>
+      <label|eq:moser-main-inequality><norm|w|2<rsup|\<ast\>>\<beta\>|>\<leqslant\>(\<nu\>C(n)\<beta\>)<rsup|1/\<beta\>><norm|w|2\<beta\>|>,<space|1em>\<beta\>\<geqslant\>1.
+    </equation>
+
+    Note that <with|mode|math|2<rsup|\<ast\>>=2n/(n-2)\<gtr\>2>. Let
+    <with|mode|math|r\<assign\>n/(n-2)>. Then iterate
+    (<reference|eq:moser-main-inequality>):
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<beta\>=1>|<cell|\<Rightarrow\>>|<cell|<norm|w|2r|>\<leqslant\>(\<nu\>C(n))<norm|w|2|>>>|<row|<cell|\<beta\>=r>|<cell|\<Rightarrow\>>|<cell|<norm|w|2r<rsup|2>|>\<leqslant\>(\<nu\>C(n)r)<rsup|1/r><norm|w|2r|>\<leqslant\>(\<nu\>C(n)r)<rsup|1/r>(\<nu\>C(n))<norm|w|2|>.>>>>
+    </eqnarray*>
+
+    By induction,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<norm|w|2r<rsup|m+1>|>>|<cell|\<leqslant\>>|<cell|(\<nu\>C(n))<rsup|1+<frac|1|r>+\<cdots\>+<frac|1|r<rsup|m>>>(r)<rsup|<frac|1|r>+<frac|2|r<rsup|2>>+<frac|m|r<rsup|m>>><norm|w|2|>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|(\<nu\>C(n))<rsup|<frac|1|1-1/r>>(r)<rsup|1/(1-1/r)<rsup|2>><norm|w|2|>.>>>>
+    </eqnarray*>
+
+    Let <with|mode|math|m\<rightarrow\>\<infty\>> and obtain
+
+    <\equation*>
+      <norm|w|L<rsup|\<infty\>>|>=sup u<rsup|+>\<leqslant\>C<norm|u<rsup|+>|2|>.
+    </equation*>
+  </proof>
 </body>
 
 <\initial>
@@ -4538,6 +4710,7 @@
     <associate|auto-49|<tuple|4.4|48>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-50|<tuple|4.4.1|48>>
+    <associate|auto-51|<tuple|4.1|?>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
@@ -4559,6 +4732,8 @@
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|45>>
+    <associate|eq:moser-main-inequality|<tuple|4.6|?>>
+    <associate|eq:moser-test-deriv|<tuple|4.5|?>>
     <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
     <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
