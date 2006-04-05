@@ -106,6 +106,10 @@
     <with|par-left|3fn|4.4.1<space|2spc>Finite Differences and Sobolev Spaces
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-50>>
+
+    <with|par-left|1.5fn|4.5<space|2spc>The Weak Harnack Inequality
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-52>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -4654,6 +4658,191 @@
       <norm|w|L<rsup|\<infty\>>|>=sup u<rsup|+>\<leqslant\>C<norm|u<rsup|+>|2|>.
     </equation*>
   </proof>
+
+  <subsection|The Weak Harnack Inequality>
+
+  Label two common assumptions for this section
+
+  <\description>
+    <item*|(1)>Assume <with|mode|math|(E<rsub|1>)>,
+    <with|mode|math|(E<rsub|2>)>.
+
+    <item*|(2)>Also assume <with|mode|math|f\<in\>L<rsup|q>(\<Omega\>)>,
+    <with|mode|math|g\<in\>L<rsup|q/2>(\<Omega\>)> for some
+    <with|mode|math|q\<gtr\>n>.
+  </description>
+
+  <\theorem>
+    <em|(Local boundedness)> Assume (1), (2). Assume <with|mode|math|u> is a
+    subsolution. Then for any ball <with|mode|math|B(y,2R)\<subset\>\<Omega\>>
+    and <with|mode|math|p\<gtr\>1>
+
+    <\equation*>
+      sup<rsub|B(y,R)>\<leqslant\>C<left|(>R<rsup|-n/p><norm|u<rsup|+>|L<rsup|p>(B(y,2R))|>+k(R)<right|)>,
+    </equation*>
+
+    where
+
+    <\equation*>
+      k(R)=<frac|R<rsup|1-n/q>|\<lambda\>><left|(><norm|f|q|>+R<rsup|1-n/q><norm|g|q/2|><right|)>
+    </equation*>
+
+    and
+
+    <\equation*>
+      C=C<left|(>n,<frac|\<Lambda\>|\<lambda\>>,\|\<Omega\>\|,\<nu\><right|)>.
+    </equation*>
+  </theorem>
+
+  <\theorem>
+    <em|(Weak Harnack Inequality)> Assume (1), (2). If <with|mode|math|u> is
+    a <with|mode|math|W<rsup|1,2>(\<Omega\>)> <em|supersolution> and
+    <with|mode|math|u\<geqslant\>0> in a ball
+    <with|mode|math|B(y,4R)\<subset\>\<Omega\>>, then
+
+    <\equation*>
+      R<rsup|-n/p><norm|u|L<rsup|p>(B(y,2R))|>\<leqslant\>C<left|(>inf<rsub|B(y,R)>u+k(R)<right|)>
+    </equation*>
+
+    for every <with|mode|math|1\<leqslant\>p\<less\>n/(n-2)> with
+    <with|mode|math|C> and <with|mode|math|k> as before.
+  </theorem>
+
+  Now, let us consider the consequences of Theorem 1 and 2.
+
+  <\theorem>
+    <em|(Strong Harnack Inequality)> Assume (1), (2). Assume
+    <with|mode|math|u> is a <with|mode|math|W<rsup|1,2>> solution with
+    <with|mode|math|><with|mode|math|u\<geqslant\>0>. Then
+
+    <\equation*>
+      sup<rsub|B(y,R)>u\<leqslant\>C<left|(>inf<rsub|B(y,R)>u+k(R)<right|)>.
+    </equation*>
+  </theorem>
+
+  <\theorem>
+    <em|(Strong Maximum Principle)> Assume (1), (2) and
+    <with|mode|math|(E<rsub|3>)>. Assume <with|mode|math|\<Omega\>>
+    connected. Suppose <with|mode|math|u> is a <with|mode|math|W<rsup|1,2>>
+    subsolution. If for some ball <with|mode|math|B(y,R)\<subsetneq\>\<Omega\>>,
+    we have
+
+    <\equation*>
+      sup<rsub|B>u=sup<rsub|\<Omega\>>u,
+    </equation*>
+
+    then <with|mode|math|u=const>.
+  </theorem>
+
+  <\proof>
+    Suppose <with|mode|math|M=sup<rsub|\<Omega\>>u>. Also suppose
+    <with|mode|math|B(y,4R)\<subsetneq\>\<Omega\>> and
+    <with|mode|math|sup<rsub|B(y,4R)>u=M>. Let <with|mode|math|v=M-u>, then
+    <with|mode|math|L v=-L u\<leqslant\>0> (i.e. supersolution) and
+    <with|mode|math|v\<geqslant\>0>. Apply weak Harnack inequality with
+    <with|mode|math|p=1>:
+
+    <\equation*>
+      R<rsup|-n><big|int><rsub|B(y,2R)>(M-u)\<mathd\>x\<leqslant\>C<left|(>inf<rsub|B(y,R)>(M-u)<right|)>=0.
+    </equation*>
+
+    <with|mode|math|\<Rightarrow\>><with|mode|math|{u=M}> is open. Even
+    though <with|mode|math|u> is not continuous is not continuous, it is
+    still true that <with|mode|math|{u=M}> is relatively closed in
+    <with|mode|math|\<Omega\>>. Then <with|mode|math|{u=M}=\<Omega\>> since
+    <with|mode|math|\<Omega\>> is connected.
+  </proof>
+
+  <\theorem>
+    <dueto|DeGiorgi, Nash>Assume (1), (2). Assume
+    <with|mode|math|u\<in\>W<rsup|1,2>> solves <with|mode|math|L u=g+div f>.
+    Then <with|mode|math|u> is locally Hölder continuous and for any ball
+    <with|mode|math|B<rsub|0>=B(y,R<rsub|0>)\<subset\>\<Omega\>> and
+    <with|mode|math|0\<less\>R\<leqslant\>R<rsub|0>>. Then
+
+    <\equation*>
+      osc<rsub|B(y,R)>u\<leqslant\>C*R<rsup|\<alpha\>><left|(>R<rsub|0><rsup|-\<alpha\>>sup<rsub|B<rsub|0>>\|u\|+k<right|)>.
+    </equation*>
+
+    Here, <with|mode|math|C> and <with|mode|math|k> are as before and
+    <with|mode|math|\<alpha\>=a(n,\<Lambda\>/\<lambda\>,\<nu\>,R,q)>.
+  </theorem>
+
+  <\proof>
+    To avoid complications work with the simpler setting
+
+    <\equation*>
+      L u=div(A*D u)=0,
+    </equation*>
+
+    i.e. <with|mode|math|b=c=f=0>, <with|mode|math|d=g=0>. Assume without
+    loss <with|mode|math|R\<leqslant\>R<rsub|0>/4>. Let
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|M<rsub|0>\<assign\>sup<rsub|B<rsub|0>>\|u\|,>|<cell|>|<cell|>>|<row|<cell|M<rsub|1>\<assign\>sup<rsub|B<rsub|R>>u,>|<cell|>|<cell|m<rsub|1>\<assign\>inf<rsub|B<rsub|R>>u,>>|<row|<cell|M<rsub|4>\<assign\>sup<rsub|B<rsub|4R>>u,>|<cell|>|<cell|m<rsub|4>\<assign\>inf<rsub|B<rsub|4R>>u.>>>>
+    </eqnarray*>
+
+    Let <with|mode|math|\<omega\>(R)\<assign\>osc<rsub|B<rsub|R>>u=M<rsub|1>-m<rsub|1>>.
+    Observe that <with|mode|math|M<rsub|4>-u\<geqslant\>0> on
+    <with|mode|math|B<rsub|4R>> and <with|mode|math|L(M<rsub|4>-u)=0>.
+    Similarly, <with|mode|math|u-m<rsub|4>\<geqslant\>0> on
+    <with|mode|math|B<rsub|4R>> and <with|mode|math|L(u-m<rsub|4>)=0>. Thus,
+    we can apply the weak Harnack inequality with <with|mode|math|p=1> to
+    obtain
+
+    <\equation*>
+      R<rsup|-n><big|int><rsub|B<rsub|2R>>(M<rsub|4>-u)\<mathd\>x\<leqslant\>C<left|(>inf<rsub|B<rsub|R>>(M<rsub|4>-u)<right|)>=C(M<rsub|4>-M<rsub|1>).
+    </equation*>
+
+    Likewise,
+
+    <\equation*>
+      R<rsup|-n><big|int><rsub|B<rsub|2R>>(u-m<rsub|4>)\<mathd\>x\<leqslant\>C<left|(>inf<rsub|B<rsub|R>>(u-m<rsub|4>)<right|)>=C(m<rsub|1>-m<rsub|4>).
+    </equation*>
+
+    Add both inequalities to obtain
+
+    <\equation*>
+      <frac|1|R<rsup|n>><big|int><rsub|B<rsub|2R>>(M<rsub|4>-m<rsub|4>)\<mathd\>x=C<rsub|n>(M<rsub|4>-m<rsub|4>)\<leqslant\>C<left|[><wide*|(M<rsub|4>-m<rsub|4>)|\<wide-underbrace\>><rsub|osc<rsub|B<rsub|4R>>u>-<wide*|(M<rsub|1>-m<rsub|1>)|\<wide-underbrace\>><rsub|osc<rsub|B<rsub|R>>u><right|]>.
+    </equation*>
+
+    Rewrite as
+
+    <\equation*>
+      \<omega\>(R)\<leqslant\>\<gamma\>\<omega\>(4R)
+    </equation*>
+
+    for some <with|mode|math|\<gamma\>\<gtr\>1>. Fix
+    <with|mode|math|r\<leqslant\>R<rsub|0>>. Choose <with|mode|math|m> such
+    that
+
+    <\equation*>
+      <frac|1|4<rsup|m>>R<rsub|0>\<leqslant\>r\<less\><frac|1|4<rsup|m-1>>R<rsub|0>.
+    </equation*>
+
+    Observe that <with|mode|math|\<omega\>(R)> is non-decreasing since
+    <with|mode|math|\<omega\>(r)=sup<rsub|B<rsub|r>>u-inf<rsub|B<rsub|r>>u>.
+    Therefore
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\<omega\>(r)>|<cell|\<leqslant\>>|<cell|\<omega\><left|(><frac|1|4<rsup|m-1>>R<rsub|0><right|)>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|\<gamma\><rsup|m-1>\<omega\>(R<rsub|0>).>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<left|(><frac|r|R<rsub|0>><right|)><rsup|log*r/log
+      4>\<omega\>(R<rsub|0>),>>>>
+    </eqnarray*>
+
+    where we used
+
+    <\equation*>
+      <frac|1|4<rsup|m>>\<leqslant\><frac|r|R<rsub|0>>\<less\><frac|1|4<rsup|m-1>>,
+    </equation*>
+
+    therefore
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|-m*log 4\<leqslant\>log(r/R<rsub|0>)>|<cell|\<less\>>|<cell|(-m-1)log
+      4>>|<row|<cell|\<Leftrightarrow\>m\<geqslant\>-log(r/R<rsub|0>)/log
+      4>|<cell|\<gtr\>>|<cell|(m-1).>>>>
+    </eqnarray*>
+  </proof>
 </body>
 
 <\initial>
@@ -4710,7 +4899,8 @@
     <associate|auto-49|<tuple|4.4|48>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-50|<tuple|4.4.1|48>>
-    <associate|auto-51|<tuple|4.1|?>>
+    <associate|auto-51|<tuple|4.1|51>>
+    <associate|auto-52|<tuple|4.5|52>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
@@ -4732,8 +4922,8 @@
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|45>>
-    <associate|eq:moser-main-inequality|<tuple|4.6|?>>
-    <associate|eq:moser-test-deriv|<tuple|4.5|?>>
+    <associate|eq:moser-main-inequality|<tuple|4.6|52>>
+    <associate|eq:moser-test-deriv|<tuple|4.5|51>>
     <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
     <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
@@ -4807,6 +4997,8 @@
       <tuple|normal||<pageref|auto-43>>
 
       <tuple|normal||<pageref|auto-44>>
+
+      <tuple|normal||<pageref|auto-51>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -4909,6 +5101,10 @@
       <with|par-left|<quote|3fn>|4.4.1<space|2spc>Finite Differences and
       Sobolev Spaces <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-50>>
+
+      <with|par-left|<quote|1.5fn>|4.5<space|2spc>The Weak Harnack Inequality
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-52>>
     </associate>
   </collection>
 </auxiliary>
