@@ -110,6 +110,10 @@
     <with|par-left|1.5fn|4.5<space|2spc>The Weak Harnack Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-52>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>Calculus
+    of Variations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-53><vspace|0.5fn>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -4843,6 +4847,246 @@
       4>|<cell|\<gtr\>>|<cell|(m-1).>>>>
     </eqnarray*>
   </proof>
+
+  <section|Calculus of Variations>
+
+  General set-up:
+
+  <\equation*>
+    I[u]=<big|int><rsub|\<Omega\>>F(D u(x))\<mathd\>x.
+  </equation*>
+
+  Here, we have <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|m>>,
+  <with|mode|math|m\<geqslant\>1>. <with|mode|math|D
+  u:\<Omega\>\<rightarrow\>M<rsup|m\<times\>n>>. Minimize <with|mode|math|I>
+  over <with|mode|math|u\<in\>\<cal-A\>>, where <with|mode|math|\<cal-A\>> is
+  a class of admissible functions.
+
+  <\example>
+    <em|(Dirichlet's principle)> Let <with|mode|math|\<Omega\>> be open and
+    bounded and <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\>>,
+    <with|mode|math|g:\<Omega\>\<rightarrow\>\<bbb-R\>> given,
+
+    <\equation*>
+      I[u]=<big|int><rsub|\<Omega\>><left|(><frac|1|2>\|D
+      u\|<rsup|2>-g*u<right|)>\<mathd\>x
+    </equation*>
+
+    and <with|mode|math|\<cal-A\>=W<rsup|1,2>(\<Omega\>)>. The terms have the
+    following meanings:
+
+    <\description>
+      <item*|<with|mode|math|\|D u\|<rsup|2>>>Represents the strain energy in
+      a membrane.
+
+      <item*|<with|mode|math|g*u>>Is the work done by the applied force.
+    </description>
+
+    General principles:
+
+    <\enumerate>
+      <item>Is <with|mode|math|inf<rsub|\<cal-A\>>I[u]\<gtr\>-\<infty\>>?
+
+      <item>Is <with|mode|math|inf<rsub|\<cal-A\>>I[u]=min<rsub|\<cal-A\>>I[u]>?
+      (This will be resolved by the <em|``Direct Method''> due to Hilbert.
+    </enumerate>
+
+    To show 1.): Suppose <with|mode|math|g\<in\>L<rsup|2>(\<Omega\>)>. Then
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<left|\|><big|int><rsub|\<Omega\>>g*u*\<mathd\>x<right|\|>>|<cell|\<leqslant\>>|<cell|<norm|g|L<rsup|2>|><norm|u|L<rsup|2>|>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|1|2><left|(>\<varepsilon\><norm|u|L<rsup|2>|2>+<frac|1|\<varepsilon\>><norm|g|L<rsup|2>|2><right|)>.>>>>
+    </eqnarray*>
+
+    By the Sobolev Inequality,
+
+    <\equation*>
+      <norm|u|L<rsup|2<rsup|\<ast\>>>|>\<leqslant\>C(n)<norm|D u|L<rsup|2>|>.
+    </equation*>
+
+    Moreover, <with|mode|math|2<rsup|\<ast\>>\<gtr\>2> and
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<norm|u|L<rsup|2>|>>|<cell|<above|\<leqslant\>|<with|mode|text|Hölder's>>>|<cell|<norm|u|L<rsup|2<rsup|\<ast\>>>|>\|\<Omega\>\|<rsup|1/n>>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C(n,\<Omega\>)<norm|D
+      u|L<rsup|2>|>.>>>>
+    </eqnarray*>
+
+    Then
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|I[u]>|<cell|=>|<cell|<frac|1|2><big|int><rsub|\<Omega\>>\|D
+      u\|<rsup|2>\<mathd\>x-<big|int><rsub|\<Omega\>>g
+      u*\<mathd\>x>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<frac|1|2><norm|D
+      u|L<rsup|2>|2>-<frac|1|2><left|(>\<varepsilon\>C<norm|D
+      u|L<rsup|2>|2>+<frac|1|\<varepsilon\>><norm|g|L<rsup|2>|2><right|)>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<frac|1|4><norm|D
+      u|L<rsup|2>|2>-<frac|1|2\<varepsilon\>><norm|g|L<rsup|2>|2>>>|<row|<cell|>|<cell|<above|\<geqslant\>|(\<ast\>)>>|<cell|c<norm|u|W<rsup|1,2><rsub|0>|2>-<frac|1|2\<varepsilon\>><norm|g|L<rsup|2>|2>,>>>>
+    </eqnarray*>
+
+    where the step <with|mode|math|(\<ast\>)> uses the Sobolev inequality
+    again, with a suitable <with|mode|math|\<varepsilon\>> chosen.
+
+    This is called a <em|coercivity bound>. In particular,
+
+    <\equation*>
+      inf<rsub|u>I[u]\<geqslant\>-<frac|1|2\<varepsilon\>><norm|g|L<rsup|2>|2>\<gtr\>-\<infty\>.
+    </equation*>
+
+    Since <with|mode|math|inf I[u]\<gtr\>-\<infty\>>, there is some sequence
+    <with|mode|math|u<rsub|k>> such that <with|mode|math|I[u<rsub|k>]\<rightarrow\>inf
+    I[u<rsub|k>]>.\ 
+
+    <em|Bounds> on <with|mode|math|{u<rsub|k>}>:
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|I[u]>|<cell|=>|<cell|<frac|1|2><big|int><rsub|\<Omega\>>\|D
+      u\|<rsup|2>\<mathd\>x-<big|int><rsub|\<Omega\>>g*u*\<mathd\>x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|<frac|1|2><left|(><big|int><rsub|\<Omega\>>\|D
+      u\|<rsup|2>+\|u\|<rsup|2>\<mathd\>x<right|)>+<frac|1|2><big|int><rsub|\<Omega\>>\|g\|<rsup|2>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<frac|1|2><left|(><norm|u|W<rsup|1,2><rsub|0>|2>+<norm|g|L<rsup|2>|2><right|)>.>>>>
+    </eqnarray*>
+
+    By coercivity, we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<norm|u<rsub|k>|W<rsub|0><rsup|1,2>(\<Omega\>)|2>>|<cell|\<leqslant\>>|<cell|<frac|1|C><left|[><wide*|I[u<rsub|k>]|\<wide-underbrace\>><rsub|\<ast\>>+<wide*|<frac|1|2\<varepsilon\>><norm|g|L<rsup|2>|2>|\<wide-underbrace\>><rsub|<with|mode|text|fixed!>><right|]>,>>>>
+    </eqnarray*>
+
+    where term <with|mode|math|\<ast\>> is uniformly bounded because
+    <with|mode|math|I[u<rsub|k>]\<rightarrow\>inf>. We could say
+    <with|mode|math|I[u<rsub|k>]\<leqslant\>inf+1>.
+
+    The main problem is: We cann only assert that there is a <em|weakly>
+    converging subsequence. That is, <with|mode|math|u<rsub|k<rsub|j>>\<rightharpoonup\>u>
+    in <with|mode|math|W<rsup|1,2><rsub|0>(\<Omega\>)>, where we relabel the
+    subsequence <with|mode|math|u<rsub|k<rsub|j>>> as
+    <with|mode|math|u<rsub|k>>.
+
+    <\theorem>
+      <with|mode|math|I[u]> is weakly lower semicontinuous. That is, if
+      <with|mode|math|v<rsub|k>\<rightharpoonup\>v>, then
+
+      <\equation*>
+        I[v]\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>>I[v<rsub|k>].
+      </equation*>
+    </theorem>
+
+    Assuming the theorem, we see that <with|mode|math|I[u]> is a minimizer.
+    Indeed,
+
+    <\equation*>
+      I[u]<above|\<leqslant\>|<with|mode|text|w.l.s.c.>>liminf<rsub|k\<rightarrow\>\<infty\>>I[u<rsub|k>]=inf<rsub|v\<in\>\<cal-A\>>I[v]\<leqslant\>I[u].
+    </equation*>
+
+    <em|Aside:> <with|mode|math|I[u]> is also strictly
+    convex<with|mode|math|\<Rightarrow\>><with|mode|math|u> is a minimizer:
+
+    <\equation*>
+      I<left|[><frac|v<rsub|1>+v<rsub|2>|2><right|]>\<leqslant\><frac|1|2>(I[v<rsub|1>]+I[v<rsub|2>])
+    </equation*>
+
+    with equality only if <with|mode|math|v<rsub|1>=\<alpha\>v<rsub|2>> for
+    some <with|mode|math|\<alpha\>\<in\>\<bbb-R\>>.
+
+    <\proof>
+      Assume two <em|distinct> minimizers
+      <with|mode|math|u<rsub|1>\<neq\>\<alpha\>u<rsub|2>>. Then
+
+      <\equation*>
+        I<left|[><frac|u<rsub|1>+u<rsub|2>|2><right|]>\<less\><frac|1|2><left|(>I[u<rsub|1>]+I[u<rsub|2>]<right|)>=min<rsub|v\<in\>\<cal-A\>>I[v],
+      </equation*>
+
+      which contradicts the definition of the minimum.
+    </proof>
+  </example>
+
+  <\theorem>
+    Assume <with|mode|math|F:M<rsup|m\<times\>n>\<rightarrow\>\<bbb-R\>> is
+    <em|convex> and <with|mode|math|F\<geqslant\>0>. Then
+
+    <\equation*>
+      I[u]=<big|int><rsub|\<Omega\>>F(D u(x))\<mathd\>x
+    </equation*>
+
+    is weakly lower semicontinuous in <with|mode|math|W<rsup|1,p><rsub|0>(\<Omega\>)>
+    for <with|mode|math|1\<less\>p\<less\>\<infty\>>.
+  </theorem>
+
+  <\proof>
+    From homework, we know that <with|mode|math|f(A)=lim<rsub|N\<rightarrow\>\<infty\>>f<rsub|N>(A)>
+    were <with|mode|math|f<rsub|N>> is an increasing sequence of piece affine
+    approximations. Since <with|mode|math|f<rsub|N>> is piecewise affine if
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|u<rsub|k>>|<cell|\<rightharpoonup\>>|<cell|u<space|1em><with|mode|text|in
+      <with|mode|math|W<rsup|1,p><rsub|0>(\<Omega\>)>>>>|<row|<cell|D
+      u<rsub|k>>|<cell|\<rightharpoonup\>>|<cell|D
+      u<space|1em><with|mode|text|in <with|mode|math|L<rsup|p>(\<Omega\>)>>,>>>>
+    </eqnarray*>
+
+    so that
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>f<rsub|N>(D
+      u<rsub|k>)\<mathd\>x\<rightarrow\><big|int><rsub|\<Omega\>>f<rsub|N>(D
+      u)\<mathd\>x.
+    </equation*>
+
+    Thus,
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>f<rsub|N>(D
+      u)\<mathd\>x>|<cell|=>|<cell|lim<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>f<rsub|N>(D
+      u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>f(D
+      u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>>I[u<rsub|k><right|]>.>>>>
+    </eqnarray*>
+
+    Now let <with|mode|math|N\<rightarrow\>\<infty\>>, and use the monotone
+    convergence theorem to find
+
+    <\equation*>
+      I[u]=<big|int><rsub|\<Omega\>>f(D u)\<mathd\>x\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>>I[u<rsub|k>].
+    </equation*>
+  </proof>
+
+  <em|Basic issue:> Suppose <with|mode|math|f(x)> is as given in this
+  picture:
+
+  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.3gw|0.3gh>>|gr-geometry|<tuple|geometry|1par|0.145733par|center>|gr-line-arrows|none|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-0.2>|<point|0|1.5>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.1|0>|<point|7.8|0>>>|<line|<point|0|1>|<point|1|1>|<point|1|0.6>|<point|2|0.6>|<point|2|1>|<point|3|1>|<point|3|0.6>|<point|4|0.6>|<point|4|1>|<point|5|1>|<point|5|0.6>|<point|5.3|0.6>>|<text-at|<with|mode|math|\<cdots\>>|<point|5.7|0.7>>|<text-at|<with|mode|math|\<lambda\>>|<point|0.9|-0.5>>|<line|<point|1|0>|<point|1|-0.1>>|<text-at|<with|mode|math|a>|<point|0.6|1.1>>|<text-at|<with|mode|math|b>|<point|1.6|0.7>>|<line|<point|2|0>|<point|2|-0.1>>|<text-at|<with|mode|math|1>|<point|2|-0.5>>>>|<with|mode|math|f(x)>.>
+
+  Consider <with|mode|math|g<rsub|k>(x)=f(k*x)>,
+  <with|mode|math|k\<geqslant\>1>, <with|mode|math|x\<in\>[0,1]>. This just
+  makes <with|mode|math|f> oscillate faster. We then know that
+
+  <\equation*>
+    g<rsub|k><below|<above|\<rightharpoonup\>|\<ast\>>|L<rsup|*\<infty\>>>\<lambda\>a+(1-\<lambda\>)b.
+  </equation*>
+
+  Suppose <with|mode|math|F> is a nonlinear function. Consider the sequence
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|G<rsub|k>(x)>|<cell|=>|<cell|F(g<rsub|k>(x))>>|<row|<cell|>|<cell|=>|<cell|<choice|<tformat|<table|<row|<cell|F(a)>|<cell|<with|mode|text|when>
+    g<rsub|k>(x)=a,>>|<row|<cell|F(b)>|<cell|<with|mode|text|when>
+    g<rsub|k>(x)=b.>>>>>>>>>
+  </eqnarray*>
+
+  Then
+
+  <\equation*>
+    G<rsub|k>\<rightharpoonup\>G=\<lambda\>F(a)+(1-\<lambda\>)F(b).
+  </equation*>
+
+  But then in general
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|G>|<cell|=>|<cell|<with|mode|text|weak-<with|mode|math|\<ast\>>lim>
+    F(g<rsub|k>)\<neq\>F(<with|mode|text|w-<with|mode|math|\<ast\>>lim>
+    g<rsub|k>)>>|<row|<cell|>|<cell|=>|<cell|F(\<lambda\>a+(1-\<lambda\>)b)>>>>
+  </eqnarray*>
+
+  However if <with|mode|math|F> is <em|convex>, we do have an <em|inequality>
+
+  <\equation*>
+    F(g)\<leqslant\><with|mode|text|w-<with|mode|math|\<ast\>>lim>F(g<rsub|k>).
+  </equation*>
+
+  \;
 </body>
 
 <\initial>
@@ -4901,6 +5145,8 @@
     <associate|auto-50|<tuple|4.4.1|48>>
     <associate|auto-51|<tuple|4.1|51>>
     <associate|auto-52|<tuple|4.5|52>>
+    <associate|auto-53|<tuple|5|54>>
+    <associate|auto-54|<tuple|5.1|56>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
@@ -4999,6 +5245,8 @@
       <tuple|normal||<pageref|auto-44>>
 
       <tuple|normal||<pageref|auto-51>>
+
+      <tuple|normal|<with|mode|<quote|math>|f(x)>.|<pageref|auto-54>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -5105,6 +5353,10 @@
       <with|par-left|<quote|1.5fn>|4.5<space|2spc>The Weak Harnack Inequality
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-52>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Calculus
+      of Variations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-53><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
