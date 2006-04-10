@@ -4858,9 +4858,9 @@
 
   Here, we have <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|m>>,
   <with|mode|math|m\<geqslant\>1>. <with|mode|math|D
-  u:\<Omega\>\<rightarrow\>M<rsup|m\<times\>n>>. Minimize <with|mode|math|I>
-  over <with|mode|math|u\<in\>\<cal-A\>>, where <with|mode|math|\<cal-A\>> is
-  a class of admissible functions.
+  u:\<Omega\>\<rightarrow\>\<bbb-M\><rsup|m\<times\>n>>. Minimize
+  <with|mode|math|I> over <with|mode|math|u\<in\>\<cal-A\>>, where
+  <with|mode|math|\<cal-A\>> is a class of admissible functions.
 
   <\example>
     <em|(Dirichlet's principle)> Let <with|mode|math|\<Omega\>> be open and
@@ -5086,7 +5086,170 @@
     F(g)\<leqslant\><with|mode|text|w-<with|mode|math|\<ast\>>lim>F(g<rsub|k>).
   </equation*>
 
-  \;
+  Fix <with|mode|math|m=1>, that is <with|mode|math|D
+  u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|n>>, write <with|mode|math|F=F(z)>
+  for <with|mode|math|z\<in\>\<bbb-R\><rsup|n>>.
+
+  <em|Why convexity?> Let <with|mode|math|v\<in\>W<rsup|1,p><rsub|0>(\<Omega\>)>,
+  consider <with|mode|math|i(t)=I[u+t*v]>. If <with|mode|math|u> is a
+  critical point <with|mode|math|I><with|mode|math|\<Rightarrow\>><with|mode|math|i<rprime|'>(0)=0>.
+
+  <\equation*>
+    i<rprime|'>(t)=<frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<Omega\>>F(D
+    u+t*D v)\<mathd\>x=<big|int><rsub|\<Omega\>>D F(D u+t*D v)\<cdot\>D v
+    \<mathd\>x.
+  </equation*>
+
+  So,
+
+  <\equation>
+    <label|eq:euler-lagrange>0=i<rprime|'>(0)=<big|int><rsub|\<Omega\>>D F(D
+    u)\<cdot\>D v \<mathd\>x.
+  </equation>
+
+  This is the weak form of the Euler-Lagrange equations
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|0>|<cell|=>|<cell|-div(D F(D
+    u(x)))<space|1em><with|mode|text|in> \<Omega\>,>>|<row|<cell|u>|<cell|=>|<cell|g<space|1em><with|mode|text|on>
+    \<partial\>\<Omega\>.>>>>
+  </eqnarray*>
+
+  With index notation
+
+  <\equation*>
+    i<rprime|'>(t)=<big|int><rsub|\<Omega\>><frac|\<partial\>F|\<partial\>z<rsub|j>>(D
+    u+t*D v)\<cdot\><frac|\<partial\>v|\<partial\>x<rsub|j>> \<mathd\>x.
+  </equation*>
+
+  If <with|mode|math|u> is a minimum, <with|mode|math|i<rprime|''>(0)\<geqslant\>0>.
+
+  <\equation*>
+    i<rprime|''>(t)=<big|int><rsub|\<Omega\>><frac|\<partial\><rsup|2>F|\<partial\>z<rsub|j>\<partial\>z<rsub|k>>(D
+    u+t*D v)\<cdot\><frac|\<partial\>v|\<partial\>x<rsub|j>>*<frac|\<partial\>v|\<partial\>x<rsub|k>>
+    \<mathd\>x
+  </equation*>
+
+  Thus,
+
+  <\equation>
+    <label|eq:cvar-convex-second>0\<leqslant\><big|int><rsub|\<Omega\>><frac|\<partial\><rsup|2>F|\<partial\>z<rsub|j>\<partial\>z<rsub|k>>(D
+    u)\<cdot\><frac|\<partial\>v|\<partial\>x<rsub|j>>*<frac|\<partial\>v|\<partial\>x<rsub|k>>
+    \<mathd\>x=<big|int><rsub|\<Omega\>>D v<rsup|T>D<rsup|2>F(D u)*D v
+    \<mathd\>x.
+  </equation>
+
+  A useful family of test functions: Consider
+
+  <\equation*>
+    \<rho\>(s)=<choice|<tformat|<cwith|4|4|2|2|cell-halign|c>|<cwith|1|1|2|2|cell-halign|c>|<table|<row|<cell|\<vdots\>>|<cell|\<vdots\>>>|<row|<cell|s>|<cell|0\<leqslant\>s\<less\>1>>|<row|<cell|2-s>|<cell|1\<leqslant\>s\<less\>2>>|<row|<cell|\<vdots\>>|<cell|\<vdots\>>>|<row|<cell|<with|mode|text|extended>>|<cell|<with|mode|text|periodically>>>>>>
+  </equation*>
+
+  Fix <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>> and
+  <with|mode|math|\<zeta\>\<in\>C<rsup|\<infty\>><rsub|c>(\<Omega\>)>.
+  Consider
+
+  <\equation*>
+    v<rsub|\<varepsilon\>>(x)=\<varepsilon\>\<zeta\>(x)<wide*|\<rho\><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>|\<wide-underbrace\>><rsub|(\<ast\>)>,
+  </equation*>
+
+  where the term <with|mode|math|(\<ast\>)> oscillates rapidly in the
+  direction <with|mode|math|\<xi\>>.
+
+  <\equation*>
+    <frac|\<partial\>v<rsub|\<varepsilon\>>|\<partial\>x<rsub|j>>=<wide*|\<varepsilon\><frac|\<partial\>\<zeta\>|\<partial\>x<rsub|j>>\<rho\><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>|\<wide-underbrace\>><rsub|O(\<varepsilon\>)>+<wide*|\<zeta\>(x)\<rho\><rprime|'><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>\<xi\><rsub|j>|\<wide-underbrace\>><rsub|O(1)>.
+  </equation*>
+
+  Therefore,
+
+  <\equation*>
+    <frac|\<partial\>v<rsub|\<varepsilon\>>|\<partial\>x<rsub|j>>*<frac|\<partial\>v<rsub|\<varepsilon\>>|\<partial\>x<rsub|k>>=\<zeta\>(x)<rsup|2><left|(>\<rho\><rprime|'><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)><right|)><rsup|2>\<xi\><rsub|j>\<xi\><rsub|k>+O(\<varepsilon\>)=\<zeta\><rsup|2>\<xi\><rsub|j>\<xi\><rsub|k>+O(\<varepsilon\>).
+  </equation*>
+
+  Substitute in (<reference|eq:cvar-convex-second>) and pass to limit
+
+  <\equation*>
+    0\<leqslant\><big|int><rsub|\<Omega\>>\<zeta\><rsup|2>(x)<left|[>\<xi\><rsub|k><frac|\<partial\><rsup|2>F|\<partial\>z<rsub|j>\<partial\>z<rsub|k>>(D
+    u)\<xi\><rsub|j><right|]>\<mathd\>x.
+  </equation*>
+
+  Since <with|mode|math|\<zeta\>> is arbitrary, we have
+
+  <\equation*>
+    \<xi\><rsup|T>D<rsup|2>F(D u)\<xi\>\<geqslant\>0,<space|1em>\<xi\>\<in\>\<bbb-R\><rsup|n>.
+  </equation*>
+
+  So, <with|mode|math|F> is convex<with|mode|math|\<Rightarrow\>>(<reference|eq:euler-lagrange>)
+  is an elliptic PDE.
+
+  <\theorem>
+    Assume <with|mode|math|m=1>. Then <with|mode|math|I> is
+    w.l.s.c.<with|mode|math|\<Leftrightarrow\>><with|mode|math|F> is convex
+    in <with|mode|math|W<rsup|1,p>(\<Omega\>)> for
+    <with|mode|math|1\<less\>p\<less\>\<infty\>>.
+  </theorem>
+
+  <\proof>
+    Fix <with|mode|math|z\<in\>\<bbb-R\><rsup|n>> and suppose
+    <with|mode|math|\<Omega\>=Q=[0,1]<rsup|n>>. Let
+    <with|mode|math|u=z\<cdot\>x>. <em|Claim:> For every
+    <with|mode|math|v\<in\>C<rsup|\<infty\>><rsub|c>(\<Omega\>)>, we have
+
+    <\equation*>
+      I[u]=<big|int><rsub|\<Omega\>>F(z) \<mathd\>x=F(z)\<leqslant\><big|int><rsub|\<Omega\>>F(z+D
+      v)\<mathd\>x.
+    </equation*>
+
+    This is all we have to prove, because we may choose smooth functions to
+    find <with|mode|math|\<xi\><rsup|T>D<rsup|2>F(z)\<xi\>\<geqslant\>0>. For
+    every <with|mode|math|k> divide <with|mode|math|Q> into subcubes of side
+    length <with|mode|math|1/2<rsup|k>>. Let <with|mode|math|x<rsub|l>>
+    denote the center of cube <with|mode|math|Q<rsub|l>>, where
+    <with|mode|math|1\<leqslant\>l\<leqslant\>2<rsup|n*k>>.
+
+    <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.100001gw|0.1gh>>|gr-geometry|<tuple|geometry|0.333742par|0.297155par|center>|<graphics|<cline|<point|0|0>|<point|0|4>|<point|4|4>|<point|4|0>>|<line|<point|0|3>|<point|4|3>>|<line|<point|4|2>|<point|0|2>>|<line|<point|0|1>|<point|4|1>>|<line|<point|3|4>|<point|3|0>>|<line|<point|2|0>|<point|2|4>>|<line|<point|1|4>|<point|1|0>>|<point|1.4|2.5>|<text-at|<with|mode|math|x<rsub|l>>|<point|1.6|2.3>>|<text-at|<with|mode|math|Q>|<point|4.5|-0.3>>>>|>
+
+    Define a function <with|mode|math|u<rsub|k>> as follows:
+
+    <\equation*>
+      u<rsub|k>(x)=<frac|1|2<rsup|k>>v(2<rsup|k>(x-x<rsub|l>))+u(x)
+    </equation*>
+
+    for <with|mode|math|x> in <with|mode|math|Q<rsub|l>>.
+
+    <\equation*>
+      D u<rsub|k>(x)=D v(2<rsup|k>(x-x<rsub|l>))+z
+    </equation*>
+
+    for <with|mode|math|x> in <with|mode|math|Q<rsub|l>>. Thus,
+    <with|mode|math|D u<rsub|k>\<rightharpoonup\>D u=z>.
+
+    Since <with|mode|math|I[u]\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>>I[u<rsub|k>]>,
+    we have
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|F(z)>|<cell|\<leqslant\>>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>><big|sum><rsub|l=1><rsup|2<rsup|n*k>><big|int><rsub|Q<rsub|l>>F(z+D
+      v(2<rsup|k>(x-x<rsub|l>))) \<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>>2<rsup|n*k><big|int><rsub|Q<rsub|l>>F(z+D
+      v(2<rsup|k>(x-x<rsub|l>))) \<mathd\>x<space|1em>(<with|mode|text|integral
+      same in every cube>)>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|\<Omega\>>F(z+D
+      v)\<mathd\>x.>>>>
+    </eqnarray*>
+  </proof>
+
+  <em|Problem in higher dimensions:> Typical example:
+  <with|mode|math|u:\<Omega\>\<subset\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>>.
+
+  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.399999gw|-58766tmpt>>|gr-geometry|<tuple|geometry|0.757718par|0.236587par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<cspline|<point|-2.63785|3.29012>|<point|-3.71736|2.37994>|<point|-3.33635|1.27927>|<point|-0.478833|2.14711>|<point|0.854677|1.17344>|<point|2.39985|3.12078>|<point|-0.372999|3.31128>>|<cspline|<point|4.4742|2.54928>|<point|4.24137|1.3851>|<point|6.44272|1.61794>|<point|6.82372|3.92512>|<point|5.55371|3.12078>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<spline|<point|-0.0766636|2.61278>|<point|3.50053|3.96746>|<point|5.32088|3.60762>>>|<text-at|<with|mode|math|\<Omega\>>|<point|1.80718|1.17344>>|<text-at|<with|mode|math|u(\<Omega\>)>|<point|6.71789|1.17344>>|<text-at|deformed
+  domain|<point|4.51654|4.39079>>>>|>
+
+  Typically,
+
+  <\equation*>
+    F(D u)=<wide*|<frac|1|2>D u<rsup|T>D u|\<wide-underbrace\>><rsub|<with|mode|text|convex>>+<wide*|(det(D
+    u))<rsup|p>|\<wide-underbrace\>><rsub|<with|mode|text|not convex>>.
+  </equation*>
+
+  J. Ball identified an if-and-only-if-condition, called <em|quasiconvexity>.
 </body>
 
 <\initial>
@@ -5147,13 +5310,17 @@
     <associate|auto-52|<tuple|4.5|52>>
     <associate|auto-53|<tuple|5|54>>
     <associate|auto-54|<tuple|5.1|56>>
+    <associate|auto-55|<tuple|5.2|57>>
+    <associate|auto-56|<tuple|5.3|58>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
+    <associate|eq:cvar-convex-second|<tuple|5.2|57>>
     <associate|eq:elliptic-equation-hstar|<tuple|4.2|47>>
+    <associate|eq:euler-lagrange|<tuple|5.1|56>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -5247,6 +5414,10 @@
       <tuple|normal||<pageref|auto-51>>
 
       <tuple|normal|<with|mode|<quote|math>|f(x)>.|<pageref|auto-54>>
+
+      <tuple|normal||<pageref|auto-55>>
+
+      <tuple|normal||<pageref|auto-56>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
