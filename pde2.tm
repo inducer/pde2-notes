@@ -114,6 +114,10 @@
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>Calculus
     of Variations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-53><vspace|0.5fn>
+
+    <with|par-left|1.5fn|5.1<space|2spc>Quasiconvexity
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-57>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -5249,7 +5253,201 @@
     u))<rsup|p>|\<wide-underbrace\>><rsub|<with|mode|text|not convex>>.
   </equation*>
 
-  J. Ball identified an if-and-only-if-condition, called <em|quasiconvexity>.
+  <subsection|Quasiconvexity>
+
+  (cf. Ch. 3, little Evans) <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|m>>,
+  <with|mode|math|m\<geqslant\>2>
+
+  <\equation*>
+    \<cal-A\>=<left|{>u\<in\>W<rsup|1,p>(\<Omega\>,\<bbb-R\><rsup|m>):u=g
+    <with|mode|text|on> \<partial\>\<Omega\><right|}>
+  </equation*>
+
+  <with|mode|math|1\<less\>p\<less\>\<infty\>>, <with|mode|math|\<Omega\>>
+  open, bounded,
+
+  <\equation*>
+    I[u]=<big|int><rsub|\<Omega\>>F(D u(x)) \<mathd\>x
+  </equation*>
+
+  with <with|mode|math|F:\<bbb-M\><rsup|m\<times\>n>\<rightarrow\>\<bbb-R\>>,
+  <with|mode|math|C<rsup|\<infty\>>>. Always assume <with|mode|math|F>
+  coercive, that is
+
+  <\equation*>
+    F(A)\<geqslant\>c<rsub|1>\|A\|<rsup|p>-c<rsub|2>.
+  </equation*>
+
+  <with|mode|math|\<Rightarrow\>>The main issue is the weak lower
+  semicontinuity of <with|mode|math|I>.
+
+  <em|Question:> What `structural assumptions' must <with|mode|math|F>
+  satsisfy? if <with|mode|math|m=1>, we know that <with|mode|math|F> should
+  be <em|convex>. This is sufficient for all <with|mode|math|n>. Is this
+  necessary?
+
+  Convexity is bad because it contradicts material frame indifference.
+
+  <em|Rank-one convexity:> Let's replicate a calculation already done: Let
+  <with|mode|math|i(t)\<assign\>I[u+t*v]>, <with|mode|math|t\<in\>[-1,1]>.
+  Assume <with|mode|math|i<rprime|'>(0)=0>,
+  <with|mode|math|i<rprime|''>(0)\<geqslant\>0>.
+
+  <\equation*>
+    i(t)=<big|int><rsub|\<Omega\>>F(D u+t*D v) \<mathd\>x.
+  </equation*>
+
+  <\equation*>
+    <frac|\<mathd\>i|\<mathd\>t>=<big|int><rsub|\<Omega\>><frac|\<mathd\>|\<mathd\>t>F(D
+    u+t*D v)\<mathd\>x=<big|int><rsub|\<Omega\>><frac|\<partial\>F|\<partial\>A<rsub|i,k>>(D
+    u+t*D v)<frac|\<partial\>v<rsub|i>|\<partial\>x<rsub|k>>\<mathd\>x
+  </equation*>
+
+  (Use summation convention.)
+
+  <\equation*>
+    0=i<rprime|'>(0)\<Rightarrow\>0=<big|int><rsub|\<Omega\>><frac|\<partial\>F|\<partial\>A<rsub|i,k>>(D
+    u)<frac|\<partial\>v<rsub|i>|\<partial\>x<rsub|k>>\<mathd\>x.
+  </equation*>
+
+  This is the weak form of the Euler-Lagrange equations
+
+  <\equation>
+    <label|eq:qc-euler-lagrange>-<frac|\<partial\>|\<partial\>x<rsub|k>><left|(><frac|\<partial\>F|\<partial\>A<rsub|i,k>>(D
+    u)<right|)>=0
+  </equation>
+
+  for <with|mode|math|i=1,\<ldots\>,m>, so we have a <em|system>. Now
+  consider <with|mode|math|i<rprime|''>(0)\<geqslant\>0>.
+
+  <\equation>
+    <label|eq:quasiconvex-i2prime>i<rprime|''>(0)=<big|int><rsub|\<Omega\>><frac|\<partial\><rsup|2>F|\<partial\>A<rsub|i,k>\<partial\>A<rsub|j,l>>(D
+    u)<frac|\<partial\>v<rsub|i>|\<partial\>x<rsub|k>>*<frac|\<partial\>v<rsub|j>|\<partial\>x<rsub|l>>\<mathd\>x\<geqslant\>0.
+  </equation>
+
+  As before, consider oscillatory test functions:
+
+  <big-figure|<with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.0999992gw|0.200003gh>>|gr-geometry|<tuple|geometry|0.515449par|0.206302par|center>|gr-line-arrows|none|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-0.2>|<point|0|2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.2|0>|<point|7.3|0>>>|<line|<point|0|0>|<point|2|2>|<point|4|0>|<point|6|2>|<point|7|1>>|<text-at|<with|mode|math|+1>|<point|0.3|1.1>>|<text-at|<with|mode|math|-1>|<point|3.2|1.4>>|<text-at|<with|mode|math|2>|<point|3.9|-0.4>>|<text-at|<with|mode|math|s>|<point|7.2|-0.4>>|<text-at|<with|mode|math|\<rho\>(s)>|<point|-0.330667|2.2445>>>>|>
+
+  Fix <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|n>>,
+  <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>,
+  <with|mode|math|\<zeta\>\<in\>C<rsup|\<infty\>><rsub|c>(\<Omega\>;\<bbb-R\>)>.
+
+  <\equation*>
+    v(x)=\<varepsilon\>\<zeta\>(x)\<rho\><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>\<eta\>.
+  </equation*>
+
+  Then
+
+  <\equation*>
+    <frac|\<partial\>v<rsub|i>|\<partial\>x<rsub|k>>=\<varepsilon\>\<zeta\><rprime|'>(x)\<rho\><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>\<eta\>+\<zeta\>(x)\<rho\><rprime|'><left|(><frac|x\<cdot\>\<xi\>|\<varepsilon\>><right|)>\<eta\><rsub|i>\<xi\><rsub|k>.
+  </equation*>
+
+  Thus
+
+  <\equation*>
+    <frac|\<partial\>v<rsub|i>|\<partial\>x<rsub|k>>*<frac|\<partial\>v<rsub|j>|\<partial\>x<rsub|l>>=\<zeta\>(x)<rsup|2>\<eta\><rsub|i>\<eta\><rsub|j>\<xi\><rsub|k>\<xi\><rsub|l>+O(\<varepsilon\>)
+  </equation*>
+
+  Substitute in (<reference|eq:quasiconvex-i2prime>) and let
+  <with|mode|math|\<varepsilon\>\<rightarrow\>0>,
+
+  <\equation*>
+    0\<leqslant\><big|int><rsub|\<Omega\>><wide*|\<zeta\><rsup|2>(x)|\<wide-underbrace\>><rsub|<with|mode|text|arbitrary>><left|[><frac|\<partial\><rsup|2>F|\<partial\>A<rsub|i,k>\<partial\>A<rsub|j,l>><right|]>\<eta\><rsub|i>\<eta\><rsub|j>\<xi\><rsub|k>\<xi\><rsub|l>
+    \<mathd\>x.
+  </equation*>
+
+  This suggests that <with|mode|math|F> should satisfy
+
+  <\equation>
+    <label|eq:quasiconvex-condition-rc>(\<rho\>\<otimes\>\<xi\>)<rsup|T>D<rsup|2>F(\<eta\>\<otimes\>\<xi\>)\<geqslant\>0
+  </equation>
+
+  for every <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|n>>,
+  <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>.
+  <with|mode|math|\<eta\>\<otimes\>\<xi\>=\<eta\>\<xi\><rsup|T>> is a
+  rank-one matrix.
+
+  <em|Note:> <with|mode|math|F> is convex if
+  <with|mode|math|B<rsup|T>D<rsup|2>F(A)B\<geqslant\>0> for every
+  <with|mode|math|B\<in\>\<bbb-M\><rsup|m\<times\>n>>. However, we only need
+  <with|mode|math|B> to be rank one in (<reference|eq:quasiconvex-condition-rc>).
+  (<reference|eq:quasiconvex-condition-rc>) is known as the Legendre-Hadamard
+  condition. It ensures the <em|ellipticity> of the <em|system>
+  (<reference|eq:qc-euler-lagrange>). Thus, we see that if <with|mode|math|I>
+  is w.l.s.c. then <with|mode|math|F> should be rank-one convex. Q: Is that
+  sufficient?
+
+  <\definition>
+    <dueto|Morrey, 1952><with|mode|math|F> is <em|quasiconvex (QC)> if
+
+    <\equation*>
+      F(A)\<leqslant\><big|int><rsub|Q>F(A+D v(x)) \<mathd\>x
+    </equation*>
+
+    for every <with|mode|math|A\<in\>\<bbb-M\><rsup|m\<times\>n>> and
+    <with|mode|math|v\<in\>C<rsup|\<infty\>><rsub|c>(Q,\<bbb-R\><rsup|m>)>.
+    Here <with|mode|math|Q> is the unit cube in
+    <with|mode|math|\<bbb-R\><rsup|n>>.
+  </definition>
+
+  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.5gh>>|gr-geometry|<tuple|geometry|0.424595par|0.418293par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<cline|<point|-2|-2>|<point|2|-2>|<point|2|2>|<point|-2|2>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-1.8|2.1>|<point|-0.7|3.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.800000000000002|2.1>|<point|0.299999999999999|3.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.1|2.1>|<point|1.2|3.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|1.1|2.1>|<point|2.2|3.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.1|2.1>|<point|3.2|3.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.2|1.2>|<point|3.3|2.4>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.2|0.3>|<point|3.3|1.5>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.2|-0.6>|<point|3.3|0.6>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.2|-1.5>|<point|3.3|-0.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.2|-2.0>|<point|3.3|-0.8>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-3.3|0.6>|<point|-2.2|1.8>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-3.3|-0.5>|<point|-2.2|0.7>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-3.2|-1.5>|<point|-2.1|-0.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-3.2|-2.5>|<point|-2.1|-1.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-3.1|-3.3>|<point|-2.0|-2.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-2.2|-3.3>|<point|-1.1|-2.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-1.5|-3.3>|<point|-0.4|-2.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.7|-3.3>|<point|0.4|-2.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.3|-3.3>|<point|1.4|-2.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|-3.3>|<point|2.0|-2.1>>>|<text-at|<with|mode|math|Q>|<point|-0.2|0>>>>|>
+
+  Subject the boundary of a cube to an affine deformation
+  <with|mode|math|A(x)>. Then <with|mode|math|u=A x> for
+  <with|mode|math|x\<in\>Q> satisfies the boundary condition
+  <with|mode|math|D u(x)=A> for <with|mode|math|x\<in\>Q>.
+
+  <\equation*>
+    I[u]=<big|int><rsub|Q>F( D u) \<mathd\>x=F(A).
+  </equation*>
+
+  Thus (QC) implies <with|mode|math|I[u]\<leqslant\>I[u+v]> for any
+  <with|mode|math|f\<in\>C<rsup|\<infty\>><rsub|c>(Q)><with|mode|math|\<Rightarrow\>>affine
+  deformation is the best.
+
+  <em|Examples of QC functions>:
+
+  <\enumerate>
+    <item><with|mode|math|F(A)=det(A)> or a minor of <with|mode|math|A>
+  </enumerate>
+
+  <\definition>
+    <dueto|Ball><with|mode|math|F> is <em|polyconvex (PC)> if
+    <with|mode|math|F> is a convex function of the minors of
+    <with|mode|math|A>.
+  </definition>
+
+  What's known:
+
+  <\theorem>
+    <dueto|Morrey>Assume <with|mode|math|F> satisfies the growth condition
+
+    <\equation*>
+      \|F(A)\|\<leqslant\>C(1+\|A\|<rsup|p>).
+    </equation*>
+
+    Then <with|mode|math|I> is w.l.s.c.<with|mode|math|\<Leftrightarrow\>><with|mode|math|F>
+    is QC.
+  </theorem>
+
+  <center|Convex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
+  Polyconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
+  Quasiconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>(\<ast\>)>>
+  RC.>
+
+  <with|mode|math|*(\<ast\>)> is known for <with|mode|math|m\<geqslant\>3>,
+  <with|mode|math|n\<geqslant\>2> (Sv¥rak, '92), but not known for
+  <with|mode|math|m=2>, <with|mode|math|n=2>.
+
+  We'll prove that if <with|mode|math|u<rsub|k>\<in\>W<rsup|1,p>> for
+  <with|mode|math|p\<gtr\>n> and <with|mode|math|u<rsub|k>\<rightharpoonup\>u><with|mode|math|\<Rightarrow\>><with|mode|math|det(D
+  u<rsub|k>)\<rightharpoonup\>det(D u)> in <with|mode|math|L<rsup|p/n>>.
+  (<em|compensated compactness in <with|mode|math|L<rsup|p/n>>>)
+
+  If <with|mode|math|A<rsub|k>(x)\<in\>L<rsup|p/n>(\<Omega\>,\<bbb-M\><rsup|m\<times\>n>)>
+  and <with|mode|math|A<rsub|k>\<rightharpoonup\>A>, it is not true that
+  <with|mode|math|det(A<rsub|k>)\<rightharpoonup\>det(A)>.
 </body>
 
 <\initial>
@@ -5310,8 +5508,11 @@
     <associate|auto-52|<tuple|4.5|52>>
     <associate|auto-53|<tuple|5|54>>
     <associate|auto-54|<tuple|5.1|56>>
-    <associate|auto-55|<tuple|5.2|57>>
+    <associate|auto-55|<tuple|5.2|58>>
     <associate|auto-56|<tuple|5.3|58>>
+    <associate|auto-57|<tuple|5.1|58>>
+    <associate|auto-58|<tuple|5.4|59>>
+    <associate|auto-59|<tuple|5.5|60>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
@@ -5319,8 +5520,8 @@
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
     <associate|eq:cvar-convex-second|<tuple|5.2|57>>
-    <associate|eq:elliptic-equation-hstar|<tuple|4.2|47>>
-    <associate|eq:euler-lagrange|<tuple|5.1|56>>
+    <associate|eq:elliptic-equation-hstar|<tuple|4.2|48>>
+    <associate|eq:euler-lagrange|<tuple|5.1|57>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -5334,9 +5535,12 @@
     <associate|eq:kruzkov-convex-cond-2|<tuple|1.4|15>>
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
-    <associate|eq:maxprinciple-proof|<tuple|4.1|45>>
+    <associate|eq:maxprinciple-proof|<tuple|4.1|46>>
     <associate|eq:moser-main-inequality|<tuple|4.6|52>>
     <associate|eq:moser-test-deriv|<tuple|4.5|51>>
+    <associate|eq:qc-euler-lagrange|<tuple|5.3|59>>
+    <associate|eq:quasiconvex-condition-rc|<tuple|5.5|60>>
+    <associate|eq:quasiconvex-i2prime|<tuple|5.4|59>>
     <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
     <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
@@ -5418,6 +5622,10 @@
       <tuple|normal||<pageref|auto-55>>
 
       <tuple|normal||<pageref|auto-56>>
+
+      <tuple|normal||<pageref|auto-58>>
+
+      <tuple|normal||<pageref|auto-59>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -5528,6 +5736,10 @@
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Calculus
       of Variations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-53><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|5.1<space|2spc>Quasiconvexity
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-57>>
     </associate>
   </collection>
 </auxiliary>
