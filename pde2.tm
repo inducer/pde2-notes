@@ -5329,7 +5329,7 @@
 
   <big-figure|<with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.0999992gw|0.200003gh>>|gr-geometry|<tuple|geometry|0.515449par|0.206302par|center>|gr-line-arrows|none|<graphics|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0|-0.2>|<point|0|2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.2|0>|<point|7.3|0>>>|<line|<point|0|0>|<point|2|2>|<point|4|0>|<point|6|2>|<point|7|1>>|<text-at|<with|mode|math|+1>|<point|0.3|1.1>>|<text-at|<with|mode|math|-1>|<point|3.2|1.4>>|<text-at|<with|mode|math|2>|<point|3.9|-0.4>>|<text-at|<with|mode|math|s>|<point|7.2|-0.4>>|<text-at|<with|mode|math|\<rho\>(s)>|<point|-0.330667|2.2445>>>>|>
 
-  Fix <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|n>>,
+  Fix <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|m>>,
   <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>,
   <with|mode|math|\<zeta\>\<in\>C<rsup|\<infty\>><rsub|c>(\<Omega\>;\<bbb-R\>)>.
 
@@ -5363,7 +5363,7 @@
     <label|eq:quasiconvex-condition-rc>(\<rho\>\<otimes\>\<xi\>)<rsup|T>D<rsup|2>F(\<eta\>\<otimes\>\<xi\>)\<geqslant\>0
   </equation>
 
-  for every <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|n>>,
+  for every <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|m>>,
   <with|mode|math|\<xi\>\<in\>\<bbb-R\><rsup|n>>.
   <with|mode|math|\<eta\>\<otimes\>\<xi\>=\<eta\>\<xi\><rsup|T>> is a
   rank-one matrix.
