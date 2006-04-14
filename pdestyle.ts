@@ -16,8 +16,10 @@
 
     <assign|average|<macro|arg|<left|{><arg|arg><right|}>>>
 
-    <assign|mean|<superpose|<big|int>| ->>
+    <assign|mean|<macro|index|<superpose|<big|int>| -><rsub|<arg|index>>>>
   </with>
+
+  <assign|eqref|<macro|refname|(<reference|<arg|refname>>)>>
 </body>
 
 <\initial>

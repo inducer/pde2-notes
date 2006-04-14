@@ -21,6 +21,16 @@
     Function Class <with|mode|math|H<rprime|'>>. Solutions of Class
     <with|mode|math|H<rprime|'>>.> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-3><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|3<space|2spc>The
+    Boundary Condition of Vanishing. The Initial Value Problem.>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-4><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>Simplification
+    of the Problem. The Approximation Procedure.>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-5><vspace|0.5fn>
   </table-of-contents>
 
   <with|color|green|GREEN> text is loosely translated.
@@ -978,36 +988,36 @@
 
 <\references>
   <\collection>
-    <associate||<tuple|3.3|4>>
+    <associate||<tuple|3.3|8>>
     <associate|auto-1|<tuple|<uninit>|1>>
     <associate|auto-2|<tuple|1|1>>
     <associate|auto-3|<tuple|2|4>>
-    <associate|auto-4|<tuple|3|?>>
-    <associate|auto-5|<tuple|4|?>>
-    <associate|def:bc-vanishing|<tuple|3.1|?>>
+    <associate|auto-4|<tuple|3|7>>
+    <associate|auto-5|<tuple|4|8>>
+    <associate|def:bc-vanishing|<tuple|3.1|7>>
     <associate|def:hprime|<tuple|2.1|5>>
-    <associate|def:ns-weak-solution|<tuple|2.2|?>>
+    <associate|def:ns-weak-solution|<tuple|2.2|6>>
     <associate|eq:a-divfree|<tuple|1.5|?>>
     <associate|eq:a-requirements|<tuple|1.5|3>>
     <associate|eq:bc-def|<tuple|3.1|?>>
-    <associate|eq:bc-def-h1-norm|<tuple|3.1|?>>
-    <associate|eq:cylinder-admissible-testfield|<tuple|4.2|?>>
+    <associate|eq:bc-def-h1-norm|<tuple|3.1|7>>
+    <associate|eq:cylinder-admissible-testfield|<tuple|4.2|9>>
     <associate|eq:def-hprime|<tuple|2.1|?>>
     <associate|eq:def-weak-deriv|<tuple|2.1|5>>
     <associate|eq:divfree-weak|<tuple|1.6|3>>
-    <associate|eq:ns-tau-to-tauprime|<tuple|4.1|?>>
+    <associate|eq:ns-tau-to-tauprime|<tuple|4.1|8>>
     <associate|eq:ns-weak|<tuple|1.4|3>>
-    <associate|eq:tau-a-ha|<tuple|2.4|?>>
-    <associate|eq:up-to-tau|<tuple|2.3|?>>
+    <associate|eq:tau-a-ha|<tuple|2.4|6>>
+    <associate|eq:up-to-tau|<tuple|2.3|6>>
     <associate|eq:weak-divfree|<tuple|1.6|?>>
-    <associate|fn:bc-finite-kinetic|<tuple|1.5|?>>
-    <associate|fn:formulation-xt|<tuple|1.1|1>>
+    <associate|fn:bc-finite-kinetic|<tuple|1.5|4>>
+    <associate|fn:formulation-xt|<tuple|1.1|2>>
     <associate|footnote-1|<tuple|1|?>>
     <associate|footnote-2|<tuple|2|?>>
     <associate|footnote-3|<tuple|3|?>>
     <associate|footnote-4|<tuple|4|?>>
     <associate|footnote-5|<tuple|5|?>>
-    <associate|lem:weak-deriv-weak-conv|<tuple|2.2|?>>
+    <associate|lem:weak-deriv-weak-conv|<tuple|2.2|5>>
   </collection>
 </references>
 
@@ -1032,6 +1042,11 @@
       Boundary Condition of Vanishing. The Initial Value Problem.>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-4><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Simplification
+      of the Problem. The Approximation Procedure.>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-5><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>

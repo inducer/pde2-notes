@@ -4498,7 +4498,7 @@
   <space|0.2spc>
 
   <\theorem>
-    <dueto|Ladyzhenskaya & Valtseva>Assume <with|mode|math|(E<rsub|1>)> and
+    <dueto|Ladyzhenskaya & Uraltseva>Assume <with|mode|math|(E<rsub|1>)> and
     <with|mode|math|(E<rsub|2>)>. Assume <with|mode|math|f\<in\>L<rsup|q>(\<Omega\>)>,
     <with|mode|math|g\<in\>L<rsup|q/2>> for some <with|mode|math|q\<gtr\>n>.
     Then if <with|mode|math|u> is a <with|mode|math|W<rsup|1,2>> subsolution
@@ -5421,33 +5421,223 @@
   What's known:
 
   <\theorem>
-    <dueto|Morrey>Assume <with|mode|math|F> satisfies the growth condition
+    <dueto|Morrey><label|thm:morrey-wlsc-qc>Assume
+    <with|mode|math|F\<in\>C<rsup|\<infty\>>> satisfies the growth condition
 
-    <\equation*>
-      \|F(A)\|\<leqslant\>C(1+\|A\|<rsup|p>).
-    </equation*>
+    <\equation>
+      <label|eq:morrey-growth-condition>\|F(A)\|\<leqslant\>C(1+\|A\|<rsup|p>)
+    </equation>
 
-    Then <with|mode|math|I> is w.l.s.c.<with|mode|math|\<Leftrightarrow\>><with|mode|math|F>
-    is QC.
+    with some <with|mode|math|C\<gtr\>0>. Then <with|mode|math|I> is
+    w.l.s.c.<with|mode|math|\<Leftrightarrow\>><with|mode|math|F> is QC.
   </theorem>
 
-  <center|Convex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
-  Polyconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
-  Quasiconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>(\<ast\>)>>
-  RC.>
+  <\remark>
+    \;
 
-  <with|mode|math|*(\<ast\>)> is known for <with|mode|math|m\<geqslant\>3>,
-  <with|mode|math|n\<geqslant\>2> (Sv¥rak, '92), but not known for
-  <with|mode|math|m=2>, <with|mode|math|n=2>.
+    <center|Convex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
+    Polyconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>>>
+    Quasiconvex <with|mode|math|<above|\<Rightarrow\>|\<nLeftarrow\>(\<ast\>)>>
+    Rank-one-convex (RC).>
 
-  We'll prove that if <with|mode|math|u<rsub|k>\<in\>W<rsup|1,p>> for
-  <with|mode|math|p\<gtr\>n> and <with|mode|math|u<rsub|k>\<rightharpoonup\>u><with|mode|math|\<Rightarrow\>><with|mode|math|det(D
-  u<rsub|k>)\<rightharpoonup\>det(D u)> in <with|mode|math|L<rsup|p/n>>.
-  (<em|compensated compactness in <with|mode|math|L<rsup|p/n>>>)
+    \;
 
-  If <with|mode|math|A<rsub|k>(x)\<in\>L<rsup|p/n>(\<Omega\>,\<bbb-M\><rsup|m\<times\>n>)>
-  and <with|mode|math|A<rsub|k>\<rightharpoonup\>A>, it is not true that
-  <with|mode|math|det(A<rsub|k>)\<rightharpoonup\>det(A)>.
+    <with|mode|math|*(\<ast\>)> is known for <with|mode|math|m\<geqslant\>3>,
+    <with|mode|math|n\<geqslant\>2> (Sv¥rak, '92), but not known for
+    <with|mode|math|m=2>, <with|mode|math|n\<geqslant\>2>.
+
+    We'll prove that if <with|mode|math|u<rsub|k>\<in\>W<rsup|1,p>> for
+    <with|mode|math|p\<gtr\>n> and <with|mode|math|u<rsub|k>\<rightharpoonup\>u><with|mode|math|\<Rightarrow\>><with|mode|math|det(D
+    u<rsub|k>)\<rightharpoonup\>det(D u)> in <with|mode|math|L<rsup|p/n>>.
+    (<em|compensated compactness in <with|mode|math|L<rsup|p/n>>>)
+
+    If <with|mode|math|A<rsub|k>(x)\<in\>L<rsup|p/n>(\<Omega\>,\<bbb-M\><rsup|m\<times\>n>)>
+    and <with|mode|math|A<rsub|k>\<rightharpoonup\>A>, it is not true that
+    <with|mode|math|det(A<rsub|k>)\<rightharpoonup\>det(A)>.
+  </remark>
+
+  <\note>
+    ``<with|mode|math|\<Rightarrow\>>'' is straightforward. Simply choos
+    <with|mode|math|u(x)=A*x> and <with|mode|math|u<rsub|k>=A*x+v<rsub|k>(x)>
+    (<with|mode|math|v<rsub|k>><with|mode|math|\<leftarrow\>>periodic
+    scaling).
+  </note>
+
+  Assume <with|mode|math|F> is QC and statisfies
+  <eqref|eq:morrey-growth-condition>.
+
+  <\lemma>
+    There is a <with|mode|math|C\<gtr\>0> such that
+
+    <\equation*>
+      \|D F(A)\|\<leqslant\>C(1+\|A\|<rsup|p-1>).
+    </equation*>
+  </lemma>
+
+  <\proof>
+    Fix <with|mode|math|A\<in\>\<bbb-M\><rsup|m\<times\>n>> and a rank-one
+    matrix <with|mode|math|\<eta\>\<otimes\>\<xi\>> with
+    <with|mode|math|\<eta\>>, <with|mode|math|\<xi\>> coordinate vectors in
+    <with|mode|math|\<bbb-R\><rsup|m>> and
+    <with|mode|math|\<bbb-R\><rsup|n>>. We know that
+    QC<with|mode|math|\<Rightarrow\>>RC, therefore the function
+
+    <\equation*>
+      f(t)=F(A+t(\<eta\>\<otimes\>\<xi\>))
+    </equation*>
+
+    is convex. By homework, we know that <with|mode|math|f(t)> is
+    locally-Lipschitz and
+
+    <\equation*>
+      \|D F(A)(\<eta\>\<otimes\>\<xi\>)\|=\|f<rprime|'>(0)\|\<leqslant\><frac|C|r>max<rsub|t\<in\>[-r,r]>\|f(t)\|.
+    </equation*>
+
+    Then
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|\|f(t)\|>|<cell|=>|<cell|\|F(A+t(\<eta\>\<otimes\>\<xi\>))\|>>|<row|<cell|>|<cell|<above|\<leqslant\>|<eqref|eq:morrey-growth-condition>>>|<cell|C(1+\|A\|<rsup|p>+t<rsup|p>\|\<eta\>\<otimes\>\<xi\>\|<rsup|p>)>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|C(1+\|A\|<rsup|p>+r<rsup|p>).>>>>
+    </eqnarray*>
+
+    Choose <with|mode|math|r=max(1,\|A\|)> to find
+
+    <\equation*>
+      \|f<rprime|'>(0)\|\<leqslant\>C(1+\|A\|<rsup|p>).
+    </equation*>
+  </proof>
+
+  <\proof>
+    (of Theorem <reference|thm:morrey-wlsc-qc>) Assume <with|mode|math|F> is
+    QC, show <with|mode|math|I> is w.l.s.c.
+
+    <\description>
+      <item*|QC tells you..>
+
+      <\equation*>
+        <mean|Q>F(D(A*x))\<mathd\>x=F(A)\<leqslant\><mean|Q>F(A+D v(x)
+      </equation*>
+
+      <item*|For w.l.s.c., we want to show..>If
+      <with|mode|math|u<rsub|k>\<rightharpoonup\>u> in
+      <with|mode|math|W<rsup|1,p>>, then
+
+      <\equation*>
+        <big|int><rsub|\<Omega\>>F(D u)\<mathd\>x\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>F(D
+        u<rsub|k>)\<mathd\>x.
+      </equation*>
+    </description>
+
+    <em|Idea:> Subdivide domain <with|mode|math|\<Omega\>> into small cubes:
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>F(D u)\<mathd\>x\<approx\><big|int><rsub|\<Omega\>>F(<with|mode|text|affine
+      approximation to <with|mode|math|D u>>)\<mathd\>x<above|\<leqslant\>|QC><big|int><rsub|\<Omega\>>F(D
+      u<rsub|k>)\<mathd\>x+<with|mode|text|errors>.
+    </equation*>
+
+    1) Assume <with|mode|math|u<rsub|k>\<rightharpoonup\>u> in
+    <with|mode|math|W<rsup|1,p>(\<Omega\>,\<bbb-R\><rsup|m>)>. Then
+
+    <\equation*>
+      sup<rsub|k><norm|D u<rsub|k>|L<rsup|p>(\<Omega\>,\<bbb-M\><rsup|m\<times\>n>)|>\<less\>\<infty\>
+    </equation*>
+
+    by the uniform boundedness principle (Banach-Steinhaus). By considering a
+    subsequence, we have
+
+    <\equation*>
+      u<rsub|k>\<rightarrow\>u <with|mode|text|in
+      <with|mode|math|L<rsup|p>(\<Omega\>,\<bbb-R\><rsup|m>)>>
+    </equation*>
+
+    (cf. Lieb&Loss) Define the measures
+
+    <\equation*>
+      \<mu\><rsub|k>(\<mathd\>x)=(1+\|D u<rsub|k>\|<rsup|p>+\|D
+      u\|<rsup|p>)\<mathd\>x.
+    </equation*>
+
+    By the uniform bounds,
+
+    <\equation*>
+      sup<rsub|k> \<mu\><rsub|k>(\<Omega\>)\<less\>\<infty\>.
+    </equation*>
+
+    Then there is a subsequence <with|mode|math|\<mu\><rsub|k>\<rightharpoonup\>\<mu\>>
+    with
+
+    <\equation*>
+      <wide*|\<mu\>(\<Omega\>)|\<wide-underbrace\>><rsub|<with|mode|text|concentration
+      measure>>\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>>\<mu\><rsub|k>(\<Omega\>).
+    </equation*>
+
+    Suppose <with|mode|math|H> is a hyperplane perpendicular to
+    <with|mode|math|e<rsub|k>>. Therefore,
+    <with|mode|math|\<mu\>(\<Omega\>\<cap\>H)\<neq\>0> for at most countably
+    many hyperplanes.
+
+    <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.400001gh>>|gr-geometry|<tuple|geometry|0.242889par|0.357724par|center>|<graphics|<cspline|<point|-0.4|2.9>|<point|-1.3|2>|<point|-0.9|0.2>|<point|-1.4|-1>|<point|1|-1.3>|<point|1.6|0.9>|<point|0.4|2.1>>|<text-at|<with|mode|math|\<Omega\>>|<point|1.2|-1.8>>|<line|<point|-1.2|3>|<point|-1.2|-1.8>>|<line|<point|-0.9|3.2>|<point|-0.9|-1.6>>|<line|<point|-0.6|3.2>|<point|-0.6|-1.6>>|<line|<point|-0.1|3.2>|<point|-0.1|-1.6>>|<line|<point|0.4|3.0>|<point|0.4|-1.8>>|<line|<point|1.0|3.1>|<point|1.0|-1.7>>|<line|<point|1.4|3.4>|<point|1.4|-1.4>>|<text-at|<with|mode|math|H>|<point|1.6|2.4>>>>|>
+
+    By translating the axes if necessary, we can assert that if
+    <with|mode|math|\<bbb-Q\><rsub|k>> denotes the dyadic lattice with side
+    length <with|mode|math|2<rsup|-i>>, then
+    <with|mode|math|\<mu\>(\<partial\>Q<rsub|l>)=0> for every
+    <with|mode|math|Q<rsub|l>\<in\>\<bbb-Q\><rsub|i>> and every
+    <with|mode|math|i>. Let <with|mode|math|(D u)<rsub|i>> denote the
+    piecewise constant function with value
+
+    <\equation*>
+      <mean|Q<rsub|l>>D u(x)\<mathd\>x
+    </equation*>
+
+    on the cube <with|mode|math|Q<rsub|l>>. By Lebesgue's Differentiation
+    Theorem, <with|mode|math|(D u)<rsub|i>\<rightarrow\>D u> a.e. for
+    <with|mode|math|i\<uparrow\>\<infty\>> in
+    <with|mode|math|L<rsup|p>(\<Omega\>,\<bbb-M\><rsup|m\<times\>n>)>. Then
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\|F((D u)<rsub|i>)-F(D
+      u)\|\<mathd\>x\<rightarrow\>0
+    </equation*>
+
+    by DCT.
+
+    2) Fix <with|mode|math|\<varepsilon\>\<gtr\>0>, choose
+    <with|mode|math|\<Omega\><rprime|'>\<subset\>\<subset\>\<Omega\>> such
+    that
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>\<setminus\>\<Omega\><rprime|'>>F(D
+      u)\<mathd\>x\<less\>\<varepsilon\>.
+    </equation*>
+
+    Choose <with|mode|math|i> so large that
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<norm|D u-(D
+      u)<rsub|i>|L<rsup|p>|>>|<cell|\<less\>>|<cell|\<varepsilon\>,>>|<row|<cell|<norm|F(D
+      u)-F((D u)<rsub|i>)|L<rsup|1>|>>|<cell|\<less\>>|<cell|\<varepsilon\>.>>>>
+    </eqnarray*>
+
+    <em|Aside:> Preview: Where is this proof going?
+
+    <\equation*>
+      I[u<rsub|k>]\<geqslant\>
+    </equation*>
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|I[u<rsub|k>]>|<cell|\<geqslant\>>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(D
+      u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(D
+      u+(D u<rsub|k>-D u))\<mathd\>x>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(D
+      u)\<mathd\>x+E<rsub|1>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(<wide*|(D
+      u)<rsub|i>|\<wide-underbrace\>><rsub|<with|mode|text|peicewise
+      affine>>)\<mathd\>x+E<rsub|1>+E<rsub|2>>>|<row|<cell|>|<cell|<above|\<geqslant\>|<with|mode|text|QC>>>|<cell|I[u]+E<rsub|1>+E<rsub|2>+E<rsub|3>.>>>>
+    </eqnarray*>
+
+    <em|End aside.>
+  </proof>
+
+  \;
 </body>
 
 <\initial>
@@ -5514,6 +5704,7 @@
     <associate|auto-58|<tuple|5.4|59>>
     <associate|auto-59|<tuple|5.5|60>>
     <associate|auto-6|<tuple|1.1|4>>
+    <associate|auto-60|<tuple|5.6|?>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
@@ -5536,6 +5727,7 @@
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|46>>
+    <associate|eq:morrey-growth-condition|<tuple|5.6|?>>
     <associate|eq:moser-main-inequality|<tuple|4.6|52>>
     <associate|eq:moser-test-deriv|<tuple|4.5|51>>
     <associate|eq:qc-euler-lagrange|<tuple|5.3|59>>
@@ -5554,6 +5746,7 @@
     <associate|thm:c8-approx-compact|<tuple|3.5|31>>
     <associate|thm:hj-viscosity-hj-where-differentiable|<tuple|2.25|29>>
     <associate|thm:hopf-burgers|<tuple|1.6|10>>
+    <associate|thm:morrey-wlsc-qc|<tuple|5.7|?>>
     <associate|thm:pick-ac-rep|<tuple|3.6|31>>
     <associate|thm:poincare-convex|<tuple|3.16|35>>
     <associate|thm:potential-estimate|<tuple|3.15|35>>
@@ -5626,6 +5819,8 @@
       <tuple|normal||<pageref|auto-58>>
 
       <tuple|normal||<pageref|auto-59>>
+
+      <tuple|normal||<pageref|auto-60>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
