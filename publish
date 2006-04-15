@@ -2,4 +2,4 @@
 vi `baz make-log`
 baz commit
 baz archive-mirror
-scp pde2.tm pde2.pdf pdestyle.ts u36612815@tiker.net:data/site-codes/tiker.net/files/pde2
+scp pde2.{tm,pdf} pdestyle.ts hopf-paper.{tm,pdf} hopfstyle.ts u36612815@tiker.net:data/site-codes/tiker.net/files/pde2

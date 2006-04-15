@@ -13,7 +13,7 @@
     contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-1><vspace|0.5fn>
 
-    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>Introduction>
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>Introduction.>
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-2><vspace|0.5fn>
 
@@ -31,13 +31,27 @@
     of the Problem. The Approximation Procedure.>
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-5><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>Proof
+    of the Existence Theorem.> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-6><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|6<space|2spc>Proof
+    of Lemma <reference|lem:integral-2-convergence>>
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-7><vspace|0.5fn>
   </table-of-contents>
 
-  <with|color|green|GREEN> text is loosely translated.
+  \;
 
-  <with|color|red|RED> text is stuff that I wasn't sure about.
+  \;
 
-  <section|Introduction>
+  Translation by Andreas Klöckner, <with|font-family|tt|kloeckner@dam.brown.edu>.
+  I would like to hear about any errors or other comments you may have.
+  <with|color|green|GREEN> text is loosely translated. <with|color|red|RED>
+  text marks spots where I was unsure.
+
+  <section|Introduction.>
 
   Let the points of <with|mode|math|n>-dimensional space be designated by
   <with|mode|math|x>, let <with|mode|math|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|n>>
@@ -107,7 +121,7 @@
     <name|O.<nbsp>Nikodym>, Sur un théorème de M.S. Zaremba concernant les
     fonctions harmoniques. J. Math. pur appl., Paris, Sér. IX, <strong|12>
     (1933), 95--109; <name|J.<nbsp>Leray>, Sur le mouvement d'un liquide
-    visquex emplissant l'espace. Acta math., Uppsala <strong|63> (1934),
+    visqueux emplissant l'espace. Acta math., Uppsala <strong|63> (1934),
     193--248; <name|H.<nbsp>Weyl>, The method of orthogonal projection in
     potential theory. Duke math J. <strong|7> (1940), 411--444.
   </footnote>.
@@ -341,7 +355,7 @@
     A long while before then, <name|C.W.<nbsp>Oseen> had based his well-known
     hydrodynamic inquiries on a form of the basic equations that is free of
     second derivatives. However, he only succeeded in proving existence for
-    sufficiently small times. Cf. his work: Hydrodynamik (Leipzig 1927)
+    sufficiently small times. Cf. his work Hydrodynamik (Leipzig 1927)
   </footnote>. In his works, Leray solved the question of existence for all
   <with|mode|math|t\<gtr\>0> in the following cases, a)
   <with|mode|math|G=\<bbb-R\><rsup|2>> under the added condition of finite
@@ -461,8 +475,8 @@
   and the corresponding norm.
 
   <\lemma>
-    If the vector fields <with|mode|math|u(x,t)> converge weakly in
-    <with|mode|math|<wide|G|^>> to a limit field
+    <label|lem:l2-lsc>If the vector fields <with|mode|math|u(x,t)> converge
+    weakly in <with|mode|math|<wide|G|^>> to a limit field
     <with|mode|math|u<rsup|\<ast\>>(x,t)>, then
 
     <\equation*>
@@ -682,7 +696,7 @@
 
   <section|The Boundary Condition of Vanishing. The Initial Value Problem.>
 
-  The cross sections <with|mode|math|t=const> of the
+  <label|sec:bc-vanish-ivp>The cross sections <with|mode|math|t=const> of the
   <with|mode|math|x>-<with|mode|math|t>-region <with|mode|math|<wide|G|^>>
   are <with|mode|math|x>-region <with|mode|math|G(t)>. By using just terms of
   Hilbert space, we need to get as close as possible to the boundary
@@ -737,10 +751,11 @@
   <with|mode|math|H<rprime|'>>.
 
   <\lemma>
-    Let <with|mode|math|<wide|G|^>> by a cylinder set
-    <with|mode|math|x\<subset\>G>, <with|mode|math|0\<less\>t\<less\>T>. Let
-    <with|mode|math|g(x,t)> be the weak limit in <with|mode|math|<wide|G|^>>
-    of a sequence of functions <with|mode|math|\<gamma\>(x,t)> continuously
+    <label|lem:cylinder-limit-hprime>Let <with|mode|math|<wide|G|^>> by a
+    cylinder set <with|mode|math|x\<subset\>G>,
+    <with|mode|math|0\<less\>t\<less\>T>. Let <with|mode|math|g(x,t)> be the
+    weak limit in <with|mode|math|<wide|G|^>> of a sequence of functions
+    <with|mode|math|\<gamma\>(x,t)> continuously
     <with|mode|math|x>-differentiable in <with|mode|math|<wide|G|^>> that are
     of the following kind: For each <with|mode|math|\<gamma\>> there is a
     compact subset of the <with|mode|math|x>-region <with|mode|math|G> such
@@ -826,11 +841,11 @@
   <with|mode|math|G>.
 
   <\definition>
-    A divergence-free field in <with|mode|math|G> of class <with|mode|math|H>
-    is said to be of class <with|mode|math|H(N)> if it is a weak limit field
-    of fields that belong to <with|mode|math|N> in <with|mode|math|G>, that
-    are twice continuously differentiable and that are
-    divergence-free.<\footnote>
+    <label|def:h-n>A divergence-free field in <with|mode|math|G> of class
+    <with|mode|math|H> is said to be of class <with|mode|math|H(N)> if it is
+    a weak limit field of fields that belong to <with|mode|math|N> in
+    <with|mode|math|G>, that are twice continuously differentiable and that
+    are divergence-free.<\footnote>
       By Saks' Theorem, it is then also the strong limit field of just these
       fields.
     </footnote>
@@ -852,12 +867,12 @@
   problem.
 
   <\theorem>
-    <em|(Existence theorem)>Let <with|mode|math|G> be an arbitrary region of
-    <with|mode|math|x>-space. Let the field <with|mode|math|U(x)> be
-    divergence-free in <with|mode|math|G> and of class <with|mode|math|H(N)>,
-    but otherwise arbitrary. Then there is a field <with|mode|math|u(x,t)>
-    defined for all <with|mode|math|t\<gtr\>0> in <with|mode|math|G> with the
-    following properties:
+    <label|the:existence><em|(Existence theorem)>Let <with|mode|math|G> be an
+    arbitrary region of <with|mode|math|x>-space. Let the field
+    <with|mode|math|U(x)> be divergence-free in <with|mode|math|G> and of
+    class <with|mode|math|H(N)>, but otherwise arbitrary. Then there is a
+    field <with|mode|math|u(x,t)> defined for all <with|mode|math|t\<gtr\>0>
+    in <with|mode|math|G> with the following properties:
 
     <\enumerate-Alpha>
       <item>In any <with|mode|math|x>-<with|mode|math|t>-cylinder region
@@ -878,9 +893,9 @@
 
   <section|Simplification of the Problem. The Approximation Procedure.>
 
-  For the construction of the solution of the initial value problem for an
-  <with|mode|math|x>-region <with|mode|math|G> constant in time, we start
-  with the equation
+  <label|sec:simplification-approximation>For the construction of the
+  solution of the initial value problem for an <with|mode|math|x>-region
+  <with|mode|math|G> constant in time, we start with the equation
 
   <\equation>
     <label|eq:ns-tau-to-tauprime><big|int><rsub|G>a<rsub|i>u<rsub|i>
@@ -958,14 +973,15 @@
   The following fact yields an even better basic equation:
 
   <\lemma>
-    There is a sequence of twice continuously differentiable and linearly
-    independent fields in <with|mode|math|G> in the field space
-    <eqref|eq:cylinder-admissible-testfield>
+    <label|lem:testfield-approx>There is a sequence of twice continuously
+    differentiable and linearly independent fields in <with|mode|math|G> in
+    the field space <eqref|eq:cylinder-admissible-testfield>
 
-    <\equation*>
-      a=a<rsup|\<nu\>>(x),<space|1em>div a<rsup|\<nu\>>=0 <with|mode|text|in>
-      G,<space|1em>a<rsup|\<nu\>>\<in\>N <with|mode|text|in> G
-    </equation*>
+    <\equation>
+      <label|eq:testfield-approx>a=a<rsup|\<nu\>>(x),<space|1em>div
+      a<rsup|\<nu\>>=0<with|mode|text| in >
+      G,<space|1em>a<rsup|\<nu\>>\<in\>N<with|mode|text| in > G
+    </equation>
 
     with the following property: An arbitrary twice continuously
     differentiable field in <with|mode|math|G> of the form
@@ -977,6 +993,596 @@
     approximation that have the value zero outside a certain compact subset
     of <with|mode|math|G> which only depends on <with|mode|math|a>.
   </lemma>
+
+  Based upon this fact it is clear that a field <with|mode|math|u(x,t)> which
+  is of class <with|mode|math|H> in each cylinder section and which satisfies
+  the basic equation <eqref|eq:ns-tau-to-tauprime> for all
+  <with|mode|math|\<tau\><rprime|'>\<gtr\>\<tau\>\<gtr\>0> and for any field
+  <with|mode|math|a> of the mentioned sequence automatically does the same
+  for all fields <eqref|eq:cylinder-admissible-testfield> admitted above. In
+  summary, we can say that the basic equations <eqref|eq:ns-weak> can be
+  replaced in their entirety by the equations <eqref|eq:ns-tau-to-tauprime>
+  with <eqref|eq:testfield-approx>.
+
+  In the function sapce of divergence-free vector fields <with|mode|math|a>,
+  <eqref|eq:ns-tau-to-tauprime>, <eqref|eq:testfield-approx> is an affine
+  coordinate representation of the basic equations of hydrodynamics. The
+  affine system of coordinate vectors <eqref|eq:testfield-approx> can, by
+  means of a unique linear transformation of a simple kind, be transformed
+  into a new one which is orthonormal in the sense of the bilinear form
+
+  <\equation*>
+    <big|int><rsub|G>v<rsub|i>w<rsub|i> \<mathd\>x.
+  </equation*>
+
+  We may additionally assume that the sequence <eqref|eq:testfield-approx>
+  satisfies this condition:
+
+  <\equation>
+    <label|eq:testfield-orthogonality><big|int><rsub|G>a<rsub|i><rsup|\<lambda\>>a<rsub|i><rsup|\<nu\>>
+    \<mathd\>x=\<delta\><rsub|\<lambda\>,\<nu\>>.
+  </equation>
+
+  <\lemma>
+    <label|lem:testfields-completeness>The orthonormal system of the fields
+    <with|mode|math|a<rsup|\<nu\>>(x)> is complete in the field space of
+    divergence-free fields <with|mode|math|U(x)> of class
+    <with|mode|math|H(N)> in <with|mode|math|G>.
+  </lemma>
+
+  The proof results from Definition <reference|def:h-n> and Lemma
+  <reference|lem:testfield-approx>.
+
+  <em|The Approximation Procedure>. The <with|mode|math|k>th approximation
+  step consists simply of only considering the first <with|mode|math|k> out
+  of the infinitely many basic equations <eqref|eq:ns-tau-to-tauprime>,
+  <eqref|eq:testfield-approx>,
+
+  <\equation>
+    <label|eq:first-k-testfields>a=a<rsup|\<nu\>>(x)<space|1em>(\<nu\>=1,2,\<ldots\>,k)
+  </equation>
+
+  and trying to solve those through the ansatz
+
+  <\equation>
+    <label|eq:first-k-ansatz>u=u<rsup|k>(x,t)=<big|sum><rsub|\<nu\>=1><rsup|k>\<lambda\><rsub|\<nu\>>(t)a<rsup|\<nu\>>(x)
+  </equation>
+
+  with as yet undetermined scalar factors
+  <with|mode|math|\<lambda\><rsub|\<nu\>>=\<lambda\><rsub|\<nu\>><rsup|k>>.
+  This ansatz automatically satisfies the condition of freedom from
+  divergence (because of <eqref|eq:testfield-approx>) and the boundary
+  condition of vanishing:
+
+  <\equation>
+    <label|eq:first-k-divfree>div u<rsup|k>=0<with|mode|text| in
+    >G,<space|1em>u<rsup|k>\<in\>N<with|mode|text| in >G.
+  </equation>
+
+  Since only differentiable <with|mode|math|\<lambda\>(t)> need to be
+  considered and since the admissible fields <with|mode|math|a> do not depend
+  on <with|mode|math|t>, the first <with|mode|math|k> equations
+  <eqref|eq:ns-tau-to-tauprime> may be written in the form
+
+  <\equation>
+    <label|eq:ns-weak-first-k><big|int><rsub|G>a<rsub|i><frac|\<partial\>u<rsub|i>|\<partial\>t>
+    \<mathd\>x=<big|int><rsub|G><frac|\<partial\>a<rsub|i>|\<partial\>x<rsub|\<alpha\>>>
+    u<rsub|\<alpha\>>u<rsub|i> \<mathd\>x+\<mu\><big|int><rsub|G><frac|\<partial\><rsup|2>a<rsub|i>|\<partial\>x<rsub|\<beta\>>\<partial\>x<rsub|\<beta\>>>u<rsub|i>
+    \<mathd\>x.
+  </equation>
+
+  Because of <eqref|eq:testfield-orthogonality>, the <with|mode|math|k>
+  equations <eqref|eq:ns-weak-first-k>, <eqref|eq:first-k-testfields>
+  together with <eqref|eq:first-k-ansatz> represent a system of ordinary
+  differential equations
+
+  <\equation>
+    <label|eq:first-k-ode><frac|\<mathd\>\<lambda\><rsub|\<nu\>>|\<mathd\>t>=F<rsub|\<nu\>>(\<lambda\><rsub|1>,\<ldots\>,\<lambda\><rsub|k>)<space|1em>(\<nu\>=1,2,\<ldots\>,k)
+  </equation>
+
+  for the <with|mode|math|\<lambda\>>, in which the right hand sides
+  <with|mode|math|F<rsub|\<nu\>>=F<rsub|\<nu\>><rsup|k>> are polynomials in
+  <with|mode|math|\<lambda\>> with constant coefficients. The equations
+  <eqref|eq:ns-weak-first-k>, <eqref|eq:first-k-testfields>,
+  <eqref|eq:first-k-ansatz> or the equivalent equations
+  <eqref|eq:first-k-ode> share with the strict hydrodynamic equations the
+  important property that for their solutions, the energy equation
+
+  <\equation>
+    <label|eq:energy-equation><frac|\<mathd\>|\<mathd\>t>*<frac|1|2><big|int><rsub|G>u<rsub|i>u<rsub|i>
+    \<mathd\>x=-\<mu\><big|int><rsub|G><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>*<frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>
+    \<mathd\>x
+  </equation>
+
+  holds. Namely, since the equations <eqref|eq:ns-weak-first-k> hold for all
+  fields <eqref|eq:first-k-testfields>, they also hold for their linear
+  combinations <eqref|eq:first-k-ansatz> <with|mode|math|u=u<rsup|k>>. The
+  energy equation follows in the usual way (and without difficulties at the
+  boundary) since because of <eqref|eq:first-k-divfree>
+
+  <\equation*>
+    <big|int><rsub|G><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<alpha\>>>u<rsub|\<alpha\>>u<rsub|i>
+    \<mathd\>x=<big|int><rsub|G><frac|\<partial\>K|\<partial\>x<rsub|\<alpha\>>>*u<rsub|\<alpha\>>
+    \<mathd\>x=0<space|1em><left|(>K=<frac|1|2>u<rsub|i>u<rsub|i><right|)>
+  </equation*>
+
+  and
+
+  <\equation*>
+    <big|int><rsub|G><frac|\<partial\><rsup|2>u<rsub|i>|\<partial\>x<rsub|\<beta\>>\<partial\>x<rsub|\<beta\>>>*u<rsub|i>
+    \<mathd\>x=-<big|int><rsub|G><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>*<frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>
+    \<mathd\>x<space|1em>(u=u<rsup|k>).
+  </equation*>
+
+  It follows from <eqref|eq:energy-equation> that
+
+  <\equation*>
+    <big|int><rsub|G>u<rsub|i>u<rsub|i> \<mathd\>x=\<lambda\><rsub|1><rsup|2>+\<cdots\>+\<lambda\><rsub|k><rsup|2><space|1em>(u=u<rsup|k>)
+  </equation*>
+
+  never increases. From this we conclude that any solution of the
+  differential system <eqref|eq:first-k-ode> begun at <with|mode|math|t=0>
+  exists for all <with|mode|math|t=0> (<with|color|red|???weird>).
+
+  The approximation procedure may very easily be interpreted formally in the
+  following manner. We think of both sides of the Navie-Stokes differential
+  equations and the solution <with|mode|math|u> formally as if they were
+  expanded in the orthonormal system of the fields
+  <with|mode|math|a<rsup|\<nu\>>>: <with|mode|math|u=\<lambda\><rsub|\<nu\>>a<rsup|\<nu\>>>.
+  We then obtain purely formally a system of infinitely many differential
+  equations of first order for the infinitely many scalar Fourier
+  coefficients <with|mode|math|\<lambda\>>. Our <with|mode|math|k>th step
+  then simply consists of only considering the first <with|mode|math|k> of
+  these equations and setting all unknowns with indices
+  <with|mode|math|\<nu\>\<gtr\>k> to zero. The way in which we subsequently
+  prove our existence theorem simultaneously yields a statement regarding the
+  convergence properties of this simplest and most natural approximation
+  method.
+
+  We choose the initial values of the <with|mode|math|\<lambda\><rsub|\<nu\>>(t)>
+  at <with|mode|math|t=0> to be the Fourier coefficients of the expansion of
+  the given field <with|mode|math|U(x)> in the
+  <with|mode|math|a<rsup|\<nu\>>>. While the solutions
+  <with|mode|math|\<lambda\>(t)> in the <with|mode|math|k>th step generally
+  depend on <with|mode|math|k>, these initial values are independent of them.
+  By the assumption that <with|mode|math|U\<in\>H(N)> in <with|mode|math|G>
+  and by the completeness lemma <reference|lem:testfields-completeness>, we
+  have
+
+  <\equation>
+    <label|eq:initial-values-of-sequence>u<rsub|k>(x,0)\<rightarrow\>U(x)<space|1em><with|mode|text|strongly
+    in <with|mode|math|G>><space|1em>(k\<rightarrow\>\<infty\>).
+  </equation>
+
+  <section|Proof of the Existence Theorem.>
+
+  We summarize the properties of the fields of the sequence which we will
+  need in the following:
+
+  <\enumerate-alpha>
+    <item>Each <with|mode|math|u<rsup|k>(x,t)> is twice continuously
+    <with|mode|math|x>-<with|mode|math|t>-differentiable and divergence-free
+    for <with|mode|math|x\<subset\>G>, <with|mode|math|t\<gtr\>0>.
+
+    <item><with|mode|math|u<rsup|k>(x,t)> vanishes if <with|mode|math|x> lies
+    outside a compact subset of the <with|mode|math|x>-region
+    <with|mode|math|G> that only depends on <with|mode|math|k>.
+
+    <item><with|mode|math|u<rsup|k>(x,t)> satisfies the equation
+    <eqref|eq:ns-weak-first-k> (<with|mode|math|t\<geqslant\>0>) and the
+    equation <eqref|eq:ns-tau-to-tauprime>
+    (<with|mode|math|\<tau\><rprime|'>\<gtr\>\<tau\>\<geqslant\>0>) in the
+    <with|mode|math|k> cases <eqref|eq:testfield-approx>
+    (<with|mode|math|\<nu\>=1,2,\<ldots\>,k)>.
+
+    <item>The integrals
+
+    <\equation*>
+      <big|int><rsub|G>u<rsub|i>u<rsub|i>
+      \<mathd\>x,<space|1em><big|int><rsub|0><rsup|><big|int><rsub|G><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>*<frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>
+      \<mathd\>x \<mathd\>t<space|1em>(u=u<rsup|k>(x,t))
+    </equation*>
+
+    remain beneath a bound which is independent of <with|mode|math|k,t,T>.
+
+    <item>The initial values <with|mode|math|u<rsup|k>(x,0)> satisfy the
+    limit relationship <eqref|eq:initial-values-of-sequence>.
+  </enumerate-alpha>
+
+  d) follows immediately from the temporally integrated energy equation
+  <eqref|eq:energy-equation> in connection with
+  <eqref|eq:initial-values-of-sequence>.
+
+  <em|First step>. Each field <with|mode|math|a<rsup|\<nu\>>(x)> is
+  continuous in <with|mode|math|G> and different from zero only in a compact
+  subset of <with|mode|math|G>. If we apply the first half of d) to the right
+  hand side of <eqref|eq:ns-weak-first-k> (<with|mode|math|a=a<rsup|\<nu\>>>)
+  by estimating the term linear in <with|mode|math|u=u<rsup|k>> by means of
+  the Schwarz Inequality and the term quadratic in <with|mode|math|u> by
+  means of an absolute bound for the derivatives of <with|mode|math|a>, we
+  obtain the following: The right hand side of <eqref|eq:ns-weak-first-k>
+  (<with|mode|math|a=a<rsup|\<nu\>>>, <with|mode|math|u=u<rsup|k>>,
+  <with|mode|math|k\<geqslant\>\<nu\>>) is uniformly bounded for fixed
+  <with|mode|math|\<nu\>> for all <with|mode|math|k> and <with|mode|math|t>.
+  The same is true of the left hand side
+
+  <\equation*>
+    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|G>a<rsub|i>u<rsub|i>
+    \<mathd\>x.
+  </equation*>
+
+  For fixed <with|mode|math|\<nu\>>, the time functions
+
+  <\equation*>
+    <big|int><rsub|G>a<rsub|i><rsup|\<nu\>>(x)u<rsub|i><rsup|k>(x,t)
+    \<mathd\>x
+  </equation*>
+
+  satisfy a Lipschitz condition for all <with|mode|math|t\<geqslant\>0> that
+  is independent of <with|mode|math|k>. Furthermore, they remain uniformly
+  bounded for all <with|mode|math|t> and <with|mode|math|k>. So by a
+  well-known <with|color|green|choice theorem> (Auswahlsatz) there exists for
+  an arbitary, fixed <with|mode|math|\<nu\>> a sequence of integers
+  <with|mode|math|k<rprime|'>> such that
+
+  <\equation>
+    <label|eq:subseq-limit-existence>lim<rsub|k<rprime|'>\<rightarrow\>\<infty\>><big|int><rsub|G>a<rsub|i><rsup|\<nu\>>(x)u<rsub|i><rsup|k>(x,t)
+    \<mathd\>x
+  </equation>
+
+  exists for any <with|mode|math|t\<geqslant\>0>, in fact uniformly so in any
+  finite <with|mode|math|t>-interval. The sequence of
+  <with|mode|math|k<rprime|'>> depends of the index <with|mode|math|\<nu\>>,
+  but we may pick the sequence belonging to the index
+  <with|mode|math|\<nu\>+1> as a subsequence of the previous one. By means of
+  a diagonal argument we may thus form a fixed sequence of integers (which we
+  will once again label as <with|mode|math|k<rprime|'>>) for which the limit
+  statement above holds properly for any fixed
+  <with|mode|math|\<nu\>=1,2,\<ldots\>>. In the sequel, we will operate on
+  this sequence of <with|mode|math|k<rprime|'>>.
+
+  <em|Second step.> We will now prove that the sequence of fields
+  <with|mode|math|u<rsup|k<rprime|'>>(x,t)> converges weakly in the
+  <with|mode|math|x>-region <with|mode|math|G> for each fixed
+  <with|mode|math|t\<geqslant\>0>. For the purposes of our proof, we now fix
+  an arbitrary, fixed value <with|mode|math|t<rsub|0>> of <with|mode|math|t>
+  and observe that by the first half of 5d) the sequence of these fields
+  (<with|mode|math|t=t<rsub|0>>) is weakly compact in <with|mode|math|G>. The
+  claim will be proven when we show that that sequence may possess only a
+  single weak limit field in <with|mode|math|G>. Let
+  <with|mode|math|u<rsup|\<ast\>>(x,t<rsub|0>)> be such a limit field and let
+  <with|mode|math|k<rprime|''>> be a subsequence of the
+  <with|mode|math|k<rprime|'>> (this subsequence will depend on
+  <with|mode|math|t<rsub|0>>) such that
+
+  <\equation*>
+    lim<rsub|k<rprime|''>\<rightarrow\>\<infty\>><big|int><rsub|G>w<rsub|i>(x)u<rsub|i><rsup|k<rprime|''>>(x,t<rsub|0>)
+    \<mathd\>x=<big|int><rsub|G>w<rsub|i>(x)u<rsub|i><rsup|*\<ast\>>(x,t<rsub|0>)
+    \<mathd\>x
+  </equation*>
+
+  for each field <with|mode|math|w(x)> of class <with|mode|math|H> in
+  <with|mode|math|G>. In the case <with|mode|math|w=a<rsup|\<nu\>>>, the
+  value of the right hand side is already fixed by the limit
+  <eqref|eq:subseq-limit-existence>. If <with|mode|math|u<rsup|\<ast\>>> and
+  <with|mode|math|u<rsup|\<ast\>\<ast\>>> are two weak limit fields and if
+  <with|mode|math|v> is their difference field, then
+
+  <\equation*>
+    <big|int><rsub|G>a<rsub|i><rsup|\<nu\>>v<rsub|i> \<mathd\>x=0
+  </equation*>
+
+  for each <with|mode|math|\<nu\>>. By Definition <reference|def:h-n> the
+  fields <with|mode|math|u<rsup|*\<ast\>>>,
+  <with|mode|math|u<rsup|\<ast\>\<ast\>>> and thus also <with|mode|math|v>
+  belong to class <with|mode|math|H(N)> in <with|mode|math|G>. However, by
+  Lemma <reference|lem:testfields-completeness> the fields
+  <with|mode|math|a<rsup|\<nu\>>> span the same field space in
+  <with|mode|math|G>. From this we conclude
+
+  <\equation*>
+    <big|int><rsub|G>v<rsub|i>v<rsub|i> \<mathd\>x=0
+  </equation*>
+
+  and thus the claim.
+
+  Consequently, there is a field <with|mode|math|u<rsup|\<ast\>>> which is
+  well-defined in <with|mode|math|G> for all <with|mode|math|t\<gtr\>0> such
+  that
+
+  <\equation>
+    lim<rsub|k<rprime|'>\<rightarrow\>\<infty\>><big|int><rsub|G>w<rsub|i>(x)u<rsub|i><rsup|k<rprime|'>>(x,t)
+    \<mathd\>x=<big|int><rsub|G>w<rsub|i>(x)u<rsup|\<ast\>><rsub|i>(x,t)
+    \<mathd\>x
+  </equation>
+
+  for each field <with|mode|math|w(x)> (<with|mode|math|w\<in\>H> in G) and
+  for each <with|mode|math|t\<gtr\>0>. The field
+  <with|mode|math|u<rsup|\<ast\>>> satisfies condition B) of the existence
+  theorem <reference|the:existence> at the end of Section
+  <reference|sec:bc-vanish-ivp>. This follows from b) and the second half of
+  5d) by applying Lemma <reference|lem:cylinder-limit-hprime>. One easily
+  proves that <with|mode|math|u<rsup|k<rprime|'>>\<rightarrow\>u<rsup|\<ast\>>>
+  also holds weakly in <with|mode|math|x> and <with|mode|math|t>
+  (<with|mode|math|0\<less\>t\<less\>T>).
+
+  <em|Third step>. The proof that the field
+  <with|mode|math|u<rsup|\<ast\>>(x,t)> satisfies condition A) of the
+  existence theorem. In each cylinder region <with|mode|math|x\<subset\>>G,
+  <with|mode|math|0\<less\>t\<less\>T>, <with|mode|math|u<rsup|\<ast\>>>
+  belongs to class <with|mode|math|H<rprime|'>>, which is, as we remarked, a
+  superclass of <with|mode|math|H<rprime|'>(N)> (and because of B) it also
+  belongs to the latter class). By the arguments in the first half of Section
+  <reference|sec:simplification-approximation> we only need to show that
+  <with|mode|math|u<rsup|\<ast\>>> satisfies the equations
+  <eqref|eq:ns-tau-to-tauprime> for every <with|mode|math|a=a<rsup|\<nu\>>>
+  and for all <with|mode|math|\<tau\><rprime|'>\<gtr\>\<tau\>\<gtr\>0>. By
+  c), <with|mode|math|u=u<rsup|\<ast\>>> satifies these equations for the
+  same <with|mode|math|\<tau\>,\<tau\><rprime|'>> and for the first
+  <with|mode|math|k<rprime|'>> fields <with|mode|math|a<rsup|\<nu\>>>. We now
+  fix <with|mode|math|\<tau\>>, <with|mode|math|\<tau\><rprime|'>> and the
+  index <with|mode|math|\<nu\>> and pass to the limit
+  <with|mode|math|k<rprime|'>\<rightarrow\>\<infty\>>. It is clear that on
+  the left hand side of <eqref|eq:ns-tau-to-tauprime> <with|mode|math|u> may
+  be replaced by <with|mode|math|u<rsup|\<ast\>>>. The same ist true of the
+  third integral on the right hand side (the first one is zero). Consider
+  that in
+
+  <\equation*>
+    <big|int><rsub|\<tau\>><rsup|\<tau\><rprime|'>><left|[><big|int><rsub|G>w<rsub|i>(x)u<rsub|i><rsup|k<rprime|'>>(x,t)
+    \<mathd\>x<right|]> \<mathd\>t
+  </equation*>
+
+  the inner integral is a uniformly bounded function with respect to
+  \ <with|mode|math|k<rprime|'>> because of the first half of d) and that we
+  may apply a well-known Lebesguian convergence theorem to the outer
+  <with|mode|math|t>-integral. It requires some deeper thoughts that make use
+  of the second half of d) to see that we may also interchange the limit
+  <with|mode|math|k<rprime|'>\<rightarrow\>\<infty\>> and the integration in
+  the second integral on the right hand side of
+  <eqref|eq:ns-tau-to-tauprime>. For this, we need the following theorem
+  which we will prove later.
+
+  <\lemma>
+    <label|lem:integral-2-convergence>Let a sequence of functions
+    <with|mode|math|f<rsup|k>(x,t)> which are continuously
+    <with|mode|math|x>-differentiable for <with|mode|math|x\<subset\>G>,
+    <with|mode|math|0\<less\>t\<less\>T> have the following properties: For
+    each fixed <with|mode|math|t>, <with|mode|math|f<rsup|k>> belongs to
+    class <with|mode|math|N>. For each fixed <with|mode|math|t>, the
+    <with|mode|math|f<rsup|k>(x,t)> converge weakly in <with|mode|math|G> to
+    a function <with|mode|math|f<rsup|\<ast\>>(x,t)>. The integrals
+
+    <\equation*>
+      <big|int><rsub|G>f<rsup|2>(x,t) \<mathd\>x,<space|1em><big|int><rsub|0><rsup|T><big|int><rsub|G>f<rsub|<rprime|'>i>f<rsub|<rprime|'>i><value|dxdt><space|1em>(f=f<rsup|k>)
+    </equation*>
+
+    remain uniformly bounded with respect to <with|mode|math|t> and
+    <with|mode|math|k>. Then the <with|mode|math|f<rsup|k>> converge strongly
+    to <with|mode|math|f<rsup|\<ast\>>> on the
+    <with|mode|math|><with|mode|math|x>-<with|mode|math|t>-region
+    <with|mode|math|x\<subset\>Q G>, <with|mode|math|0\<less\>t\<less\>T>,
+    where <with|mode|math|Q> is an arbitrary finite cuboid in
+    <with|mode|math|x>-space. In particular, the assertion holds for
+    <with|mode|math|G> itself if <with|mode|math|G> is bounded.
+  </lemma>
+
+  Because of a), b), because of the result of the second step and because of
+  d), the assumptions of the lemma are satisfied for the components of the
+  sequence of fields <with|mode|math|u<rsup|k<rprime|'>>(x,t)> for an
+  arbitrary fixed <with|mode|math|T>. Thus, it follows that
+
+  <\equation*>
+    <big|int><rsub|0><rsup|T><big|int><rsub|Q
+    G>(u<rsub|i>-u<rsub|i><rsup|\<ast\>>)(u<rsub|i>-u<rsub|i><rsup|\<ast\>>)<value|dxdt><space|1em>(u=u<rsup|k<rprime|'>>)
+  </equation*>
+
+  goes to zero for <with|mode|math|k<rprime|'>\<rightarrow\>\<infty\>> if
+  <with|mode|math|Q> is an arbitry finite cuboid of <with|mode|math|x>-space.
+  We can thus justify the passing to the limit in the second integral on the
+  right hand side of <eqref|eq:ns-tau-to-tauprime>
+  (<with|mode|math|a=a<rsup|\<nu\>>>, <with|mode|math|\<nu\>> fixed). Recall
+  that the factor <with|mode|math|a> of the integrand vanishes outside a
+  fixed compact subset <with|mode|math|C> of <with|mode|math|G>. If we choose
+  <with|mode|math|Q\<supset\>C> and <with|mode|math|T\<gtr\>\<tau\><rprime|'>>,
+  then for the integral
+
+  <\equation*>
+    <big|int><rsub|\<tau\>><rsup|\<tau\><rprime|'>><big|int><rsub|Q
+    G>(a<rsub|i,\<alpha\>>)(u<rsub|\<alpha\>>)<value|dxdt><space|1em>(a=a<rsup|\<nu\>>,u=u<rsup|k<rprime|'>>)
+  </equation*>
+
+  we have the following stuation. The first factor converges weakly in the
+  area of integration to <with|mode|math|a<rsub|i,\<alpha\>>u<rsub|\<alpha\>><rsup|\<ast\>><rsub|><rsup|*>>,
+  while the second one converges strongly to
+  <with|mode|math|u<rsub|i><rsup|\<ast\>>>. As is well-known, this suffices
+  to carry out the passing to the limit under the integral sign. We have thus
+  shown that the field <with|mode|math|u<rsup|\<ast\>>> satisfies the
+  equations <eqref|eq:ns-tau-to-tauprime> for any field
+  <with|mode|math|a<rsup|\<nu\>>(x)> and for all positive
+  <with|mode|math|\<tau\>>, <with|mode|math|\<tau\><rprime|'>>. The condition
+  A) of the existence theorem is thus verified except for the freedom from
+  divergence. This latter property, however, is trivially true, even for any
+  fixed <with|mode|math|t\<gtr\>0>.
+
+  To complete the proof of the existence theorem, we only need to show that
+  the initial condition C) is also satisfied. From the energy equation
+  <eqref|eq:energy-equation> follows
+
+  <\equation>
+    <label|eq:energy-ic><frac|1|2><big|int><rsub|G>u<rsub|i>u<rsub|i>
+    \<mathd\>x\|<rsub|0>=<frac|1|2><big|int><rsub|G>u<rsub|i>u<rsub|i>
+    \<mathd\>x\|<rsub|T>+<big|int><rsub|0><rsup|T><big|int><rsub|G><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>>*<frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|\<beta\>>><value|dxdt>
+  </equation>
+
+  for each field <with|mode|math|u> of our sequence. The left hand side tends
+  to
+
+  <\equation*>
+    <frac|1|2><big|int><rsub|G>U<rsub|i>U<rsub|i> \<mathd\>x
+  </equation*>
+
+  for <with|mode|math|k<rprime|'>\<rightarrow\>\<infty\>> because of
+  <eqref|eq:initial-values-of-sequence>. For <with|mode|math|t=T>, the fields
+  converge weakly to <with|mode|math|u<rsup|\<ast\>>> in <with|mode|math|G>.
+  In an <with|mode|math|x>-<with|mode|math|t>-cylinder section, we have
+
+  <\equation*>
+    u<rsub|i,\<beta\>><rsup|*k<rprime|'>>\<rightarrow\>u<rsub|i,\<beta\>><rsup|\<ast\>>
+  </equation*>
+
+  weakly because of Lemma <reference|lem:weak-deriv-weak-conv> and d). By
+  applying Lemma <reference|lem:l2-lsc>, <eqref|eq:energy-ic> implies the
+  inequality
+
+  <\equation*>
+    <frac|1|2><big|int><rsub|G>U<rsub|i>U<rsub|i>
+    \<mathd\>x\<geqslant\><frac|1|2><big|int><rsub|G>u<rsub|i><rsup|\<ast\>>u<rsub|i><rsup|\<ast\>>
+    \<mathd\>x\|<rsub|T>+\<mu\><big|int><rsub|0><rsup|T><big|int><rsub|G>u<rsub|i,\<beta\>><rsup|\<ast\>>u<rsub|i,\<beta\>><rsup|\<ast\>><value|dxdt>
+  </equation*>
+
+  for an arbitrary <with|mode|math|T\<gtr\>0>. In particular,
+
+  <\equation*>
+    <wide|lim<rsub|t\<rightarrow\>0>|\<bar\>><big|int><rsub|G>u<rsub|i><rsup|\<ast\>>u<rsub|i><rsup|\<ast\>>
+    \<mathd\>x\<leqslant\><big|int><rsub|G>U<rsub|i>U<rsub|i> \<mathd\>x.
+  </equation*>
+
+  If we once again apply Lemma <reference|lem:l2-lsc> to this last
+  inequality, we recognize that the initial condition C) is satisfied, which
+  is what we wanted to show.
+
+  We will not go into detail on the question of strong convergence for a
+  fixed <with|mode|math|t>.
+
+  <section|Proof of Lemma <reference|lem:integral-2-convergence>>
+
+  The lemma is closely related to the <with|color|red|Rellich Choice Theorem>
+  (Auswahlsatz) and is proven similarly as well<\footnote>
+    Cf. <name|Courant-Hilbert>, l.c. footnote
+    <reference|fn:bc-finite-kinetic>, p. 218. In Rellich's Theorem, the
+    boundedness of the <with|mode|math|x>-integrals of the squares of the
+    derivatives is assumed. Our boundedness assumption merely concerns the
+    <with|mode|math|x>-<with|mode|math|t>-integral and is thus better adapted
+    to the state of affairs in our problem.
+
+    Leray proves and uses a lemma even closer to the <with|color|red|Rellich
+    Choice Theorem> (Auswahlsatz) l.c. Footnote
+    <reference|fn:formulation-xt>, p. 214, Lemma 2, which, like this theorem,
+    only works with the <with|mode|math|x>-integral. Our convergence proof is
+    more direct.
+  </footnote>.
+
+  Let us note up front that the lemma, just like Rellich's Theorem, need not
+  hold for <with|mode|math|G> itself if <with|mode|math|G> is infinite. A
+  counterexample is given by the case where <with|mode|math|G> is the entire
+  <with|mode|math|x>-space and
+
+  <\equation*>
+    f<rsup|k>(x,t)=f(x<rsub|1>+k,x<rsub|2>,\<ldots\>,x<rsub|n>)
+  </equation*>
+
+  with <with|mode|math|f> belonging to <with|mode|math|H<rprime|'>> and
+  <with|mode|math|N> in <with|mode|math|G>. In this case,
+  <with|mode|math|f<rsup|\<ast\>>=0>, but there is no strong covnergence to
+  zero<\footnote>
+    We may thus only conclude the strong convergence of the approximate
+    fields <with|mode|math|u(x,t)> to <with|mode|math|u<rsup|\<ast\>>(x,t)>
+    in the cylinder sections if <with|mode|math|G> is bounded. However,
+    strong convergence is clearly true for arbitrary <with|mode|math|G>.
+    Leray deduced it for his aprpoximations in the case where
+    <with|mode|math|G> is the entire <with|mode|math|x>-space using
+    complicated estimates of the distribution of energy over
+    <with|mode|math|G>. We hope to come back to the stronger convergence
+    properties of our approximations at some later date.
+  </footnote>.\ 
+
+  The proof of Lemma <reference|lem:integral-2-convergence> arises from
+  Friedrichs' Inequality: Let <with|mode|math|Q> be a finite cuboid in
+  <with|mode|math|x>-space. For any given
+  <with|mode|math|\<varepsilon\>\<gtr\>0>, there exists a finite number of
+  fixed functions <with|mode|math|\<omega\><rsub|\<nu\>>(x)> which belong to
+  <with|mode|math|H> in <with|mode|math|Q> such that the inequality
+
+  <\equation*>
+    <big|int><rsub|Q>f<rsup|2> \<mathd\>x\<leqslant\><big|sum><rsub|\<nu\>><left|[><big|int><rsub|Q>f*\<omega\><rsub|\<nu\>>
+    \<mathd\>x<right|]><rsup|2>+\<varepsilon\><big|int><rsub|Q>f<rsub|<rprime|'>i>f<rsub|<rprime|'>i>
+    \<mathd\>x
+  </equation*>
+
+  is satisfied by any function <with|mode|math|f(x)> belonging to
+  <with|mode|math|H<rprime|'>> in <with|mode|math|Q><\footnote>
+    The <with|mode|math|\<omega\><rsub|\<nu\>>> may be assumed to be
+    orthogonal in <with|mode|math|Q>. The inequality then represents an
+    estimate of the difference in Bessel's inequality. You may find the proof
+    of the inequality in <name|Courant-Hilbert>, l.c. footnonte
+    <reference|fn:bc-finite-kinetic>, p. 218, Chap. VII, Ÿ3, Section 1. We
+    may easily convince ourselves that the proof that is given there in 2
+    dimensions also works in <with|mode|math|n> dimensions. Friedrichs'
+    Inequality does not hold for arbitrary bounded regions.
+  </footnote>. For the proof of Lemma <reference|lem:integral-2-convergence>,
+  we first note that for fixed <with|mode|math|t> the functions
+  <with|mode|math|f<rsup|k>(x,t)> of the lemma are continuously
+  differentiable in <with|mode|math|G> and of class <with|mode|math|N>. If we
+  define the functions to be zero outside <with|mode|math|G>, then this
+  statement remains valid if we relate it to the entire
+  <with|mode|math|x>-space instead of to <with|mode|math|G>. In particular,
+  any of the functions on any finite cuboid <with|mode|math|Q> of
+  <with|mode|math|x>-space belongs to class <with|mode|math|H<rprime|'>>. The
+  extension of the functions and the last statement were made possible by the
+  assumption of membership in lcass <with|mode|math|N>. This is however the
+  only place where this assumption is used. We now fix a cuboid
+  <with|mode|math|Q> and a number <with|mode|math|\<varepsilon\>\<gtr\>0>
+  arbitrarily and pick the finitely many auxiliary functions
+  <with|mode|math|\<omega\><rsub|\<nu\>>(x)> such that Friedrichs' Inequality
+  holds in <with|mode|math|Q>. We apply it to the functions
+
+  <\equation>
+    <label|eq:friedrichs-victims>f(x,t)=f<rsup|k>(x,t)-f<rsup|l>(x,t),
+  </equation>
+
+  which surely belong to <with|mode|math|H<rprime|'>> in <with|mode|math|Q>,
+  for fixed <with|mode|math|t>. By integration in <with|mode|math|t>, we
+  conclude that all the functions <eqref|eq:friedrichs-victims> satisfy the
+  inequality
+
+  <\equation>
+    <label|eq:friedrichs-difference><big|int><rsub|0><rsup|T><big|int><rsub|Q>f<rsup|2><value|dxdt>\<leqslant\><big|sum><rsub|\<nu\>><big|int><rsub|0><rsup|T><left|[><big|int><rsub|Q>f*\<omega\><rsub|\<nu\>>
+    \<mathd\>x<right|]><rsup|2>\<mathd\>t+\<varepsilon\><big|int><rsub|0><rsup|T><big|int><rsub|Q>f<rsub|<rprime|'>i>f<rsub|<rprime|'>i><value|dxdt>.
+  </equation>
+
+  By assumption (weak convergence for fixed <with|mode|math|t>), we have
+
+  <\equation*>
+    lim<rsub|k\<rightarrow\>\<infty\>,l\<rightarrow\>\<infty\>><big|int><rsub|Q>f*\<omega\><rsub|\<nu\>>
+    \<mathd\>x=0
+  </equation*>
+
+  for each fixed <with|mode|math|t>. Because of the boundedness assumption
+  (first half), furthermore the function of <with|mode|math|t>
+
+  <\equation*>
+    <big|int><rsub|Q>(f<rsup|k>-f<rsup|l>)*\<omega\><rsub|\<nu\>> \<mathd\>x
+  </equation*>
+
+  remains uniformly bounded w.r.t. <with|mode|math|k>, <with|mode|math|l>.
+  Thus the first term on the right hand side in
+  <eqref|eq:friedrichs-difference> tends to zero for
+  <with|mode|math|k\<rightarrow\>\<infty\>>,
+  <with|mode|math|l\<rightarrow\>\<infty\>>. By assumption, the factor of
+  <with|mode|math|\<varepsilon\>> for the functions
+  <eqref|eq:friedrichs-victims> remains below a fixed bound. But
+
+  <\equation*>
+    <wide|lim|\<bar\>><rsub|k\<rightarrow\>\<infty\>,l\<rightarrow\>\<infty\>><big|int><rsub|0><rsup|T><big|int><rsub|Q>(f<rsup|k>-f<rsup|l>)<rsup|2><value|dxdt>\<leqslant\>c*\<varepsilon\>
+  </equation*>
+
+  implies strong convergence of our our sequence in the
+  <with|mode|math|x>-<with|mode|math|t>-region <with|mode|math|x\<subset\>Q>,
+  <with|mode|math|0\<less\>t\<less\>T>, since <with|mode|math|\<varepsilon\>>
+  was arbitrary. We easily obtain that the limit function is the function
+  <with|mode|math|f<rsup|\<ast\>>(x,t)> mentioned in the statement of the
+  lemma. Thus, Lemma <reference|lem:integral-2-convergence> is proven.
 </body>
 
 <\initial>
@@ -988,13 +1594,16 @@
 
 <\references>
   <\collection>
-    <associate||<tuple|3.3|8>>
+    <associate||<tuple|6.3|13>>
     <associate|auto-1|<tuple|<uninit>|1>>
     <associate|auto-2|<tuple|1|1>>
     <associate|auto-3|<tuple|2|4>>
     <associate|auto-4|<tuple|3|7>>
     <associate|auto-5|<tuple|4|8>>
+    <associate|auto-6|<tuple|5|11>>
+    <associate|auto-7|<tuple|6|13>>
     <associate|def:bc-vanishing|<tuple|3.1|7>>
+    <associate|def:h-n|<tuple|3.2|8>>
     <associate|def:hprime|<tuple|2.1|5>>
     <associate|def:ns-weak-solution|<tuple|2.2|6>>
     <associate|eq:a-divfree|<tuple|1.5|?>>
@@ -1005,9 +1614,24 @@
     <associate|eq:def-hprime|<tuple|2.1|?>>
     <associate|eq:def-weak-deriv|<tuple|2.1|5>>
     <associate|eq:divfree-weak|<tuple|1.6|3>>
+    <associate|eq:energy-equation|<tuple|4.10|10>>
+    <associate|eq:energy-ic|<tuple|5.3|13>>
+    <associate|eq:first-k-ansatz|<tuple|4.6|10>>
+    <associate|eq:first-k-divfree|<tuple|4.7|10>>
+    <associate|eq:first-k-ode|<tuple|4.9|10>>
+    <associate|eq:first-k-testfields|<tuple|4.5|10>>
+    <associate|eq:friedrichs-difference|<tuple|6.2|?>>
+    <associate|eq:friedrichs-victimcs|<tuple|6.1|?>>
+    <associate|eq:friedrichs-victims|<tuple|6.1|?>>
+    <associate|eq:initial-values-of-sequence|<tuple|4.11|11>>
+    <associate|eq:l2-lsc|<tuple|2.1|?>>
     <associate|eq:ns-tau-to-tauprime|<tuple|4.1|8>>
     <associate|eq:ns-weak|<tuple|1.4|3>>
+    <associate|eq:ns-weak-first-k|<tuple|4.8|10>>
+    <associate|eq:subseq-limit-existence|<tuple|5.1|11>>
     <associate|eq:tau-a-ha|<tuple|2.4|6>>
+    <associate|eq:testfield-approx|<tuple|4.3|9>>
+    <associate|eq:testfield-orthogonality|<tuple|4.4|9>>
     <associate|eq:up-to-tau|<tuple|2.3|6>>
     <associate|eq:weak-divfree|<tuple|1.6|?>>
     <associate|fn:bc-finite-kinetic|<tuple|1.5|4>>
@@ -1017,7 +1641,16 @@
     <associate|footnote-3|<tuple|3|?>>
     <associate|footnote-4|<tuple|4|?>>
     <associate|footnote-5|<tuple|5|?>>
+    <associate|lem:cylinder-limit-hprime|<tuple|3.1|7>>
+    <associate|lem:integral-2-convergence|<tuple|5.1|12>>
+    <associate|lem:l2-lsc|<tuple|2.1|5>>
+    <associate|lem:testfield-approx|<tuple|4.2|9>>
+    <associate|lem:testfield-aprpox|<tuple|4.2|?>>
+    <associate|lem:testfields-completeness|<tuple|4.3|10>>
     <associate|lem:weak-deriv-weak-conv|<tuple|2.2|5>>
+    <associate|sec:bc-vanish-ivp|<tuple|3|7>>
+    <associate|sec:simplification-approximation|<tuple|4|8>>
+    <associate|the:existence|<tuple|3.1|8>>
   </collection>
 </references>
 
@@ -1028,7 +1661,7 @@
       of contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Introduction>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Introduction.>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-2><vspace|0.5fn>
 
@@ -1047,6 +1680,15 @@
       of the Problem. The Approximation Procedure.>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-5><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Proof
+      of the Existence Theorem.> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-6><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Proof
+      of Lemma <reference|lem:integral-2-convergence>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-7><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
