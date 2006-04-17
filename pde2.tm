@@ -5634,7 +5634,209 @@
       affine>>)\<mathd\>x+E<rsub|1>+E<rsub|2>>>|<row|<cell|>|<cell|<above|\<geqslant\>|<with|mode|text|QC>>>|<cell|I[u]+E<rsub|1>+E<rsub|2>+E<rsub|3>.>>>>
     </eqnarray*>
 
-    <em|End aside.>
+    <em|End aside.> (Let's not complete this proof.)
+  </proof>
+
+  <subsection|Null Lagrangians, Determinants>
+
+  <\equation*>
+    I[u]=<big|int><rsub|\<Omega\>>F(D u)\<mathd\>x
+  </equation*>
+
+  for <with|mode|math|u:\<Omega\>\<rightarrow\>\<bbb-R\><rsup|m>>,
+  <with|mode|math|F:\<bbb-M\><rsup|m\<times\>n>\<rightarrow\>\<bbb-R\>>. The
+  Euler-Lagrange equations read
+
+  <\equation>
+    <label|eq:null-euler-lagrange><frac|\<partial\>|\<partial\>x<rsub|j>><left|(><frac|\<partial\>F|\<partial\>A<rsub|i,j>>(D
+    u)<right|)>=0,<space|1em>i=1,\<ldots\>,m.
+  </equation>
+
+  <\definition>
+    <with|mode|math|F> is a <em|null-Lagrangian> if
+    <eqref|eq:null-euler-lagrange> holds for every
+    <with|mode|math|u\<in\>C<rsup|2>(\<Omega\>)>.
+  </definition>
+
+  <with|mode|math|u:\<Omega\>\<subset\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>>
+
+  <\theorem>
+    <with|mode|math|det> is a null-Lagrangian. The associated Euler-Lagrange
+    equation is
+
+    <\equation>
+      <label|eq:euler-lagrange-det><frac|\<partial\>|\<partial\>x<rsub|j>><left|(>cof(D
+      u)<rsub|i,j><right|)>=0,<space|1em>i=1,\<ldots\>,n.
+    </equation>
+  </theorem>
+
+  <\proof>
+    <em|Claims:>
+
+    <\enumerate-numeric>
+      <item>A matrix identity:
+
+      <\equation*>
+        <frac|\<partial\>(det A)|\<partial\>A<rsub|l,m>>=(cof A)<rsub|l,m>
+      </equation*>
+
+      <item>If <with|mode|math|A=D u>, then <eqref|eq:euler-lagrange-det>
+      holds.
+    </enumerate-numeric>
+
+    <\equation*>
+      (cof A)<rsub|l,m>=(n-1)\<times\>(n-1)
+      det(<with|mode|text|<with|mode|math|A> without row <with|mode|math|l>,
+      column <with|mode|math|m>><right|)>.
+    </equation*>
+
+    Algebra identity:
+
+    <\equation*>
+      A<rsup|-1>=<frac|1|det A>(cof A)<rsup|T>.
+    </equation*>
+
+    <\equation*>
+      (det A)Id=A<rsup|T>(cof A).
+    </equation*>
+
+    Let <with|mode|math|B> denote <with|mode|math|cof A>.
+
+    <\equation>
+      <label|eq:atcof>det A*\<delta\><rsub|i,j>=A<rsub|k,i>B<rsub|k,j>
+    </equation>
+
+    Claim 1 follows from <eqref|eq:atcof>, since <with|mode|math|(cof
+    A)<rsub|l,m>> depends only on <with|mode|math|A<rsub|i,j>>
+    <with|mode|math|i\<neq\>l,j\<neq\>m>.
+
+    Differentiate both sides w.r.t. <with|mode|math|x<rsub|j>>:
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<with|mode|text|LHS:>>|<cell|>|<cell|<frac|\<partial\>|\<partial\>x<rsub|j>>(det
+      A)\<delta\><rsub|i,j>>>|<row|<cell|>|<cell|=>|<cell|<frac|\<partial\>|\<partial\>x<rsub|j>>(det
+      A)>>|<row|<cell|>|<cell|=>|<cell|<frac|\<partial\>(det
+      A)|\<partial\>A<rsub|l,m>>\<cdot\><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>>>|<row|<cell|>|<cell|<above|=|<with|mode|text|Claim
+      1>>>|<cell|B<rsub|l,m><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>,>>>>
+    </eqnarray*>
+
+    where we have used summation over repeated indices.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<with|mode|text|RHS:>>|<cell|>|<cell|<tabular|<tformat|<cwith|1|1|1|1|cell-lborder|0.5pt>|<cwith|1|1|1|1|cell-rborder|0.5pt>|<cwith|1|1|1|1|cell-bborder|0.5pt>|<cwith|1|1|1|1|cell-tborder|0.5pt>|<table|<row|<cell|<frac|\<partial\>A<rsub|k,i>|\<partial\>x<rsub|j>>B<rsub|k,j>>>>>>+A<rsub|k,i><wide*|<frac|\<partial\>B<rsub|k,j>|\<partial\>x<rsub|j>>|\<wide-underbrace\>><rsub|<with|mode|text|want
+      to say this is 0.>>>>>>
+    </eqnarray*>
+
+    <with|mode|math|\<box\>> terms are typically not the same for arbitrary
+    matrices <with|mode|math|A(x)>. However, if <with|mode|math|A(x)=D u(x)>,
+    then
+
+    <\equation*>
+      B<rsub|k,j><frac|\<partial\>A<rsub|k,i>|\<partial\>x<rsub|j>>=B<rsub|k,j><frac|\<partial\><rsup|2>u<rsub|k>|\<partial\>x<rsub|i>\<partial\>x<rsub|j>>=B<rsub|l,m><frac|\<partial\><rsup|2>u<rsub|l>|\<partial\>x<rsub|i>\<partial\>x<rsub|m>>=B<rsub|l,m><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>
+    </equation*>
+
+    Comparing terms, we have
+
+    <\equation*>
+      A<rsub|k,i><frac|\<partial\>B<rsub|k,j>|\<partial\>x<rsub|j>>=0,<space|1em>i=1,\<ldots\>,n
+    </equation*>
+
+    or <with|mode|math|(D u)<rsup|T>div(cof D u)=0\<in\>\<bbb-R\><rsup|n>>.
+
+    <\equation*>
+      cof D u=n\<times\>n <with|mode|text|matrix><matrix|<tformat|<table|<row|<cell|\<longminus\>>>|<row|<cell|\<longminus\>>>|<row|<cell|\<longminus\>>>>>>
+    </equation*>
+
+    <\equation*>
+      div(cof D u)=<matrix|<tformat|<table|<row|<cell|\<updownarrow\>>>>>>
+    </equation*>
+
+    If <with|mode|math|D u> is invertible, we have <with|mode|math|div(cof
+    Du)=0> as desired. If not, let <with|mode|math|u<rsub|\<varepsilon\>>=u+\<varepsilon\>x>.
+    Then <with|mode|math|D u<rsub|\<varepsilon\>>=D u+\<varepsilon\>I> is
+    invertible for arbitrarily small <with|mode|math|\<varepsilon\>\<gtr\>0>
+    and
+
+    <\equation*>
+      div(cof(D u<rsub|\<varepsilon\>>))=0.
+    </equation*>
+
+    Now let <with|mode|math|\<varepsilon\>\<searrow\>0.>
+  </proof>
+
+  <\theorem>
+    <dueto|Morrey, Reshetnyak><em|(Weak continuity of determinant)> Suppose
+    <with|mode|math|u<rsup|(k)>\<rightharpoonup\>u> in
+    <with|mode|math|W<rsup|1,p>(\<Omega\>,\<bbb-R\><rsup|n>)>,
+    <with|mode|math|n\<less\>p\<less\>\<infty\>>. Then
+
+    <\equation*>
+      det(D u<rsup|(k)>)\<rightharpoonup\>det(D
+      u)<space|1em><with|mode|text|in >L<rsup|p/n>(\<Omega\>).
+    </equation*>
+  </theorem>
+
+  <\proof>
+    <em|Step 1.> Main observation is that <with|mode|math|det(D u)> may be
+    written as a divergence.
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|det(D u)\<delta\><rsub|i,j>>|<cell|=>|<cell|(D
+      u)<rsub|k,i>B<rsub|k,j>>>|<row|<cell|det(D
+      u)>|<cell|=>|<cell|<frac|1|n>(D u)<rsub|k,j>(cof D
+      u)<rsub|k,j>>>|<row|<cell|>|<cell|=>|<cell|<frac|1|n>*<frac|\<partial\>u<rsub|k>|\<partial\>x<rsub|j>>(cof
+      D u)<rsub|k,j>>>|<row|<cell|>|<cell|=>|<cell|<frac|\<partial\>|\<partial\>x<rsub|j>><left|[><frac|1|n>u<rsub|k>(cof
+      D u)<rsub|k,j><right|]>>>|<row|<cell|>|<cell|=>|<cell|div<left|[><frac|1|n>(cof
+      D u)<rsup|T>u<right|]>.>>>>
+    </eqnarray*>
+
+    Note that above <with|mode|math|u<rsub|k>> is the <with|mode|math|k>th
+    component of <with|mode|math|u>, while below and in the statement,
+    <with|mode|math|u<rsup|(k)>> means the <with|mode|math|k>th function of
+    the sequence.
+
+    <em|Step 2.> It suffices to show that
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\<eta\>(x)det(D
+      u<rsup|(k)>)\<mathd\>x\<rightarrow\><big|int><rsub|\<Omega\>>\<eta\>(x)det(D
+      u) \<mathd\>x
+    </equation*>
+
+    for every <with|mode|math|\<eta\>\<in\>C<rsub|c><rsup|\<infty\>>(\<Omega\>)>.
+    But by step 1, we have
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\<eta\>(x)det(D
+      u<rsup|(k)>)\<mathd\>x=-<frac|1|n><big|int><rsub|\<Omega\>><left|(><frac|\<partial\>\<eta\>|\<partial\>x<rsub|l>>u<rsup|(k)><rsub|n><right|)>(cof(D
+      u<rsup|(k)>))<rsub|m,l>\<mathd\>x.
+    </equation*>
+
+    By Morrey's Inequality, <with|mode|math|u<rsup|(k)>> is uniformly bounded
+    in <with|mode|math|C<rsup|0,1-n/p>(\<Omega\>,\<bbb-R\><rsup|m>)>. By
+    Arzelà-Ascoli's theorem, we may now extract a subsequence
+    <with|mode|math|u<rsup|(k<rsub|j>)>> that converges uniformly. It must
+    converge to <with|mode|math|u>.
+
+    Note that if <with|mode|math|f<rsup|(k)>\<rightarrow\>f> uniformly and
+    <with|mode|math|g<rsup|(k)>\<rightharpoonup\>g> in
+    <with|mode|math|L<rsup|q>(\<Omega\>)>,then
+
+    <\equation*>
+      f<rsup|(k)>g<rsup|(k)>\<rightharpoonup\>f*g
+    </equation*>
+
+    in <with|mode|math|L<rsup|q>(\<Omega\>)>. Now use induction on dimension
+    of minors.
+
+    Alternative: Differential forms calculation:
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>\<eta\>(x)det(D u)
+      \<mathd\>x=<big|int><rsub|\<Omega\>>\<eta\>(x)\<mathd\>u<rsub|1>\<wedge\>\<mathd\>u<rsub|2>\<ldots\>\<wedge\>\<mathd\>u<rsub|n>=<big|int><rsub|\<Omega\>>\<eta\>(x)\<mathd\>(u<rsub|1>\<wedge\>\<mathd\>u<rsub|2>\<ldots\>\<wedge\>\<mathd\>u<rsub|n>)
+    </equation*>
+
+    (broken off, do this by ourselves...?)
   </proof>
 
   \;
@@ -5705,14 +5907,17 @@
     <associate|auto-59|<tuple|5.5|60>>
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-60|<tuple|5.6|?>>
+    <associate|auto-61|<tuple|5.2|?>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
+    <associate|eq:atcof|<tuple|5.9|?>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
     <associate|eq:cvar-convex-second|<tuple|5.2|57>>
     <associate|eq:elliptic-equation-hstar|<tuple|4.2|48>>
     <associate|eq:euler-lagrange|<tuple|5.1|57>>
+    <associate|eq:euler-lagrange-det|<tuple|5.8|?>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -5730,6 +5935,7 @@
     <associate|eq:morrey-growth-condition|<tuple|5.6|?>>
     <associate|eq:moser-main-inequality|<tuple|4.6|52>>
     <associate|eq:moser-test-deriv|<tuple|4.5|51>>
+    <associate|eq:null-euler-lagrange|<tuple|5.7|?>>
     <associate|eq:qc-euler-lagrange|<tuple|5.3|59>>
     <associate|eq:quasiconvex-condition-rc|<tuple|5.5|60>>
     <associate|eq:quasiconvex-i2prime|<tuple|5.4|59>>
