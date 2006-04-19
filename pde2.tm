@@ -3852,7 +3852,7 @@
   </remark>
 
   <\remark>
-    There are no assumptions of boundedness or connectnes or smoothness on
+    There are no assumptions of boundedness or connectedness or smoothness on
     <with|mode|math|\<Omega\>>.
   </remark>
 
@@ -5836,10 +5836,183 @@
       \<mathd\>x=<big|int><rsub|\<Omega\>>\<eta\>(x)\<mathd\>u<rsub|1>\<wedge\>\<mathd\>u<rsub|2>\<ldots\>\<wedge\>\<mathd\>u<rsub|n>=<big|int><rsub|\<Omega\>>\<eta\>(x)\<mathd\>(u<rsub|1>\<wedge\>\<mathd\>u<rsub|2>\<ldots\>\<wedge\>\<mathd\>u<rsub|n>)
     </equation*>
 
-    (broken off, do this by ourselves...?)
+    (stopped in mid-deduction, we're supposed do this by ourselves...)
   </proof>
 
-  \;
+  <\theorem>
+    <label|thm:brouwer><em|(Brouwer's Fixed Point Theorem)> Suppose
+    <with|mode|math|u:<wide|B|\<bar\>>\<rightarrow\><wide|B|\<bar\>>> is
+    continuous. Then there is some <with|mode|math|x\<in\><wide|B|\<bar\>>>
+    such that <with|mode|math|u(x)=x>.
+  </theorem>
+
+  <\theorem>
+    <label|thm:no-retract><em|(No Retract Theorem)> There is no continuous
+    map <with|mode|math|u:<wide|B|\<bar\>>\<rightarrow\>\<partial\>B> such
+    that <with|mode|math|u(x)=x> on <with|mode|math|\<partial\>B>.
+  </theorem>
+
+  <\proof>
+    (of Theorem <reference|thm:brouwer>) Assume
+    <with|mode|math|u:<wide|B|\<bar\>>\<rightarrow\><wide|B|\<bar\>>> does
+    not have a fixed point. Let <with|mode|math|v(x)=u(x)-x>,
+    <with|mode|math|v:<wide|B|\<bar\>>\<rightarrow\>\<bbb-R\><rsup|n>>. Then
+    <with|mode|math|v(x)\<neq\>0> and <with|mode|math|\|v\|> is bounded away
+    from 0. Consider <with|mode|math|w(x)=v(x)/\|v(x)\|>. <with|mode|math|w>
+    is continuous, and
+
+    <\equation*>
+      w:<wide|B|\<bar\>>\<rightarrow\>\<partial\>B
+    </equation*>
+
+    contradicts the No Retract Theorem.
+  </proof>
+
+  <\proof>
+    (of Theorem <reference|thm:no-retract>) <em|Step 1>. Assume first that
+    <with|mode|math|u> is smooth (<with|mode|math|C<rsup|\<infty\>>>) map
+    from <with|mode|math|<wide|B|\<bar\>>\<rightarrow\>\<partial\>B>, and
+    <with|mode|math|u(x)=x> on <with|mode|math|\<partial\>B>. Let
+    <with|mode|math|w(x)=x> be the identity
+    <with|mode|math|<wide|B|\<bar\>>\<rightarrow\><wide|B|\<bar\>>>. Then
+    <with|mode|math|w(x)=x> on <with|mode|math|\<partial\>B>. But then since
+    the determinant is a null Lagrangian, we have
+
+    <\equation>
+      <label|eq:retract-null-lagrangian><big|int><rsub|<wide|B|\<bar\>>>det(D
+      u)\<mathd\>x=<big|int><rsub|B>det(D w)\<mathd\>x=\|B\|.
+    </equation>
+
+    However, <with|mode|math|\|u(x)\|<rsup|2>=1> for all
+    <with|mode|math|x\<in\>B>. That means
+
+    <\equation*>
+      u<rsub|i>u<rsub|i>=1<space|1em>\<Rightarrow\><space|1em><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|j>>u<rsub|i>=0,<space|1em>j=1,\<ldots\>,n.
+    </equation*>
+
+    In matrix notation, this is
+
+    <\equation*>
+      (D u)<rsup|T>u=0.
+    </equation*>
+
+    Since <with|mode|math|\|u(x)\|=1>, 0 is an eigenvalue of
+    <with|mode|math|D u><with|mode|math|\<Rightarrow\>><with|mode|math|det D
+    u=0>. This contradicts <eqref|eq:retract-null-lagrangian>.
+
+    <em|Step 2>. Suppose <with|mode|math|u:<wide|B|\<bar\>>\<rightarrow\>\<partial\>B>
+    is a <em|continuous> retract onto <with|mode|math|\<partial\>B>. Extend
+    <with|mode|math|u:\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>> by
+    setting <with|mode|math|u(x)=x> outside <with|mode|math|B>. Note that
+    <with|mode|math|\|u(x)\|\<geqslant\>1> for all <with|mode|math|x>. Let
+    <with|mode|math|\<eta\><rsub|\<varepsilon\>>> be a positive , radial
+    mollifier, and consider
+
+    <\equation*>
+      u<rsub|\<varepsilon\>>=\<eta\><rsub|\<varepsilon\>>\<ast\>u.
+    </equation*>
+
+    <with|mode|math|\<Rightarrow\>>For <with|mode|math|\<varepsilon\>>
+    sufficiently small, <with|mode|math|\|u<rsub|\<varepsilon\>>(x)\|\<geqslant\>1/2>.
+    Since <with|mode|math|\<eta\><rsub|\<varepsilon\>>> is radial, we also
+    have <with|mode|math|u<rsub|\<varepsilon\>>(x)=x> for
+    <with|mode|math|\|x\|\<geqslant\>2>. Set
+
+    <\equation*>
+      w<rsub|\<varepsilon\>>(x)=<frac|u<rsub|\<varepsilon\>>(x/2)|\|u<rsub|\<varepsilon\>>(x/2)\|>
+    </equation*>
+
+    to obtain a smooth retract onto <with|mode|math|\<partial\>B>
+    contradicting Step 1.
+  </proof>
+
+  <\remark>
+    This is closely tied to the notion of the <em|degree> of a map. Given
+    <with|mode|math|u:<wide|B|\<bar\>>\<rightarrow\>\<bbb-R\>> smooth, we can
+    define
+
+    <\equation*>
+      deg(u)=<mean|B>det(D u)\<mathd\>x.
+    </equation*>
+
+    Note that if <with|mode|math|u=x> on <with|mode|math|\<partial\>B>, then
+    we have
+
+    <\equation*>
+      deg(u)=1=deg(Id).
+    </equation*>
+
+    This allows us to define the degree of Sobolev mappings. Suppose
+    <with|mode|math|u\<in\>W<rsup|1,1>(\<Omega\>,\<bbb-R\><rsup|n>)> with
+    <with|mode|math|n\<less\>p\<leqslant\>\<infty\>>. Here,
+
+    <\equation*>
+      det(D u)=<big|sum><rsub|\<sigma\>>(-1)<rsup|\<sigma\>><frac|\<partial\>u<rsub|1>|\<partial\>x<rsub|\<sigma\><rsub|1>>>\<cdots\><frac|\<partial\>u<rsub|n>|\<partial\>x<rsub|\<sigma\><rsub|n>>>.
+    </equation*>
+
+    So by Hölder's Inequality, <with|mode|math|det(D
+    u)\<in\>L<rsup|p/n>><with|mode|math|\<Rightarrow\>><with|mode|math|det(D
+    u)\<in\>L<rsup|1>><with|mode|math|\<Rightarrow\>>We can define
+    <with|mode|math|deg(u)>. It turns out that we can always define the dgre
+    of <em|continuous> maps by approximation. Loosely,
+
+    <\enumerate-numeric>
+      <item>Mollify <with|mode|math|u<rsub|\<varepsilon\>>=u\<ast\>\<eta\><rsub|\<varepsilon\>>>.
+
+      <item>Show if <with|mode|math|u<rsub|\<varepsilon\>>> is smooth, then
+      <with|mode|math|deg(u<rsub|\<varepsilon\>>)> is an integer
+
+      <item><with|mode|math|deg(u<rsub|\<varepsilon\>>)\<rightarrow\>lim> as
+      <with|mode|math|\<varepsilon\>\<rightarrow\>0>.
+    </enumerate-numeric>
+
+    <with|mode|math|\<Rightarrow\>><with|mode|math|deg(u)> independent of
+    <with|mode|math|\<varepsilon\>> for <with|mode|math|\<varepsilon\>> small
+    enough.
+
+    <em|Reference:> Nirenberg, Courant Lecture Notes.
+
+    If we know that the degree is defined for continuous maps, then since
+    <with|mode|math|p\<gtr\>n>, then <with|mode|math|u\<in\>W<rsup|1,p>(B;\<bbb-R\><rsup|n>)>,
+    <with|mode|math|p\<gtr\>n>, we know <with|mode|math|u\<in\>C<rsup|0,1-n/p>(B;\<bbb-R\><rsup|n>)>,
+    so <with|mode|math|deg(u)> is well-defined.
+
+    <em|Question:> What happens if <with|mode|math|p=n>? Harmonic maps/liquid
+    crystals <with|mode|math|u:\<Omega\>\<rightarrow\>S<rsup|n-1>>.
+
+    <em|Answer:> (Brezis, Nirenberg) Don't need <with|mode|math|u> to be
+    continuous to define <with|mode|math|deg(u)>. Sobolev Embedding:
+
+    <\equation*>
+      W<rsup|1,p>\<rightarrow\><choice|<tformat|<table|<row|<cell|C<rsup|0,1-n/p>>|<cell|n\<less\>p\<leqslant\>\<infty\>,>>|<row|<cell|BMO\<supseteq\>VMO>|<cell|p=n,>>|<row|<cell|L<rsup|q>>|<cell|p\<less\>n,q\<leqslant\>p<rsup|\<ast\>>=<frac|n*p|n-p>.>>>>>
+    </equation*>
+
+    <\equation*>
+      [u]<rsub|BMO>=<mean|B>\|u-<wide|u|\<bar\>><rsub|B>\|.
+    </equation*>
+
+    <with|mode|math|VMO:> Vanishing mean oscillation.
+
+    <\theorem>
+      <with|mode|math|deg\<Leftrightarrow\>VMO>. (?)
+    </theorem>
+
+    <with|color|red|(Unfinished business here.)>
+
+    <em|><em|Weak continuity of determinants:> If
+    <with|mode|math|u<rsub|k>\<in\>W<rsup|1,p>(\<Omega\>;\<bbb-R\><rsup|n>)>
+    with <with|mode|math|n\<less\>p>, then if
+    <with|mode|math|u<rsub|k>\<rightharpoonup\>u>, also have
+
+    <\equation*>
+      <big|int><rsub|\<Omega\>>det(D u<rsub|k>)\<mathd\>x\<rightharpoonup\><big|int><rsub|\<Omega\>>det(D
+      u)\<mathd\>x
+    </equation*>
+
+    <with|mode|math|\<Rightarrow\>> <with|mode|math|deg> is continuous. This
+    is still true if <with|mode|math|n=p>, provided we know that
+    <with|mode|math|det(D u<rsub|k>)\<geqslant\>0>. (Muller, Bull, AMS 1987)
+  </remark>
 </body>
 
 <\initial>
@@ -5906,18 +6079,18 @@
     <associate|auto-58|<tuple|5.4|59>>
     <associate|auto-59|<tuple|5.5|60>>
     <associate|auto-6|<tuple|1.1|4>>
-    <associate|auto-60|<tuple|5.6|?>>
-    <associate|auto-61|<tuple|5.2|?>>
+    <associate|auto-60|<tuple|5.6|62>>
+    <associate|auto-61|<tuple|5.2|63>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
-    <associate|eq:atcof|<tuple|5.9|?>>
+    <associate|eq:atcof|<tuple|5.9|63>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
     <associate|eq:cvar-convex-second|<tuple|5.2|57>>
     <associate|eq:elliptic-equation-hstar|<tuple|4.2|48>>
     <associate|eq:euler-lagrange|<tuple|5.1|57>>
-    <associate|eq:euler-lagrange-det|<tuple|5.8|?>>
+    <associate|eq:euler-lagrange-det|<tuple|5.8|63>>
     <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
@@ -5932,15 +6105,16 @@
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
     <associate|eq:maxprinciple-proof|<tuple|4.1|46>>
-    <associate|eq:morrey-growth-condition|<tuple|5.6|?>>
+    <associate|eq:morrey-growth-condition|<tuple|5.6|60>>
     <associate|eq:moser-main-inequality|<tuple|4.6|52>>
     <associate|eq:moser-test-deriv|<tuple|4.5|51>>
-    <associate|eq:null-euler-lagrange|<tuple|5.7|?>>
+    <associate|eq:null-euler-lagrange|<tuple|5.7|63>>
     <associate|eq:qc-euler-lagrange|<tuple|5.3|59>>
     <associate|eq:quasiconvex-condition-rc|<tuple|5.5|60>>
     <associate|eq:quasiconvex-i2prime|<tuple|5.4|59>>
     <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
     <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
+    <associate|eq:retract-null-lagrangian|<tuple|5.10|65>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
     <associate|lem:coercivity|<tuple|4.15|47>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
@@ -5949,10 +6123,12 @@
     <associate|lem:riesz-kernel-est|<tuple|3.14|34>>
     <associate|lem:touching|<tuple|2.27|29>>
     <associate|the:hopf-burgers|<tuple|1.6|7>>
+    <associate|thm:brouwer|<tuple|5.14|64>>
     <associate|thm:c8-approx-compact|<tuple|3.5|31>>
     <associate|thm:hj-viscosity-hj-where-differentiable|<tuple|2.25|29>>
     <associate|thm:hopf-burgers|<tuple|1.6|10>>
-    <associate|thm:morrey-wlsc-qc|<tuple|5.7|?>>
+    <associate|thm:morrey-wlsc-qc|<tuple|5.7|60>>
+    <associate|thm:no-retract|<tuple|5.15|65>>
     <associate|thm:pick-ac-rep|<tuple|3.6|31>>
     <associate|thm:poincare-convex|<tuple|3.16|35>>
     <associate|thm:potential-estimate|<tuple|3.15|35>>
@@ -6141,6 +6317,10 @@
       <with|par-left|<quote|1.5fn>|5.1<space|2spc>Quasiconvexity
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-57>>
+
+      <with|par-left|<quote|1.5fn>|5.2<space|2spc>Null Lagrangians,
+      Determinants <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-61>>
     </associate>
   </collection>
 </auxiliary>
