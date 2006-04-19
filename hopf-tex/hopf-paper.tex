@@ -1,0 +1,1067 @@
+\documentclass{article}
+\usepackage{geometry,amsmath,amssymb,enumerate,bbm,color}
+\geometry{letterpaper}
+
+\def\iintg{\iint_{\hat G}}
+\def\dxdt{\;\mathd x\;\mathd t}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\numberwithin{equation}{section}
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\mathd}{\mathrm{d}}
+\newcommand{\op}[1]{#1}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmname}[1]{\textsc{#1}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmstrong}[1]{\textbf{#1}}
+\newcommand{\tmtexttt}[1]{{\ttfamily{#1}}}
+\newenvironment{enumeratealpha}{\begin{enumerate}[a{\textup{)}}] }{\end{enumerate}}
+\newenvironment{enumeratealphacap}{\begin{enumerate}[A.] }{\end{enumerate}}
+\newenvironment{proof}{\noindent\textbf{Proof\ }}{\hspace*{\fill}$\Box$\medskip}
+\definecolor{grey}{rgb}{0.75,0.75,0.75}
+\definecolor{orange}{rgb}{1.0,0.5,0.5}
+\definecolor{brown}{rgb}{0.5,0.25,0.0}
+\definecolor{pink}{rgb}{1.0,0.5,0.5}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+
+\title{On the Initial Value Problem for the Basic Equations of
+Hydrodynamics}\author{Eberhard Hopf}\maketitle
+
+{\tableofcontents}
+
+
+
+
+
+Translation by Andreas Kl\"ockner, \tmtexttt{kloeckner@dam.brown.edu}. I would
+like to hear about any errors or other comments you may have. {\color{green}
+GREEN} text is loosely translated. {\color{red} RED} text marks spots where I
+was unsure.
+
+\section{Introduction.}
+
+Let the points of $n$-dimensional space be designated by $x$, let $x_1, x_2,
+\ldots, x_n$ be the coordiantes in a fixed cartesian coordinatesystem.
+Further, let $\mathd x = \mathd x_1 \mathd x_2 \cdots \mathd x_n$ be the
+volume element in $x$-space. Let $u (x, t)$ be a time-dependent vector field
+defined on an open subset $\hat{G}$ of $x$-$t$-space with components $u_i$ in
+the aforementioned coordinate system. We will not assume that $\hat{G}$ is
+connected, and only for brevity will be speaking of {\color{red} regions}.
+Regions in $x$-space will be denoted $G$, in $x$-$t$-space they will be
+denoted $\hat{G}$. The fact that a vector field $u (x, t)$ which is
+continuously $x$-differentiable on an $x$-$t$-region $\hat{G}$ is
+divergence-free is characterized by the differential equation
+\begin{equation}
+  \tmop{div} u = \frac{\partial u}{\partial x_{\nu}} = 0,
+\end{equation}
+where we note that throughout this paper we will be using the common summation
+convention without the use of the sum symbol. There is also another well-known
+differential-less characterization of the fact that the divergence is zero. We
+say that a scalar or vector-valued function $v (x, t)$ on $\hat{G}$ belongs to
+{\tmem{class $N$ on $\hat{G}$}} iff $v \equiv 0$ outside a suitable compact
+subset of this region. The functions of this class, which we will be referring
+to often, thus vanish on a boundary strip of $\hat{G}$. This aforementioned
+characterization is then: A field $u (x, t)$ which is continuously
+$x$-differentiable on $\hat{G}$ is called {\tmem{divergence-free}} on
+$\hat{G}$ iff
+\begin{equation}
+  \iintg u_i \frac{\partial h}{\partial x_i} \mathd x \mathd t = 0
+\end{equation}
+for any function $h (x, t)$ of class $N$ in $\hat{G}$ that is uniquely
+determined and continuously $x$-differentiable on $\hat{G}$. This fact is a
+consquence of Gauss' Theorem which is applicable because $h \in N$ in
+$\hat{G}$ and because of the fundamental lemma of variational calculus. If we
+introduce the the scalar product of two vector fields $v (x, t)$ and $w (x,
+t)$ on $\hat{G}$ as
+\[ \iintg v_i w_i \mathd x \mathd t, \]
+we can say that ``a field $u$ which is continuously $x$-differentiable in
+$\hat{G}$ is divergence-free in $\hat{G}$'' means that $u$ is orthogonal in
+$\hat{G}$ to the gradient field of any function of class $N$ that is uniquely
+determined and continuously $x$-differentiable in
+$\hat{G}${\footnote{\label{fn:formulation-xt}The formulation of these terms in
+$x$-$t$-space rather than just in $x$-space is advantageous for our problem.
+Applications of Hilbert space theory can be found in the following works:
+{\tmname{O.~Nikodym}}, Sur un th\'eor\`eme de M.S. Zaremba concernant les
+fonctions harmoniques. J. Math. pur appl., Paris, S\'er. IX, {\tmstrong{12}}
+(1933), 95--109; {\tmname{J.~Leray}}, Sur le mouvement d'un liquide visqueux
+emplissant l'espace. Acta math., Uppsala {\tmstrong{63}} (1934), 193--248;
+{\tmname{H.~Weyl}}, The method of orthogonal projection in potential theory.
+Duke math J. {\tmstrong{7}} (1940), 411--444.}}.
+
+The following counterpart of this fact is of interest here: It is necessary
+and sufficient for a field $h' (x, t)$ which is continuous in $\hat{G}$ (and
+which has components $h'_i$) to be the gradient field $h'_i = \partial h /
+\partial x_i$ of an in $\hat{G}$ uniquely determined and continuously
+$x$-differentiable function $h (x, t)$ that it is orthogonal in $\hat{G}$ to
+any divergence-free field of class $N$ that is continuously $x$-differentiable
+in $\hat{G}$.
+
+Necessity is once more a consequence of the Integral Theorem. The following
+considerations show sufficiency. The consideration of fields of the form $w
+(x, t) = \varphi (t) \omega (x)$ with scalar $\varphi$ first shows that we may
+constrain ourselves to the the corresponding claim for $x$-regions $G$. So,
+assume
+\[ \int_G w_i h_i' \mathd x = 0 \]
+for any smooth divergence-free field $w (x)$ of class $N$ in $G$. The claim
+follows if we can show that the circulation of the field $h'$
+\[ \int_{\mathfrak{C}} h_i' \mathd x_i = \int_{\mathfrak{C}} h'_s \mathd s \]
+vanishes along any closed path $\mathfrak{C}$ in $G$. It is easy to see that
+this needs to be shown only for continuously curved paths without
+self-intersections. We will obtain this vanishing through a suitable choice of
+fields $w$. For any given small $\varepsilon > 0$, there is a vector field $w
+(x)$ which is smooth and divergence-free in $G$ and which has the following
+properties: $w$ is non-zero only in a closed tube around $\mathfrak{C}$ of
+thickness $< \varepsilon$. On any plane tube section that cuts $\mathfrak{C}$
+orthogonally, the vector $w$ forms an angle $< \varepsilon$ with the normal
+direction (i.e. the direction of $\mathfrak{C}$ in the section). The sectional
+flow of $w$, which is independent of the exact shape of the section because
+$w$ is divergence-free, is equal to $1$. This fact suffices to prove the
+vanishing of the circulation along $\mathfrak{C}$. We consider such a field $w
+(x)$ that belongs to a given (but sufficiently small) $\varepsilon$. If we let
+$\mathd F$ denote the hypersurface element on these tube sections and if we
+choose the arc length $s$ along $\mathfrak{C}$ as the parameter transverse to
+the sections, we can write the volume element $\mathd x$ in the tube as $\rho
+(x) \mathd F \mathd s$, where we assume $\rho$ to be continuous in a
+neighborhood of $\mathfrak{C}$ and equal to $1$ on $\mathfrak{C}$. Then
+\[ \int h_i' w_i \mathd x = \int \left[ h'_w |w| \rho \mathd F \right] \mathd
+   s. \]
+If we replace the component $h'_w$ by the component $h'_s$ taken at the
+intersection of $\mathfrak{C}$ with the section, $|w (x) |$ by the component
+$w_s (x)$ taken in a direction normal to $\mathd F$ and $\rho$ by 1, then the
+right-hand side integral becomes
+\[ \int h'_s \left[ \int w_s \mathd F \right] \mathd s = \int h'_s \mathd s,
+\]
+i.e. the circulation. Based upon the aforementioned properties of the field
+$w$, we can meanwhile easily prove that that the error introduced by these
+replacements goes to zero with $\varepsilon$. Thereby the claim is proven.
+
+The basic equations of Navier-Stokes for the movement of a homogeneous,
+incompressible liquid are
+\begin{equation}
+  \frac{\partial u_i}{\partial t} + u_{\alpha} \frac{\partial u_i}{\partial
+  x_{\alpha}} = - \frac{\partial p}{\partial x_i} + \mu \frac{\partial^2
+  u_i}{\partial x_{\beta} \partial x_{\beta}},
+\end{equation}
+where $\mu$ is a positive constant, namely the {\tmem{kinematic viscosity
+coefficient}} and
+\[ \tmop{div} u = 0. \]
+Let $u (x, t), p (x, t)$ be a solution in an $x$-$t$-region $\hat{G}$ which we
+assume to be continuous along with all the occurring derivatives $u_t$, $u_x$,
+$u_{x x}$. We will now introdcue a new time-dependent vector field $a = a (x,
+t)$ which is divergence-free in $\hat{G}$. It is assumed to be of class $N$ in
+$\hat{G}$ and sufficiently smooth: $a$ and the derivatives $a_t, a_x, a_{x x}$
+should be continuous in $\hat{G}$. Otherwise, there will be no no requirements
+on the field $a$. Because $a \in N$ in $G$ and because
+\[ u_{\alpha} \frac{\partial u_i}{\partial x_{\alpha}} = \frac{\partial u_i
+   u_{\alpha}}{\partial x_{\alpha}}, \]
+we have
+\begin{eqnarray*}
+  \iintg a_i \frac{\partial u_i}{\partial t} \mathd x \mathd t & = & - \iintg
+  \frac{\partial a_i}{\partial t} u_i \mathd x \mathd t,\\
+  \iintg a_i u_{\alpha} \frac{\partial u_i}{\partial x_{\alpha}} \mathd x
+  \mathd t & = & - \iintg \frac{\partial a_i}{\partial x_{\alpha}} u_{\alpha}
+  u_i \mathd x \mathd t,\\
+  \iintg a_i \frac{\partial^2 u_i}{\partial x_{\beta} \partial x_{\beta}}
+  \mathd x \mathd t & = & - \iintg \frac{\partial a_i}{\partial x_{\beta}}
+  \frac{\partial u_i}{\partial x_{\beta}} \mathd x \mathd t = \iintg
+  \frac{\partial^2 a_i}{\partial x_{\beta} \partial x_{\beta}} \mathd x \mathd
+  t
+\end{eqnarray*}
+and since $\tmop{div} a = 0$ and $a \in N$, we have
+\[ \iintg a_i \frac{\partial p}{\partial x_i} \mathd x \mathd t = 0. \]
+Thereby we find that the field $u (x, t)$ satisfies the following condition
+\begin{equation}
+  \label{eq:ns-weak} \iintg \frac{\partial a_i}{\partial t} u_i \mathd x
+  \mathd t + \iintg \frac{\partial a_i}{\partial x_{\alpha}} u_{\alpha} u_i
+  \mathd x \mathd t + \mu \iintg \frac{\partial^2 a_i}{\partial x_{\beta}
+  \partial x_{\beta}} u_i \mathd x \mathd t = 0
+\end{equation}
+for any sufficiently smooth field $a (x, t)$ on $\hat{G}$ with the properties
+\begin{equation}
+  \label{eq:a-requirements} \tmop{div} a = 0 \text{in $\hat{G}$}, \hspace{1em}
+  a \in N \text{in $\hat{G}$} .
+\end{equation}
+In addition, we need to take into account that $u$ is divergence-free, i.e.
+\begin{equation}
+  \label{eq:divfree-weak} \iintg \frac{\partial h}{\partial x_i} u_i \mathd x
+  \mathd t = 0, \hspace{1em} h \in N \text{in}  \hat{G}
+\end{equation}
+holds for any function of the mentioned class that is sufficiently smooth on
+$\hat{G}$. We have thereby reduced the basic equations to the form of
+equations between linear functional operators of arbitrary fields and
+functions $a$ and $h$. The essential part of this is that the unknown field
+$u$ on which these operators depend occurs without any derivatives.
+
+We still need to convince ourselves that we may revert from equations
+(\ref{eq:ns-weak}) and (\ref{eq:divfree-weak}) to the differential form of the
+equations if we restrict ourselves to sufficiently smooth solution fields $u$
+in $\hat{G}$. We already know that under this assumption
+(\ref{eq:divfree-weak}) goes back to $\tmop{div} u = 0$ in $\hat{G}$. For a
+sufficiently smooth $u$, we may undo all the integrations-by-parts. It follows
+that
+\[ \iintg a_i \left\{ \frac{\partial u_i}{\partial t} + u_{\alpha}
+   \frac{\partial u_i}{\partial x_{\alpha}} - \mu \frac{\partial^2
+   u_i}{\partial x_{\beta} \partial x_{\beta}} \right\} \mathd x \mathd t \]
+must hold for any sufficiently smooth field $a (x, t)$ of the form
+(\ref{eq:a-requirements}). Using the theorem proved above, we may conclude
+that the curly braces must be the partial derivatives of a uniquely determined
+function $p (x, t)$, i.e. that the differential equations of motion must hold
+in $\hat{G}$. We see that the above integral form of the equations exactly
+expresses the physical demand that the pressure be unique.
+
+It is quite natural to build the general mathematical theory on the integral
+form of the equations. But then it is appropriate to rid ourselves of the
+artificial restriction to smooth solution fields $u$. The occurrence of the
+quadratic forms
+\[ \int u_i u_i \mathd x, \hspace{1em} \int \frac{\partial u_i}{\partial
+   x_{\beta}}  \frac{\partial u_i}{\partial x_{\beta}} \mathd x \]
+in the energy equation leads us to base the problem on a Hilbert space of
+vector fields. It is a methodical advantage that in this broader framework the
+differentiability properties of the solutions $u$ become the subject of a
+problem that can be entirely separated from the problem of
+existence.{\footnote{Compare the treatment of quadratic variation and linear
+differential problems by methods of Hilbert spaces in {\tmname{R.~Courant}}
+and {\tmname{D.~Hilbert}}, Methoden der mathematischen Physik, Volume 2,
+Berlin 1937, Chapter VII.}}
+
+The common initial value problem of the basic equations of hydrodynamics is
+the following: We need to find the solution $u (x, t)$ in a prescribed, moving
+region $G (t)$ ($t \geqslant 0$) of $x$-space, while $u (0)$ in $G (0)$ is
+prescribed (together with a suitably formulated condition of continuous
+continuation for $t \rightarrow 0$) and the boundary values at the boundary of
+$G (t)$, $t > 0$ are also given (with a suitably formulated sense of
+continuation). {\tmname{J.~Leray}} dedicated three sizable works to this
+problem in the early thirties{\footnote{{\tmname{J.~Leray}}, a) \'Etude de
+diverses \'equations int\'egrales non lin\'eaires et de quelques probl\`emes
+que pose l'Hydrodyamique. J.Math.pur.appl. Paris, S\'er. IX {\tmstrong{12}}
+(1933) 1--82; b) Essay sur les mouvements plans d'un liquide visqueux que
+limitent des parois. c) loc. cit. in footnote \ref{fn:formulation-xt}.}}.
+These inquiries had already forced Leray to use the methods of Hilbert space
+and the integral interpretation of the equations in three
+dimensions{\footnote{A long while before then, {\tmname{C.W.~Oseen}} had based
+his well-known hydrodynamic inquiries on a form of the basic equations that is
+free of second derivatives. However, he only succeeded in proving existence
+for sufficiently small times. Cf. his work Hydrodynamik (Leipzig 1927)}}. In
+his works, Leray solved the question of existence for all $t > 0$ in the
+following cases, a) $G =\mathbbm{R}^2$ under the added condition of finite
+kinetic energy, b) $G$ is a fixed oval with zero boundary values, c) $G
+=\mathbbm{R}^3$ under the added condition of finite kinetic energy. The
+remarkable analysis that Leray dedicates to the question of differentiability
+point to a strange difference between the dimensions $n = 2$ and $n > 2$.
+While, at least if in the first case $G$ is the entire plane, the proof of
+infinite differentiability is successful, the proof methods that one should
+view as natural fail for $n \geqslant 3$. Even for arbitrary smoothness of all
+prescribed data, the proof of smoothness of the solution did not work out. The
+other strange thing is the failure of the uniqeness proff in three dimensions.
+These questions are still not answered satisfactorily. It is hard to believe
+that the initial value problem of viscous liquids for $n = 3$ should have more
+than one solution, and more attention should be paid to the settling of the
+uniqueness question. However, newer research indicates that for nonlinear
+partial differential problems the number of independent variables has
+significant influence on the local properties of solutions.
+
+In the present work, which is also dedicated to the initial value problem and
+in which we assume the integral view of the equations as their primary form,
+we will leave aside the questions of differentiability and uniqueness. We hope
+to come back to these things as well as to the proof of the energy equation
+(which is easy in our context) in later memoranda. The main point of this work
+is that the construction of approximate solutions that takes such broad space
+in Leray's work is replaced here by simpler process, which may also be applied
+to a much broader classes of partial differential problems. We also hope to
+come back to this issue later. This method enables the solution of the initial
+value problem for all $t > 0$ in substantial generality, however in this first
+memorandum what matters to us is more the exposition of the basic idea of the
+method rather than the generality of the results. We will restrain ourselves
+to the case that the $x$-region $G$ is fixed in time, but otherwise completely
+arbitrary, and where $u$ has vanishing boundary values. The boundary condition
+will be defined in terms of Hilbert space--broad enough to guarantee
+solvability, and narrow enough to guarantee the uniqueness of the solution, at
+least in two dimensions{\footnote{\label{fn:bc-finite-kinetic}If $G$ is the
+entire $x$-space, the boundary condition thus phrased becomes the condition of
+finite kinetic energy and finite dissipation integral.
+
+The phrasing of the boundary condition is suggested by the work of
+{\tmname{R.~Courant}} and {\tmname{D.~Hilbert}}, Methoden der mathematischen
+Physik, Vol. 2, Berlin 1937, Chap. VII, Ÿ1, 3rd section.}}. In pure existence
+theory, the number of space dimensions will not play any role.
+
+\section{The Function Class $H'$. Solutions of Class $H'$.}
+
+We will take the class $H$ with respect to an $x$-$t$-region $\hat{G}$ to mean
+the class of all real, measurable functions $f (x, t)$ defined on this region
+with finite norm
+\[ \iintg f^2 \mathd x \mathd t. \]
+$H$ is a real Hilbert space. Terms such as weak and strong convergence in
+$\hat{G}$ will be understood in the following with respect to the norm. We
+remind that a sequence of functions $f \in H$ in $\hat{G}$ converges weakly if
+first, the norms of all $f$ remain below a fixed value and second, if
+\[ \iintg fg \mathd x \mathd t \rightarrow \iintg f^{\ast} g \mathd x \mathd t
+\]
+holds for any fixed function $g \in H$ in $\hat{G}$. While maintaining the
+first condition, the second one may be weakened to the effect that the
+sequence of numbers
+\[ \iintg fg \mathd x \mathd t \]
+converges for any fixed $g$ in a set that is strongly dense in $H$. Then,
+there exists one, and essentially only one weak limit function $f^{\ast}$ in
+$\hat{G}$. Besides these terms, for which we have assumed an $x$-$t$-region,
+we will have to use the same terms for a purely spatial $x$-region $G$. In
+this case, we will base our considerations on the norm
+\[ \int_G f^2 \mathd x. \]
+We remind the reader of the weak compactness of a sequence of functions with
+uniformly bounded norms (F.~Riesz's Theorem). The following criterion for
+strong convergence, which was also used extensively by Leray, will also be
+necessary here. For a sequence of functions that converges weakly in $\hat{G}$
+to a limit function $f^{\ast}$, we have
+\[ \overline{\op{\lim}} \iintg f^2 \mathd x \mathd t \geqslant \iintg
+   (f^{\ast})^2 \mathd x \mathd t, \]
+where equality holds if and only if $f \rightarrow f^{\ast}$ in the strong
+sense. All these things transfer to vector fields $u$, $v$ on $\hat{G}$ if we
+use the scalar product
+\[ \iintg u_i v_i \mathd x \mathd t \]
+and the corresponding norm.
+
+\begin{lemma}
+  \label{lem:l2-lsc}If the vector fields $u (x, t)$ converge weakly in
+  $\hat{G}$ to a limit field $u^{\ast} (x, t)$, then
+  \[ \overline{\lim} \iintg u_i u_i \mathd x \mathd t \geqslant \iintg
+     u_i^{\ast} u_i^{\ast} \mathd x \mathd t. \]
+  Equality holds if and only if the convergence in $\hat{G}$ is strong.
+\end{lemma}
+
+Like Leray, we need the term of a generalized (purely spatial) $x$-derivative
+of functions $f (x, t)$ and fields $u (x, t)$.
+
+\begin{definition}
+  \label{def:hprime}An $f (x, t)$ defined on an $x$-$t$-region $\hat{G}$ is
+  defined to belong to the class $H'$ if and only if it has the following
+  properties: $f$ belongs to $H$ in $\hat{G}$. There exist $n$ functions $f_{'
+  i}$ belonging to $H$ in $\hat{G}$ such that the relations
+  \begin{equation}
+    \label{eq:def-weak-deriv} \iintg hf_{' i} \mathd x \mathd t = - \iintg
+    \frac{\partial h}{\partial x_i} f \mathd x \mathd t \hspace{1em} (h \in N
+    \text{in}  \hat{G})
+  \end{equation}
+  are satisfied for any function $h (x, t)$ which is continuous in $\hat{G}$
+  along with its derivatives and which belongs to class $N$, and for any $i =
+  1, 2, \ldots, n$.
+\end{definition}
+
+The class $H'$ obviously contains any $f (x, t)$ that is continuously
+$x$-differentiable in $\hat{G}$ such that $f$ and all $\partial f / \partial
+x_i$ belong to $H$ in $\hat{G}$. For such an $f$, we have $\partial f /
+\partial x_i = f_{' i}$. This follows from the integral theorem and the demand
+that $h$ must belong to $N$, i.e. that $h$ vanishes outside a certain compact
+subset of $\hat{G}$. Obviously, generalized $x$-derivatives $f_{' i}$ in $G$
+are uniquely determined except for the values on an $x$-$t$-zero set in the
+case of $f \in H'$ in $\hat{G}$.
+
+\begin{lemma}
+  \label{lem:weak-deriv-weak-conv}If a sequence of functions of class $H'$
+  converge weakly to $f^{\ast}$ and for all $f$ the expressions
+  \[ \iintg f^2 \mathd x \mathd t + \iintg f_{' i} f_{' i} \mathd x \mathd t
+  \]
+  are uniformly bounded, then $f^{\ast}$ also belongs to $H'$ in $\hat{G}$ and
+  every $x$-derivatives $f_{' i}$ converges weakly to the corresponding
+  $x$-derivative $f^{\ast}_{' i}$.
+\end{lemma}
+
+\begin{proof}
+  Every $f$ satisfies (\ref{eq:def-weak-deriv}), where $h$ is an arbitrary
+  function that is admissible there. The right hand sides converge to
+  \[ - \iintg \frac{\partial h}{\partial x_i} f^{\ast} \mathd x \mathd t. \]
+  For a fixed $h$ and $i$, the left hand sides converge along the sequence of
+  the $f$'s. The admissible functions $h$ in $\hat{G}$ lie strongly dense in
+  the Hilbert space $H$.Thus, for any fixed $i$ the sequence of the $f_{' i}$
+  is weakly convergent. If we let $f^{\ast}_i$ denote the limit function, then
+  from (\ref{eq:def-weak-deriv}), we conclude that
+  \[ \iintg hf^{\ast}_i \mathd x \mathd t = - \iintg \frac{\partial
+     h}{\partial x_i} f^{\ast} \mathd x \mathd t \]
+  holds for any admissible $h$ and $i$. By Definition \ref{def:hprime},
+  $f^{\ast}$ belongs to $H'$ in $\hat{G}$, and because of uniquness of the
+  $x$-derivative, we have $f^{\ast}_i = f^{\ast}_{' i}$.
+\end{proof}
+
+A field is said to be of class $H'$ in $\hat{G}$ if this is the case for all
+components.
+
+In the above integral form of the basic equations of hydrodynamics, there are
+no derivatives on $u$. It is however practical to make a weak
+differentiability assumption like membership in the class $H'$ on the
+solutions $u$. We may then write for the friction term in (\ref{eq:ns-weak})
+\begin{equation}
+  \mu \iintg \frac{\partial^2 a_i}{\partial x_{\beta} \partial x_{\beta}} u_i
+  \dxdt = - \mu \iintg \frac{\partial a_i}{\partial x_{\beta}} u_{i, \beta}
+  \dxdt .
+\end{equation}
+\begin{definition}
+  \label{def:ns-weak-solution}A field $u (x, t)$ is called a solution of class
+  $H'$ of the basic equations of hydrodynamics in the $x$-$t$-region $\hat{G}$
+  if it satisfies the following conditions:
+  \begin{enumeratealpha}
+    \item $u \in H'$ in $\hat{G}$.
+    
+    \item Vanishing divergence; any function $h$ which is of class $N$ in
+    $\hat{G}$ and continuously $x$-differentiable satisfies the relation
+    (\ref{eq:divfree-weak}).
+    
+    \item Equations of motion; any field $a (x, t)$ that is of class $N$ in
+    $\hat{G}$, divergence-free and continuous along with its derivatives
+    $a_t$, $a_x$, $a_{x x}$ satisfies the relation (\ref{eq:ns-weak}).
+  \end{enumeratealpha}
+\end{definition}
+
+Observe that under the condition a) the term in the basic equations
+(\ref{eq:ns-weak}) which is nonlinear in $u$ is a valid Lebesgue integral for
+any admissible field $a$. That is already the case if $u \in H$ in $\hat{G}$.
+
+Because of a) the condition of incompressibility b) is equivalent with
+\[ \tmop{div} u \equiv u_{i, i} = 0 \]
+for a.e. $(x, t) \in \hat{G}$.
+
+We will consider all integrands in the basic equations {\eqref{eq:ns-weak}}
+outside of $\hat{G}$ defined to zero. The integrals can then be extended over
+all $x$-$t$-space. With this convention, the following theorem, which we would
+like to prove here even though it is not needed in this paper, holds:
+
+\begin{theorem}
+  A solution of class $H'$ satisfies the equation
+  \begin{equation}
+    \label{eq:up-to-tau} \int_{t = \tau} a_i u_i \mathd x = \int \int_{t <
+    \tau} \frac{\partial a_i}{\partial t} u_i \mathd x \mathd t + \int \int_{t
+    < \tau} \frac{\partial a_i}{\partial x_{\alpha}} u_{\alpha} u_i \mathd x
+    \mathd t - \mu \int \int_{t < \tau} \frac{\partial a_i}{\partial
+    x_{\beta}} u_{i, \beta} \dxdt
+  \end{equation}
+  for a.e. value of $\tau$.
+\end{theorem}
+
+\begin{proof}
+  Consider that along with $a (x, t)$, $h (t) a (x, t)$ is also an admissible
+  field if $h (t)$ is an arbitrary continuously differentiable function for
+  all $t$. If we replace $a$ by $h a$ in equation {\eqref{eq:ns-weak}}, which
+  we write abbreviated as
+  \[ \int \int K [a, u] \mathd x \mathd t = \int_{- \infty}^{\infty} \left\{
+     \int_{t = \tau} K [a, u] \right\} \mathd \tau = 0, \]
+  it follows that the equation
+  \begin{equation}
+    \label{eq:tau-a-ha} \int_{- \infty}^{\infty} h (\tau) \left\{ \int_{t =
+    \tau} K \mathd x \right\} \mathd \tau + \int_{- \infty}^{\infty} h' (\tau)
+    \left\{ \int_{t = \tau} a_i u_i \mathd x \right\} \mathd \tau = 0
+  \end{equation}
+  is also satisfied. The terms in curly braces are Lebesgue-integrable
+  functions of $\tau$ on $- \infty < \tau < \infty$ that vanish for all large
+  $| \tau |$. The validity of {\eqref{eq:tau-a-ha}} for abritray $h (\tau)$
+  with continuous $h' (\tau)$ is equivalent with the fact that
+  \[ \int_{t = \tau} a_i u_i \mathd x = \int_{- \infty}^t \left\{ \int_{t
+     \text{fixed}} K \mathd x \right\} \mathd t = \int \int_{t < \tau} K \dxdt
+  \]
+  for a.e. $\tau$.
+\end{proof}
+
+In {\eqref{eq:up-to-tau}}, the left hand side is defined for just a.e. $\tau$,
+while the right hand side is an {\color{red} absolutely continuous}
+(totalstetig) function of $\tau$. In fact, one can prove: A solution of lcass
+$H'$ in $\hat{G}$ can be changed on an $x$-$t$-zero set such that the new $u$
+satisfies {\eqref{eq:up-to-tau}} without exception, i.e. for any admissible
+$a$ and any $\tau$. But we will not elaborate further on this here.
+
+\section{The Boundary Condition of Vanishing. The Initial Value Problem.}
+
+\label{sec:bc-vanish-ivp}The cross sections $t = \tmop{const}$ of the
+$x$-$t$-region $\hat{G}$ are $x$-region $G (t)$. By using just terms of
+Hilbert space, we need to get as close as possible to the boundary condition
+of vanishing of a function $g (x, t)$ and a field $u (x, t)$ for all $t$ on
+the boundary of $G (t)$. This can be achieved by obtaining the function $g$
+from function of class $N$ in $\hat{G}$ by means of a limit process. In doing
+so, it is necessary to use sufficiently effective bounds on the spatial
+$x$-derivatives (but not on the $t$-derivatives) of the approximating
+functions, so that the ``vanishing'' remains intact along the boundaries of
+the $x$-regions $G (t)$. We express the boundary condition by membership in
+the following function class $H' (N)$.
+
+\begin{definition}
+  \label{def:bc-vanishing}A function $g (x, t)$ is said to be of class $H'
+  (N)$ in $\hat{G}$ if it is a weak limit function in $\hat{G}$ of a sequence
+  of functions $\gamma (x, t)$, which belong to $N$ in $\hat{G}$ and are
+  continuous along with their $x$-derivatives und for which the expressions
+  \begin{equation}
+    \label{eq:bc-def-h1-norm} \iintg \gamma^2 \dxdt + \iintg \gamma_{' i}
+    \gamma_{' i} \dxdt
+  \end{equation}
+  are uniformly bounded.{\footnote{Cf. {\tmname{Courant-Hilbert}}, l.c.
+  footnote \ref{fn:bc-finite-kinetic}, p. 218. The definition of the boundary
+  condition of vanishing given there is only seemingly stronger than ours. By
+  S. Saks' Theorem the sequence of arithmetic means of a weakly convergent
+  sequence has a strongly convergent subsequence. It follows from this theorem
+  and from Lemma \ref{lem:weak-deriv-weak-conv} that for any $g$ in $H' (N)$,
+  there exists a sequence of functions $\gamma$ of the above-mentioned kind
+  such that
+  \[ \gamma \rightarrow g, \hspace{1em} \gamma_{' i} \rightarrow g_{' i} \]
+  holds inthe strong sense.}}
+\end{definition}
+
+It follows from Lemma \ref{lem:weak-deriv-weak-conv} that for a given
+$x$-$t$-region $G$ the class $H' (N)$ is contained in the class $H'$.
+
+\begin{lemma}
+  \label{lem:cylinder-limit-hprime}Let $\hat{G}$ by a cylinder set $x \subset
+  G$, $0 < t < T$. Let $g (x, t)$ be the weak limit in $\hat{G}$ of a sequence
+  of functions $\gamma (x, t)$ continuously $x$-differentiable in $\hat{G}$
+  that are of the following kind: For each $\gamma$ there is a compact subset
+  of the $x$-region $G$ such that $\gamma$ vanishes for $x$ outside that set;
+  \ also let the integrals {\eqref{eq:bc-def-h1-norm}} be uniformly bounded.
+  Then $g$ belongs to $H' (N)$ in $\hat{G}$.{\footnote{If $G$ is all
+  $x$-space, the class $H' (N)$ coincides with the class $H'$. In this case
+  the admissible $\gamma$ are strongly dense in the function space $H'$ in the
+  sense of the norm {\eqref{eq:bc-def-h1-norm}}.}}
+\end{lemma}
+
+\begin{proof}
+  Observe the difference between the class of the $\gamma$ admissible in this
+  lemma and the narrower class of the $\gamma$ of Definition
+  \ref{def:bc-vanishing}. Membership of $\gamma$ in $N$ in the $x$-$t$-region
+  $\hat{G}$ in the present case requires that $\gamma$ vanishes sufficiently
+  close to $t = 0$ and $t = T$. But since only $x$-derivatives occur in
+  {\eqref{eq:bc-def-h1-norm}}, this difference is inconsequential. If we
+  replace the present $\gamma$ by functions $\varphi (t) \gamma (x, t)$, where
+  $\varphi$ is continuous in {\color{red} $[0, T$]} and
+  \[ \varphi = \left\{\begin{array}{ll}
+       0 & \text{for} 0 < t < \varepsilon, \; T - \varepsilon < t < T,\\
+       1 & \text{for} 2 \varepsilon < t < T - 2 \varepsilon,
+     \end{array}\right. \]
+  and otherwise $0 < \varphi < 1$ ($\varepsilon \rightarrow 0$), then
+  Definition \ref{def:bc-vanishing} applies to the new $\tilde{\gamma} =
+  \varphi \gamma$. Thus $g$ belongs to $H' (N)$.
+\end{proof}
+
+\begin{lemma}
+  The relations
+  \[ \iintg g_{' i} \dxdt = - \iintg gf_{' i} \dxdt \hspace{1em} (i = 1, 2,
+     \ldots, n) \]
+  are satisfied by any f of class $H'$ in $\hat{G}$ and any $g$ of class $H'
+  (N)$ in $\hat{G}$.
+\end{lemma}
+
+\begin{proof}
+  By Definition \ref{def:hprime}, the relations hold for any specified $f$ and
+  for any $\gamma$ that is continuously $x$-differentiable and of class $N$ in
+  $\hat{G}$. By Definition \ref{def:bc-vanishing}, $g$ is a weak limit of a
+  sequence of such $\gamma$ with uniforml bounded integrals
+  {\eqref{eq:bc-def-h1-norm}} By Lemma \ref{lem:weak-deriv-weak-conv}, besides
+  $\gamma \rightarrow g$, we also have $\gamma_{' i} \rightarrow g_{' i}$
+  weakly in $\hat{G}$. The relations that hold for $f$, $\gamma$ thus also
+  hold for $f$, $g$.
+\end{proof}
+
+To facilitate a more convenient phrasing of the initial condition, we also
+introduc the class $H (N)$. In doing so, we restrict ourselves to $x$-space
+and field $u (x)$ that are defined in an $x$-region $G$. If we only consider
+functions $f (x)$ that belong to both the classes $H$ and $N$, then it is
+clear that the strong closure of these sets of functions is identical to $H$.
+The same is true of vector fields in $G$. However, a difference arises if we
+restrict ourselves to divergence-free fields in $G$.
+
+\begin{definition}
+  \label{def:h-n}A divergence-free field in $G$ of class $H$ is said to be of
+  class $H (N)$ if it is a weak limit field of fields that belong to $N$ in
+  $G$, that are twice continuously differentiable and that are
+  divergence-free.{\footnote{By Saks' Theorem, it is then also the strong
+  limit field of just these fields.}}
+\end{definition}
+
+One easily proves the following: If the field $u (x)$ is divergence-free and
+of class $H (N)$ and if the function $\varphi (x)$ is of class $H'$, then
+\[ \int_G u_i \varphi_{' i} \mathd x = 0. \]
+Membership of a divergence-free field in $H (N)$ obviously replaces the
+boundary condition of vanishing on the normal component.
+
+We may now state the existence theorem for the hydrodynamic initial value
+problem.
+
+\begin{theorem}
+  \label{the:existence}{\tmem{(Existence theorem)}}Let $G$ be an arbitrary
+  region of $x$-space. Let the field $U (x)$ be divergence-free in $G$ and of
+  class $H (N)$, but otherwise arbitrary. Then there is a field $u (x, t)$
+  defined for all $t > 0$ in $G$ with the following properties:
+  \begin{enumeratealphacap}
+    \item In any $x$-$t$-cylinder region $x \subset G$, $0 < t < T$, $u$ is a
+    solution of class $H'$ of the basic equations of hydrodynamics (cf.
+    Definition \ref{def:ns-weak-solution}).
+    
+    \item ``Vanishing of the boundary values'' for $t > 0$: In any of the
+    above-mentioned cylinder regions, $u$ belongs to $H' (N)$.
+    
+    \item Initial condition: For $t \rightarrow 0$, $u (x, t) \rightarrow U
+    (x)$ converges strongly in $G$.
+  \end{enumeratealphacap}
+\end{theorem}
+
+\section{Simplification of the Problem. The Approximation Procedure.}
+
+\label{sec:simplification-approximation}For the construction of the solution
+of the initial value problem for an $x$-region $G$ constant in time, we start
+with the equation
+\begin{equation}
+  \label{eq:ns-tau-to-tauprime} \int_G a_i u_i \mathd x|_{t = \tau'} - \int_G
+  a_i u_i |_{t = \tau} = \int_{\tau}^{\tau'} \int_G \frac{\partial
+  a_i}{\partial t} u_i \dxdt + \int_{\tau}^{\tau'} \int_G \frac{\partial
+  a_i}{\partial x_{\alpha}} u_{\alpha} u_i \dxdt + \mu \int_{\tau}^{\tau'}
+  \int_G \frac{\partial^2 a_i}{\partial x_{\beta} \partial x_{\beta}} u \dxdt
+  .
+\end{equation}
+\begin{lemma}
+  Let the field $u (x, t)$ be defined in $G$ for all $t > 0$ and let it belong
+  to class $H$ in any cylinder section $x \subset G$, $0 < t < T$ of
+  $x$-$t$-space. Let it satisfy Equation {\eqref{eq:ns-tau-to-tauprime}} for
+  all $\tau' > \tau > 0$ and for any field $a$ such that: $a = a (x)$ is twice
+  continuously differentiable and
+  \begin{equation}
+    \label{eq:cylinder-admissible-testfield} a = a (x), \hspace{1em}
+    \tmop{div} a = 0 \text{in} G, \hspace{1em} a \in N \text{in} G,
+  \end{equation}
+  i.e. $a (x)$ vansishes outside a suitable compact subset of $G$.
+  
+  Then $u$ satisfies the basic equation {\eqref{eq:ns-weak}} for the half
+  cylinder $\hat{G}$: $x \subset G$, $t > 0$ and for any field admissible
+  there (cf. condition c) in the definition \ref{def:ns-weak-solution} of a
+  weak solution).
+\end{lemma}
+
+\begin{proof}
+  If we write {\eqref{eq:ns-tau-to-tauprime}} in the abbreviated form
+  \[ f (\tau') - f (\tau) = \int_{\tau}^{\tau'} g (t), \]
+  we see that the equation
+  \[ \int_0^{\infty} \varphi' (t) f (t) \mathd t + \int_0^{\infty} \varphi (t)
+     g (t) \mathd t = 0 \]
+  must be satisfied for any $\varphi$ that is continuously differentiable in
+  $(0, \infty$) and which vanishes for all sufficiently small and large $t$.
+  If we once more write the equation out in full, we recognize that Equation
+  {\eqref{eq:ns-weak}} is satisfied in said half cylinder by any filed $a =
+  \varphi (t) a (x)$, where $a (x)$ is an arbitrary one of the fields
+  permitted above {\eqref{eq:cylinder-admissible-testfield}} and $\varphi (t)$
+  is an arbitrary one of the functions permitted above. But now any $a (x, t)$
+  permitted by condition c) in the definition \ref{def:ns-weak-solution} of a
+  solution may be approximated in the half cylinder $\hat{G}$ by sums of
+  fields of such special shape that in the basic equation {\eqref{eq:ns-weak}}
+  integration and limit may be interchanged. E.g. one could always arrange
+  that the convergnece of the fields and their derivatives up to a prescribed
+  order in $\hat{G}$ is uniform and that the approximating fields all vanish
+  outside a fixed compact subset of $\hat{G}$.
+  
+  It is thereby clear that a field $u (x, t)$ which satisfies
+  {\eqref{eq:ns-tau-to-tauprime}} to the extent specified in the lemma, and
+  which is further divergence-free and which belongs to class $H'$ in any
+  cylinder section satisfies the full scope of the definition
+  \ref{def:ns-weak-solution} of a solution on any cylinder section.
+\end{proof}
+
+The following fact yields an even better basic equation:
+
+\begin{lemma}
+  \label{lem:testfield-approx}There is a sequence of twice continuously
+  differentiable and linearly independent fields in $G$ in the field space
+  {\eqref{eq:cylinder-admissible-testfield}}
+  \begin{equation}
+    \label{eq:testfield-approx} a = a^{\nu} (x), \hspace{1em} \tmop{div}
+    a^{\nu} = 0 \text{ in } G, \hspace{1em} a^{\nu} \in N \text{ in } G
+  \end{equation}
+  with the following property: An arbitrary twice continuously differentiable
+  field in $G$ of the form {\eqref{eq:cylinder-admissible-testfield}} is the
+  uniform limit field in $G$ of a sequence of finite linear combinations of
+  the field $a^{\nu} (x)$, with uniform convergence of even the derivatives up
+  to second order in $G$. For a given $a (x)$, only such linear combinations
+  occur in this approximation that have the value zero outside a certain
+  compact subset of $G$ which only depends on $a$.
+\end{lemma}
+
+Based upon this fact it is clear that a field $u (x, t)$ which is of class $H$
+in each cylinder section and which satisfies the basic equation
+{\eqref{eq:ns-tau-to-tauprime}} for all $\tau' > \tau > 0$ and for any field
+$a$ of the mentioned sequence automatically does the same for all fields
+{\eqref{eq:cylinder-admissible-testfield}} admitted above. In summary, we can
+say that the basic equations {\eqref{eq:ns-weak}} can be replaced in their
+entirety by the equations {\eqref{eq:ns-tau-to-tauprime}} with
+{\eqref{eq:testfield-approx}}.
+
+In the function sapce of divergence-free vector fields $a$,
+{\eqref{eq:ns-tau-to-tauprime}}, {\eqref{eq:testfield-approx}} is an affine
+coordinate representation of the basic equations of hydrodynamics. The affine
+system of coordinate vectors {\eqref{eq:testfield-approx}} can, by means of a
+unique linear transformation of a simple kind, be transformed into a new one
+which is orthonormal in the sense of the bilinear form
+\[ \int_G v_i w_i \mathd x. \]
+We may additionally assume that the sequence {\eqref{eq:testfield-approx}}
+satisfies this condition:
+\begin{equation}
+  \label{eq:testfield-orthogonality} \int_G a_i^{\lambda} a_i^{\nu} \mathd x =
+  \delta_{\lambda, \nu} .
+\end{equation}
+\begin{lemma}
+  \label{lem:testfields-completeness}The orthonormal system of the fields
+  $a^{\nu} (x)$ is complete in the field space of divergence-free fields $U
+  (x)$ of class $H (N)$ in $G$.
+\end{lemma}
+
+The proof results from Definition \ref{def:h-n} and Lemma
+\ref{lem:testfield-approx}.
+
+{\tmem{The Approximation Procedure}}. The $k$th approximation step consists
+simply of only considering the first $k$ out of the infinitely many basic
+equations {\eqref{eq:ns-tau-to-tauprime}}, {\eqref{eq:testfield-approx}},
+\begin{equation}
+  \label{eq:first-k-testfields} a = a^{\nu} (x) \hspace{1em} (\nu = 1, 2,
+  \ldots, k)
+\end{equation}
+and trying to solve those through the ansatz
+\begin{equation}
+  \label{eq:first-k-ansatz} u = u^k (x, t) = \sum_{\nu = 1}^k \lambda_{\nu}
+  (t) a^{\nu} (x)
+\end{equation}
+with as yet undetermined scalar factors $\lambda_{\nu} = \lambda_{\nu}^k$.
+This ansatz automatically satisfies the condition of freedom from divergence
+(because of {\eqref{eq:testfield-approx}}) and the boundary condition of
+vanishing:
+\begin{equation}
+  \label{eq:first-k-divfree} \tmop{div} u^k = 0 \text{ in } G, \hspace{1em}
+  u^k \in N \text{ in } G.
+\end{equation}
+Since only differentiable $\lambda (t)$ need to be considered and since the
+admissible fields $a$ do not depend on $t$, the first $k$ equations
+{\eqref{eq:ns-tau-to-tauprime}} may be written in the form
+\begin{equation}
+  \label{eq:ns-weak-first-k} \int_G a_i \frac{\partial u_i}{\partial t} \mathd
+  x = \int_G \frac{\partial a_i}{\partial x_{\alpha}} u_{\alpha} u_i \mathd x
+  + \mu \int_G \frac{\partial^2 a_i}{\partial x_{\beta} \partial x_{\beta}}
+  u_i \mathd x.
+\end{equation}
+Because of {\eqref{eq:testfield-orthogonality}}, the $k$ equations
+{\eqref{eq:ns-weak-first-k}}, {\eqref{eq:first-k-testfields}} together with
+{\eqref{eq:first-k-ansatz}} represent a system of ordinary differential
+equations
+\begin{equation}
+  \label{eq:first-k-ode} \frac{\mathd \lambda_{\nu}}{\mathd t} = F_{\nu}
+  (\lambda_1, \ldots, \lambda_k) \hspace{1em} (\nu = 1, 2, \ldots, k)
+\end{equation}
+for the $\lambda$, in which the right hand sides $F_{\nu} = F_{\nu}^k$ are
+polynomials in $\lambda$ with constant coefficients. The equations
+{\eqref{eq:ns-weak-first-k}}, {\eqref{eq:first-k-testfields}},
+{\eqref{eq:first-k-ansatz}} or the equivalent equations
+{\eqref{eq:first-k-ode}} share with the strict hydrodynamic equations the
+important property that for their solutions, the energy equation
+\begin{equation}
+  \label{eq:energy-equation} \frac{\mathd}{\mathd t}  \frac{1}{2} \int_G u_i
+  u_i \mathd x = - \mu \int_G \frac{\partial u_i}{\partial x_{\beta}} 
+  \frac{\partial u_i}{\partial x_{\beta}} \mathd x
+\end{equation}
+holds. Namely, since the equations {\eqref{eq:ns-weak-first-k}} hold for all
+fields {\eqref{eq:first-k-testfields}}, they also hold for their linear
+combinations {\eqref{eq:first-k-ansatz}} $u = u^k$. The energy equation
+follows in the usual way (and without difficulties at the boundary) since
+because of {\eqref{eq:first-k-divfree}}
+\[ \int_G \frac{\partial u_i}{\partial x_{\alpha}} u_{\alpha} u_i \mathd x =
+   \int_G \frac{\partial K}{\partial x_{\alpha}} u_{\alpha} \mathd x = 0
+   \hspace{1em} \left( K = \frac{1}{2} u_i u_i \right) \]
+and
+\[ \int_G \frac{\partial^2 u_i}{\partial x_{\beta} \partial x_{\beta}} u_i
+   \mathd x = - \int_G \frac{\partial u_i}{\partial x_{\beta}}  \frac{\partial
+   u_i}{\partial x_{\beta}} \mathd x \hspace{1em} (u = u^k) . \]
+It follows from {\eqref{eq:energy-equation}} that
+\[ \int_G u_i u_i \mathd x = \lambda_1^2 + \cdots + \lambda_k^2 \hspace{1em}
+   (u = u^k) \]
+never increases. From this we conclude that any solution of the differential
+system {\eqref{eq:first-k-ode}} begun at $t = 0$ exists for all $t = 0$
+({\color{red} ???weird}).
+
+The approximation procedure may very easily be interpreted formally in the
+following manner. We think of both sides of the Navie-Stokes differential
+equations and the solution $u$ formally as if they were expanded in the
+orthonormal system of the fields $a^{\nu}$: $u = \lambda_{\nu} a^{\nu}$. We
+then obtain purely formally a system of infinitely many differential equations
+of first order for the infinitely many scalar Fourier coefficients $\lambda$.
+Our $k$th step then simply consists of only considering the first $k$ of these
+equations and setting all unknowns with indices $\nu > k$ to zero. The way in
+which we subsequently prove our existence theorem simultaneously yields a
+statement regarding the convergence properties of this simplest and most
+natural approximation method.
+
+We choose the initial values of the $\lambda_{\nu} (t)$ at $t = 0$ to be the
+Fourier coefficients of the expansion of the given field $U (x)$ in the
+$a^{\nu}$. While the solutions $\lambda (t)$ in the $k$th step generally
+depend on $k$, these initial values are independent of them. By the assumption
+that $U \in H (N)$ in $G$ and by the completeness lemma
+\ref{lem:testfields-completeness}, we have
+\begin{equation}
+  \label{eq:initial-values-of-sequence} u_k (x, 0) \rightarrow U (x)
+  \hspace{1em} \text{strongly in $G$} \hspace{1em} (k \rightarrow \infty) .
+\end{equation}
+
+\section{Proof of the Existence Theorem.}
+
+We summarize the properties of the fields of the sequence which we will need
+in the following:
+\begin{enumeratealpha}
+  \item Each $u^k (x, t)$ is twice continuously $x$-$t$-differentiable and
+  divergence-free for $x \subset G$, $t > 0$.
+  
+  \item $u^k (x, t)$ vanishes if $x$ lies outside a compact subset of the
+  $x$-region $G$ that only depends on $k$.
+  
+  \item $u^k (x, t)$ satisfies the equation {\eqref{eq:ns-weak-first-k}} ($t
+  \geqslant 0$) and the equation {\eqref{eq:ns-tau-to-tauprime}} ($\tau' >
+  \tau \geqslant 0$) in the $k$ cases {\eqref{eq:testfield-approx}} ($\nu = 1,
+  2, \ldots, k)$.
+  
+  \item The integrals
+  \[ \int_G u_i u_i \mathd x, \hspace{1em} \int_0^{} \int_G \frac{\partial
+     u_i}{\partial x_{\beta}}  \frac{\partial u_i}{\partial x_{\beta}} \mathd
+     x \mathd t \hspace{1em} (u = u^k (x, t)) \]
+  remain beneath a bound which is independent of $k, t, T$.
+  
+  \item The initial values $u^k (x, 0)$ satisfy the limit relationship
+  {\eqref{eq:initial-values-of-sequence}}.
+\end{enumeratealpha}
+d) follows immediately from the temporally integrated energy equation
+{\eqref{eq:energy-equation}} in connection with
+{\eqref{eq:initial-values-of-sequence}}.
+
+{\tmem{First step}}. Each field $a^{\nu} (x)$ is continuous in $G$ and
+different from zero only in a compact subset of $G$. If we apply the first
+half of d) to the right hand side of {\eqref{eq:ns-weak-first-k}} ($a =
+a^{\nu}$) by estimating the term linear in $u = u^k$ by means of the Schwarz
+Inequality and the term quadratic in $u$ by means of an absolute bound for the
+derivatives of $a$, we obtain the following: The right hand side of
+{\eqref{eq:ns-weak-first-k}} ($a = a^{\nu}$, $u = u^k$, $k \geqslant \nu$) is
+uniformly bounded for fixed $\nu$ for all $k$ and $t$. The same is true of the
+left hand side
+\[ \frac{\mathd}{\mathd t} \int_G a_i u_i \mathd x. \]
+For fixed $\nu$, the time functions
+\[ \int_G a_i^{\nu} (x) u_i^k (x, t) \mathd x \]
+satisfy a Lipschitz condition for all $t \geqslant 0$ that is independent of
+$k$. Furthermore, they remain uniformly bounded for all $t$ and $k$. So by a
+well-known {\color{green} choice theorem} (Auswahlsatz) there exists for an
+arbitary, fixed $\nu$ a sequence of integers $k'$ such that
+\begin{equation}
+  \label{eq:subseq-limit-existence} \lim_{k' \rightarrow \infty} \int_G
+  a_i^{\nu} (x) u_i^k (x, t) \mathd x
+\end{equation}
+exists for any $t \geqslant 0$, in fact uniformly so in any finite
+$t$-interval. The sequence of $k'$ depends of the index $\nu$, but we may pick
+the sequence belonging to the index $\nu + 1$ as a subsequence of the previous
+one. By means of a diagonal argument we may thus form a fixed sequence of
+integers (which we will once again label as $k'$) for which the limit
+statement above holds properly for any fixed $\nu = 1, 2, \ldots$. In the
+sequel, we will operate on this sequence of $k'$.
+
+{\tmem{Second step.}} We will now prove that the sequence of fields $u^{k'}
+(x, t)$ converges weakly in the $x$-region $G$ for each fixed $t \geqslant 0$.
+For the purposes of our proof, we now fix an arbitrary, fixed value $t_0$ of
+$t$ and observe that by the first half of 5d) the sequence of these fields ($t
+= t_0$) is weakly compact in $G$. The claim will be proven when we show that
+that sequence may possess only a single weak limit field in $G$. Let $u^{\ast}
+(x, t_0)$ be such a limit field and let $k''$ be a subsequence of the $k'$
+(this subsequence will depend on $t_0$) such that
+\[ \lim_{k'' \rightarrow \infty} \int_G w_i (x) u_i^{k''} (x, t_0) \mathd x =
+   \int_G w_i (x) u_i^{\ast} (x, t_0) \mathd x \]
+for each field $w (x)$ of class $H$ in $G$. In the case $w = a^{\nu}$, the
+value of the right hand side is already fixed by the limit
+{\eqref{eq:subseq-limit-existence}}. If $u^{\ast}$ and $u^{\ast \ast}$ are two
+weak limit fields and if $v$ is their difference field, then
+\[ \int_G a_i^{\nu} v_i \mathd x = 0 \]
+for each $\nu$. By Definition \ref{def:h-n} the fields $u^{\ast}$, $u^{\ast
+\ast}$ and thus also $v$ belong to class $H (N)$ in $G$. However, by Lemma
+\ref{lem:testfields-completeness} the fields $a^{\nu}$ span the same field
+space in $G$. From this we conclude
+\[ \int_G v_i v_i \mathd x = 0 \]
+and thus the claim.
+
+Consequently, there is a field $u^{\ast}$ which is well-defined in $G$ for all
+$t > 0$ such that
+\begin{equation}
+  \lim_{k' \rightarrow \infty} \int_G w_i (x) u_i^{k'} (x, t) \mathd x =
+  \int_G w_i (x) u^{\ast}_i (x, t) \mathd x
+\end{equation}
+for each field $w (x)$ ($w \in H$ in G) and for each $t > 0$. The field
+$u^{\ast}$ satisfies condition B) of the existence theorem \ref{the:existence}
+at the end of Section \ref{sec:bc-vanish-ivp}. This follows from b) and the
+second half of 5d) by applying Lemma \ref{lem:cylinder-limit-hprime}. One
+easily proves that $u^{k'} \rightarrow u^{\ast}$ also holds weakly in $x$ and
+$t$ ($0 < t < T$).
+
+{\tmem{Third step}}. The proof that the field $u^{\ast} (x, t)$ satisfies
+condition A) of the existence theorem. In each cylinder region $x \subset$G,
+$0 < t < T$, $u^{\ast}$ belongs to class $H'$, which is, as we remarked, a
+superclass of $H' (N)$ (and because of B) it also belongs to the latter
+class). By the arguments in the first half of Section
+\ref{sec:simplification-approximation} we only need to show that $u^{\ast}$
+satisfies the equations {\eqref{eq:ns-tau-to-tauprime}} for every $a =
+a^{\nu}$ and for all $\tau' > \tau > 0$. By c), $u = u^{\ast}$ satifies these
+equations for the same $\tau, \tau'$ and for the first $k'$ fields $a^{\nu}$.
+We now fix $\tau$, $\tau'$ and the index $\nu$ and pass to the limit $k'
+\rightarrow \infty$. It is clear that on the left hand side of
+{\eqref{eq:ns-tau-to-tauprime}} $u$ may be replaced by $u^{\ast}$. The same
+ist true of the third integral on the right hand side (the first one is zero).
+Consider that in
+\[ \int_{\tau}^{\tau'} \left[ \int_G w_i (x) u_i^{k'} (x, t) \mathd x \right]
+   \mathd t \]
+the inner integral is a uniformly bounded function with respect to \ $k'$
+because of the first half of d) and that we may apply a well-known Lebesguian
+convergence theorem to the outer $t$-integral. It requires some deeper
+thoughts that make use of the second half of d) to see that we may also
+interchange the limit $k' \rightarrow \infty$ and the integration in the
+second integral on the right hand side of {\eqref{eq:ns-tau-to-tauprime}}. For
+this, we need the following theorem which we will prove later.
+
+\begin{lemma}
+  \label{lem:integral-2-convergence}Let a sequence of functions $f^k (x, t)$
+  which are continuously $x$-differentiable for $x \subset G$, $0 < t < T$
+  have the following properties: For each fixed $t$, $f^k$ belongs to class
+  $N$. For each fixed $t$, the $f^k (x, t)$ converge weakly in $G$ to a
+  function $f^{\ast} (x, t)$. The integrals
+  \[ \int_G f^2 (x, t) \mathd x, \hspace{1em} \int_0^T \int_G f_{' i} f_{' i}
+     \dxdt \hspace{1em} (f = f^k) \]
+  remain uniformly bounded with respect to $t$ and $k$. Then the $f^k$
+  converge strongly to $f^{\ast}$ on the $x$-$t$-region $x \subset Q G$, $0 <
+  t < T$, where $Q$ is an arbitrary finite cuboid in $x$-space. In particular,
+  the assertion holds for $G$ itself if $G$ is bounded.
+\end{lemma}
+
+Because of a), b), because of the result of the second step and because of d),
+the assumptions of the lemma are satisfied for the components of the sequence
+of fields $u^{k'} (x, t)$ for an arbitrary fixed $T$. Thus, it follows that
+\[ \int_0^T \int_{Q G} (u_i - u_i^{\ast}) (u_i - u_i^{\ast}) \dxdt
+   \hspace{1em} (u = u^{k'}) \]
+goes to zero for $k' \rightarrow \infty$ if $Q$ is an arbitry finite cuboid of
+$x$-space. We can thus justify the passing to the limit in the second integral
+on the right hand side of {\eqref{eq:ns-tau-to-tauprime}} ($a = a^{\nu}$,
+$\nu$ fixed). Recall that the factor $a$ of the integrand vanishes outside a
+fixed compact subset $C$ of $G$. If we choose $Q \supset C$ and $T > \tau'$,
+then for the integral
+\[ \int_{\tau}^{\tau'} \int_{Q G} (a_{i, \alpha}) (u_{\alpha}) \dxdt
+   \hspace{1em} (a = a^{\nu}, u = u^{k'}) \]
+we have the following stuation. The first factor converges weakly in the area
+of integration to $a_{i, \alpha} u_{\alpha}^{\ast}$, while the second one
+converges strongly to $u_i^{\ast}$. As is well-known, this suffices to carry
+out the passing to the limit under the integral sign. We have thus shown that
+the field $u^{\ast}$ satisfies the equations {\eqref{eq:ns-tau-to-tauprime}}
+for any field $a^{\nu} (x)$ and for all positive $\tau$, $\tau'$. The
+condition A) of the existence theorem is thus verified except for the freedom
+from divergence. This latter property, however, is trivially true, even for
+any fixed $t > 0$.
+
+To complete the proof of the existence theorem, we only need to show that the
+initial condition C) is also satisfied. From the energy equation
+{\eqref{eq:energy-equation}} follows
+\begin{equation}
+  \label{eq:energy-ic} \frac{1}{2} \int_G u_i u_i \mathd x|_0 = \frac{1}{2}
+  \int_G u_i u_i \mathd x|_T + \int_0^T \int_G \frac{\partial u_i}{\partial
+  x_{\beta}}  \frac{\partial u_i}{\partial x_{\beta}} \dxdt
+\end{equation}
+for each field $u$ of our sequence. The left hand side tends to
+\[ \frac{1}{2} \int_G U_i U_i \mathd x \]
+for $k' \rightarrow \infty$ because of
+{\eqref{eq:initial-values-of-sequence}}. For $t = T$, the fields converge
+weakly to $u^{\ast}$ in $G$. In an $x$-$t$-cylinder section, we have
+\[ u_{i, \beta}^{k'} \rightarrow u_{i, \beta}^{\ast} \]
+weakly because of Lemma \ref{lem:weak-deriv-weak-conv} and d). By applying
+Lemma \ref{lem:l2-lsc}, {\eqref{eq:energy-ic}} implies the inequality
+\[ \frac{1}{2} \int_G U_i U_i \mathd x \geqslant \frac{1}{2} \int_G u_i^{\ast}
+   u_i^{\ast} \mathd x|_T + \mu \int_0^T \int_G u_{i, \beta}^{\ast} u_{i,
+   \beta}^{\ast} \dxdt \]
+for an arbitrary $T > 0$. In particular,
+\[ \overline{\lim_{t \rightarrow 0}} \int_G u_i^{\ast} u_i^{\ast} \mathd x
+   \leqslant \int_G U_i U_i \mathd x. \]
+If we once again apply Lemma \ref{lem:l2-lsc} to this last inequality, we
+recognize that the initial condition C) is satisfied, which is what we wanted
+to show.
+
+We will not go into detail on the question of strong convergence for a fixed
+$t$.
+
+\section{Proof of Lemma \ref{lem:integral-2-convergence}}
+
+The lemma is closely related to the {\color{red} Rellich Choice Theorem}
+(Auswahlsatz) and is proven similarly as well{\footnote{Cf.
+{\tmname{Courant-Hilbert}}, l.c. footnote \ref{fn:bc-finite-kinetic}, p. 218.
+In Rellich's Theorem, the boundedness of the $x$-integrals of the squares of
+the derivatives is assumed. Our boundedness assumption merely concerns the
+$x$-$t$-integral and is thus better adapted to the state of affairs in our
+problem.
+
+Leray proves and uses a lemma even closer to the {\color{red} Rellich Choice
+Theorem} (Auswahlsatz) l.c. Footnote \ref{fn:formulation-xt}, p. 214, Lemma 2,
+which, like this theorem, only works with the $x$-integral. Our convergence
+proof is more direct.}}.
+
+Let us note up front that the lemma, just like Rellich's Theorem, need not
+hold for $G$ itself if $G$ is infinite. A counterexample is given by the case
+where $G$ is the entire $x$-space and
+\[ f^k (x, t) = f (x_1 + k, x_2, \ldots, x_n) \]
+with $f$ belonging to $H'$ and $N$ in $G$. In this case, $f^{\ast} = 0$, but
+there is no strong covnergence to zero{\footnote{We may thus only conclude the
+strong convergence of the approximate fields $u (x, t)$ to $u^{\ast} (x, t)$
+in the cylinder sections if $G$ is bounded. However, strong convergence is
+clearly true for arbitrary $G$. Leray deduced it for his aprpoximations in the
+case where $G$ is the entire $x$-space using complicated estimates of the
+distribution of energy over $G$. We hope to come back to the stronger
+convergence properties of our approximations at some later date.}}.
+
+The proof of Lemma \ref{lem:integral-2-convergence} arises from Friedrichs'
+Inequality: Let $Q$ be a finite cuboid in $x$-space. For any given
+$\varepsilon > 0$, there exists a finite number of fixed functions
+$\omega_{\nu} (x)$ which belong to $H$ in $Q$ such that the inequality
+\[ \int_Q f^2 \mathd x \leqslant \sum_{\nu} \left[ \int_Q f \omega_{\nu}
+   \mathd x \right]^2 + \varepsilon \int_Q f_{' i} f_{' i} \mathd x \]
+is satisfied by any function $f (x)$ belonging to $H'$ in $Q${\footnote{The
+$\omega_{\nu}$ may be assumed to be orthogonal in $Q$. The inequality then
+represents an estimate of the difference in Bessel's inequality. You may find
+the proof of the inequality in {\tmname{Courant-Hilbert}}, l.c. footnonte
+\ref{fn:bc-finite-kinetic}, p. 218, Chap. VII, Ÿ3, Section 1. We may easily
+convince ourselves that the proof that is given there in 2 dimensions also
+works in $n$ dimensions. Friedrichs' Inequality does not hold for arbitrary
+bounded regions.}}. For the proof of Lemma \ref{lem:integral-2-convergence},
+we first note that for fixed $t$ the functions $f^k (x, t)$ of the lemma are
+continuously differentiable in $G$ and of class $N$. If we define the
+functions to be zero outside $G$, then this statement remains valid if we
+relate it to the entire $x$-space instead of to $G$. In particular, any of the
+functions on any finite cuboid $Q$ of $x$-space belongs to class $H'$. The
+extension of the functions and the last statement were made possible by the
+assumption of membership in lcass $N$. This is however the only place where
+this assumption is used. We now fix a cuboid $Q$ and a number $\varepsilon >
+0$ arbitrarily and pick the finitely many auxiliary functions $\omega_{\nu}
+(x)$ such that Friedrichs' Inequality holds in $Q$. We apply it to the
+functions
+\begin{equation}
+  \label{eq:friedrichs-victims} f (x, t) = f^k (x, t) - f^l (x, t),
+\end{equation}
+which surely belong to $H'$ in $Q$, for fixed $t$. By integration in $t$, we
+conclude that all the functions {\eqref{eq:friedrichs-victims}} satisfy the
+inequality
+\begin{equation}
+  \label{eq:friedrichs-difference} \int_0^T \int_Q f^2 \dxdt \leqslant
+  \sum_{\nu} \int_0^T \left[ \int_Q f \omega_{\nu} \mathd x \right]^2 \mathd t
+  + \varepsilon \int_0^T \int_Q f_{' i} f_{' i} \dxdt .
+\end{equation}
+By assumption (weak convergence for fixed $t$), we have
+\[ \lim_{k \rightarrow \infty, l \rightarrow \infty} \int_Q f \omega_{\nu}
+   \mathd x = 0 \]
+for each fixed $t$. Because of the boundedness assumption (first half),
+furthermore the function of $t$
+\[ \int_Q (f^k - f^l) \omega_{\nu} \mathd x \]
+remains uniformly bounded w.r.t. $k$, $l$. Thus the first term on the right
+hand side in {\eqref{eq:friedrichs-difference}} tends to zero for $k
+\rightarrow \infty$, $l \rightarrow \infty$. By assumption, the factor of
+$\varepsilon$ for the functions {\eqref{eq:friedrichs-victims}} remains below
+a fixed bound. But
+\[ \overline{\lim}_{k \rightarrow \infty, l \rightarrow \infty} \int_0^T
+   \int_Q (f^k - f^l)^2 \dxdt \leqslant c \varepsilon \]
+implies strong convergence of our our sequence in the $x$-$t$-region $x
+\subset Q$, $0 < t < T$, since $\varepsilon$ was arbitrary. We easily obtain
+that the limit function is the function $f^{\ast} (x, t)$ mentioned in the
+statement of the lemma. Thus, Lemma \ref{lem:integral-2-convergence} is
+proven.
+
+\end{document}
