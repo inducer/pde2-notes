@@ -55,7 +55,7 @@
 
   Let the points of <with|mode|math|n>-dimensional space be designated by
   <with|mode|math|x>, let <with|mode|math|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|n>>
-  be the coordiantes in a fixed cartesian coordinatesystem. Further, let
+  be the coordiantes in a fixed cartesian coordinate system. Further, let
   <with|mode|math|\<mathd\>x=\<mathd\>x<rsub|1>\<mathd\>x<rsub|2>\<cdots\>\<mathd\>x<rsub|n>>
   be the volume element in <with|mode|math|x>-space. Let
   <with|mode|math|u(x,t)> be a time-dependent vector field defined on an open
@@ -1588,7 +1588,7 @@
 <\initial>
   <\collection>
     <associate|page-type|letter>
-    <associate|preamble|true>
+    <associate|preamble|false>
   </collection>
 </initial>
 
@@ -1653,3 +1653,42 @@
     <associate|the:existence|<tuple|3.1|8>>
   </collection>
 </references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
+      of contents> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Introduction.>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>The
+      Function Class <with|mode|<quote|math>|H<rprime|'>>. Solutions of Class
+      <with|mode|<quote|math>|H<rprime|'>>.>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-3><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>The
+      Boundary Condition of Vanishing. The Initial Value Problem.>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-4><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Simplification
+      of the Problem. The Approximation Procedure.>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-5><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Proof
+      of the Existence Theorem.> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-6><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Proof
+      of Lemma <reference|lem:integral-2-convergence>>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-7><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>

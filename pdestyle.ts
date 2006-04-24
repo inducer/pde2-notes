@@ -17,6 +17,8 @@
     <assign|average|<macro|arg|<left|{><arg|arg><right|}>>>
 
     <assign|mean|<macro|index|<superpose|<big|int>| -><rsub|<arg|index>>>>
+
+    <assign|laplace|\<triangle\>>
   </with>
 
   <assign|eqref|<macro|refname|(<reference|<arg|refname>>)>>

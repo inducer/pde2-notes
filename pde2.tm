@@ -118,6 +118,18 @@
     <with|par-left|1.5fn|5.1<space|2spc>Quasiconvexity
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-57>>
+
+    <with|par-left|1.5fn|5.2<space|2spc>Null Lagrangians, Determinants
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-61>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|6<space|2spc>Navier-Stokes
+    Equations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-62><vspace|0.5fn>
+
+    <with|par-left|1.5fn|6.1<space|2spc>Energy Inequality
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-64>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -6013,6 +6025,143 @@
     is still true if <with|mode|math|n=p>, provided we know that
     <with|mode|math|det(D u<rsub|k>)\<geqslant\>0>. (Muller, Bull, AMS 1987)
   </remark>
+
+  <section|Navier-Stokes Equations>
+
+  We will briefly write (NSE) for:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u<rsub|t>+u\<cdot\>\<nabla\>u>|<cell|=>|<cell|<wide*|(<value|laplace>u-\<nabla\>p)|\<wide-underbrace\>><rsub|<with|mode|text|force>>+<wide*|f|\<wide-underbrace\>><rsub|<with|mode|text|external
+    force>>>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0>>|<row|<cell|u(x,0)>|<cell|=>|<cell|u<rsub|0>(x)<with|mode|text|
+    given with >\<nabla\>\<cdot\>u<rsub|0>=0>>>>
+  </eqnarray*>
+
+  for <with|mode|math|u:[0,\<infty\>)\<times\>\<bbb-R\><rsup|n>\<rightarrow\>\<bbb-R\><rsup|n>>.
+
+  <\equation*>
+    (u\<cdot\>\<nabla\>u)<rsub|i>=u<rsub|j><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|j>>;<space|1em>u<rsub|t>+u\<nabla\>u=<wide*|<frac|D
+    u|D t>|\<wide-underbrace\>><rsub|<with|mode|text|material derivative>>.
+  </equation*>
+
+  <em|Navier-Stokes v. Euler:> RHS has parameter <with|mode|math|\<nu\>>
+
+  <\equation*>
+    u<rsub|t>+u\<cdot\>\<nabla\>u=-\<nu\><value|laplace>u-\<nabla\>p.
+  </equation*>
+
+  If <with|mode|math|\<nu\>=0>, we have Euler's equations. (Newton's law for
+  fluids) If <with|mode|math|\<nu\>\<neq\>0>, we may as well assume
+  <with|mode|math|\<nu\>=1>.
+
+  <em|<with|mode|math|\<nabla\>\<cdot\>u=0> is simply conservation of mass:>
+  (If the fluid had density <with|mode|math|\<rho\>>, we would have the
+  balance law
+
+  <\equation*>
+    \<partial\><rsub|t>\<rho\>+div(\<rho\>u)=0.
+  </equation*>
+
+  If we further assume
+
+  <\equation*>
+    \<partial\><rsub|t>\<rho\>+u\<cdot\>\<nabla\>\<rho\>=0,
+  </equation*>
+
+  that is
+
+  <\equation*>
+    <frac|D\<rho\>|D t>=0,
+  </equation*>
+
+  then we have <with|mode|math|\<nabla\>\<cdot\>u=0>. Compare with Burgers
+  Equation:
+
+  <\equation*>
+    \<partial\><rsub|t>u+u*\<partial\><rsub|x>u=0,<space|1em>x\<in\>\<bbb-R\>,t\<gtr\>0.
+  </equation*>
+
+  It is clear that singularirties form for most smooth initial data.
+
+  The pressure has the role of maintaining incompressibility. Take the
+  divergence of (NSE1):
+
+  <\equation*>
+    \<nabla\>\<cdot\>(<neg|\<partial\><rsub|t>u>+u\<cdot\>\<nabla\>u)=\<nabla\>(-\<nabla\>p+<neg|<value|laplace>u>).
+  </equation*>
+
+  Then
+
+  <\equation*>
+    Tr(\<nabla\>u<rsup|T>\<nabla\>u)=-<value|laplace>p.
+  </equation*>
+
+  Thus <with|mode|math|-\<triangle\>p\<geqslant\>0>. Flows ares steady if
+  they don't depend on <with|mode|math|t>. In this case we have
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|u+\<nabla\>u+\<nabla\>p>|<cell|=>|<cell|<value|laplace>p,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  If <with|mode|math|\<nu\>=0>, we have ideal (i.e. no viscosity), steady
+  flows:
+
+  <\equation*>
+    u\<cdot\>\<nabla\>u+\<nabla\>p=0,<space|1em>\<nabla\>\<cdot\>u=0\<Rightarrow\>\<nabla\><left|(><frac|u<rsup|2>|2>+p<right|)>=0,<space|1em>\<nabla\>\<cdot\>u=0,
+  </equation*>
+
+  or <with|mode|math|\|u\|<rsup|2>/2+p=const>, which is called
+  <em|Bernoulli's Theorem>.
+
+  <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.400003gh>>|gr-geometry|<tuple|geometry|0.242889par|0.176018par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<cline|<point|1.9|0>|<point|0.8|0.3>|<point|0.1|0.4>|<point|-1|0.4>|<point|-1.2|0.3>|<point|-1.2|0.1>|<point|-0.9|-0.1>|<point|-0.4|0>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-1.3|0.7>|<point|-0.5|0.8>|<point|0.2|0.7>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|-0.4>|<point|-0.3|-0.3>>>|<text-at|<with|mode|math|u>
+  more, <with|mode|math|p> less|<point|-1.2|1.4>>|<text-at|<with|mode|math|u>
+  less, <with|mode|math|p> more|<point|-1.2|-1>>>>|>
+
+  <em|Vorticity:> <with|mode|math|\<omega\>=curl u>. This is a scalar when
+  <with|mode|math|n=2> vorticity equation:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<partial\><rsub|t>\<omega\>+\<nabla\>\<times\>(u\<cdot\>\<nabla\>u)>|<cell|=>|<cell|<value|laplace>\<omega\>,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0,>>|<row|<cell|\<nabla\>\<times\>u>|<cell|=>|<cell|\<omega\>.>>>>
+  </eqnarray*>
+
+  In 2-D, this is simply
+
+  <\equation*>
+    <choice|<tformat|<table|<row|<cell|\<partial\><rsub|t>\<omega\>+u\<cdot\>\<nabla\>u=<value|laplace>\<omega\>,>>|<row|<cell|<choice|<tformat|<table|<row|<cell|\<nabla\>u=0,>>|<row|<cell|\<nabla\>\<times\>u=\<omega\>,>>>>>>>>>>
+  </equation*>
+
+  where the first equation is an advection-diffusion equation for
+  <with|mode|math|\<omega\>>.
+
+  <subsection|Energy Inequality>
+
+  Assume <with|mode|math|f\<equiv\>0> for simplicity. Dot the first NSE above
+  with <with|mode|math|u>:
+
+  <\equation*>
+    <frac|\<partial\>|\<partial\>t><left|(><frac|\|u\|<rsup|2>|2><right|)>+u\<cdot\>\<nabla\><left|(><frac|\|u\|<rsup|2>|2>+p<right|)>=\<nabla\>\<cdot\>(u\<cdot\>\<nabla\>u)-\|\<nabla\>u\|<rsup|2>.
+  </equation*>
+
+  Integrate over <with|mode|math|\<bbb-R\><rsup|n>>:
+
+  <\equation*>
+    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<bbb-R\><rsup|n>><frac|\|u\|<rsup|2>|2>
+    \<mathd\>x=-<big|int><rsub|\<bbb-R\><rsup|n>>\|\<nabla\>u\|<rsup|2>
+    \<mathd\>x<space|1em>\<Rightarrow\><space|1em><norm|u(\<cdot\>,t)|L<rsup|2>|2>\<leqslant\><norm|u<rsub|0>|L<rsup|2>|2>.
+  </equation*>
+
+  <\equation*>
+    <big|int><rsub|0><rsup|t><big|int><rsub|\<bbb-R\><rsup|n>>\|\<nabla\>u\|<rsup|2>
+    \<mathd\>x\<leqslant\><norm|u<rsub|0>|L<rsup|2>|2>.
+  </equation*>
+
+  <\theorem>
+    <dueto|Leray, Hopf>For every <with|mode|math|u<rsub|0>\<in\>L<rsup|2>(\<bbb-R\><rsup|n>)>,
+    there exist distributional solutions <with|mode|math|u\<in\>L<rsup|\<infty\>>(\<bbb-R\><rsub|+>,L<rsup|2>(\<bbb-R\><rsup|n>))>,
+    such that the energy inequalities hold.
+  </theorem>
+
+  <em|Q: Regularity/Uniqueness of these solutions?> <with|mode|math|n=2>,
+  Ladyzhenskaya<with|mode|math|\<rightarrow\>>uniqueness.
 </body>
 
 <\initial>
@@ -6081,6 +6230,9 @@
     <associate|auto-6|<tuple|1.1|4>>
     <associate|auto-60|<tuple|5.6|62>>
     <associate|auto-61|<tuple|5.2|63>>
+    <associate|auto-62|<tuple|6|66>>
+    <associate|auto-63|<tuple|6.1|67>>
+    <associate|auto-64|<tuple|6.1|67>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
@@ -6123,7 +6275,7 @@
     <associate|lem:riesz-kernel-est|<tuple|3.14|34>>
     <associate|lem:touching|<tuple|2.27|29>>
     <associate|the:hopf-burgers|<tuple|1.6|7>>
-    <associate|thm:brouwer|<tuple|5.14|64>>
+    <associate|thm:brouwer|<tuple|5.14|65>>
     <associate|thm:c8-approx-compact|<tuple|3.5|31>>
     <associate|thm:hj-viscosity-hj-where-differentiable|<tuple|2.25|29>>
     <associate|thm:hopf-burgers|<tuple|1.6|10>>
@@ -6203,6 +6355,8 @@
       <tuple|normal||<pageref|auto-59>>
 
       <tuple|normal||<pageref|auto-60>>
+
+      <tuple|normal||<pageref|auto-63>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -6321,6 +6475,14 @@
       <with|par-left|<quote|1.5fn>|5.2<space|2spc>Null Lagrangians,
       Determinants <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-61>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|6<space|2spc>Navier-Stokes
+      Equations> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-62><vspace|0.5fn>
+
+      <with|par-left|<quote|1.5fn>|6.1<space|2spc>Energy Inequality
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-64>>
     </associate>
   </collection>
 </auxiliary>
