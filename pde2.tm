@@ -130,6 +130,18 @@
     <with|par-left|1.5fn|6.1<space|2spc>Energy Inequality
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-64>>
+
+    <with|par-left|1.5fn|6.2<space|2spc>Existence through Hopf
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-65>>
+
+    <with|par-left|3fn|6.2.1<space|2spc>Helmholtz projection
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-66>>
+
+    <with|par-left|3fn|6.2.2<space|2spc>Weak Formulation
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-68>>
   </table-of-contents>
 
   <\with|par-first|0>
@@ -6162,6 +6174,178 @@
 
   <em|Q: Regularity/Uniqueness of these solutions?> <with|mode|math|n=2>,
   Ladyzhenskaya<with|mode|math|\<rightarrow\>>uniqueness.
+
+  <subsection|Existence through Hopf>
+
+  <em|Reference:> Hopf's paper on website, Serrin's commentary.
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<partial\><rsub|t>u+u\<cdot\>\<nabla\>u>|<cell|=>|<cell|-\<nabla\>p+<value|laplace>u,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0.>>>>
+  </eqnarray*>
+
+  <with|mode|math|x\<in\>G> <with|mode|math|=> open subset of
+  <with|mode|math|\<bbb-R\><rsup|n>>, <with|mode|math|<wide|G|^>=G\<times\>(0,\<infty\>)>
+  space-time. Initial boundary value problem:
+
+  <\equation*>
+    u(x,0)=u<rsub|0>(x)<space|1em><with|mode|text|given
+    and><space|1em>\<nabla\>\<cdot\>u<rsub|0>=0.
+  </equation*>
+
+  No-slip boundary conditions:
+
+  <\equation*>
+    u(x,t)=0<space|1em><with|mode|text|for><space|1em>x\<in\>\<partial\>G.
+  </equation*>
+
+  (Compare this to Euler's equation, where we only assume that there is no
+  normal velocity.)
+
+  <subsubsection|Helmholtz projection>
+
+  Recall the example of a divergence-free vector field from the last final.
+
+  <big-figure|<with|gr-mode|<tuple|edit|line>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.5gh>>|gr-geometry|<tuple|geometry|0.303458par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<line|<point|-2|2>|<point|2|-2>>|<line|<point|-2|-2>|<point|2|2>>|<cline|<point|-2|2>|<point|-2|-2>|<point|2|-2>|<point|2|2>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.6|1.3>|<point|0.7|1.3>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|1.2|0.7>|<point|1.2|-0.4>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|-1.1>|<point|-0.5|-1.1>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-1.2|-0.6>|<point|-1.2|0.5>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-1|-1>|<point|-1.6|-0.4>>>>>|>
+
+  Observe that only the continuous boundary-normal field matters, not the
+  (discontinuous) boundary-tangential field. We want to push the requirement
+  <with|mode|math|\<nabla\>\<cdot\>u=0> into <with|mode|math|L<rsup|2>>.
+
+  <with|mode|math|\<nabla\>\<cdot\>u=0> in
+  <with|mode|math|\<cal-D\><rprime|'>> simply means
+
+  <\equation*>
+    <big|int><rsub|G>u\<cdot\>\<nabla\>\<varphi\>*\<mathd\>x=0
+  </equation*>
+
+  for every <with|mode|math|\<varphi\>\<in\>C<rsup|\<infty\>><rsub|c>(\<Omega\>)>.
+  Let <with|mode|math|P=closure {\<nabla\>\<varphi\>:\<varphi\>\<in\>C<rsup|\<infty\>><rsub|c><with|mode|text|
+  in >L<rsup|2>(G,\<bbb-R\><rsup|n>)}>. <with|mode|math|P> is the space of
+  gradients in <with|mode|math|L<rsup|2>(G)>. If <with|mode|math|h\<in\>P>,
+  then there exists <with|mode|math|\<varphi\><rsub|k>\<in\>C<rsup|\<infty\>><rsub|c>(G)>
+  such that <with|mode|math|\<nabla\>\<varphi\><rsub|k>\<rightarrow\>h> in
+  <with|mode|math|L<rsup|2>(G,\<bbb-R\><rsup|n>)>. Then
+
+  <\equation*>
+    L<rsup|2>(G)=<wide*|P|\<wide-underbrace\>><rsub|<with|mode|text|gradients>>\<oplus\><wide*|P<rsup|\<perp\>>|\<wide-underbrace\>><rsub|<with|mode|text|divergence-free>>.
+  </equation*>
+
+  <subsubsection|Weak Formulation>
+
+  In all that follows, <with|mode|math|a\<in\>C<rsup|\<infty\>><rsub|c>(<wide|G|^>,\<bbb-R\><rsup|n>)>
+  is a divergence-free vector field
+
+  <\equation*>
+    \<partial\><rsub|t>u+<wide*|u\<cdot\>\<nabla\>u|\<wide-underbrace\>><rsub|<with|mode|text|read
+    as <with|mode|math|\<nabla\>(u\<otimes\>u)>>>=-\<nabla\>p+<value|laplace>u.
+  </equation*>
+
+  In coordinates,
+
+  <\equation*>
+    \<partial\><rsub|t>u<rsub|i>+u<rsub|j><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|j>>=-<frac|\<partial\>p|\<partial\>x<rsub|i>>+<frac|\<partial\><rsup|2>u<rsub|i>|\<partial\>x<rsub|j>\<partial\>x<rsub|j>><space|1em>i=1,\<ldots\>,n.
+  </equation*>
+
+  Take inner product with <with|mode|math|a> and integrate by parts:
+
+  <\equation*>
+    (W<rsub|1>)<space|1em>-<big|int><rsub|<wide|G|^>><left|[>\<partial\><rsub|t>a\<cdot\>u+<wide*|\<nabla\>a\<cdot\>(u\<otimes\>u)|\<wide-underbrace\>><rsub|<with|mode|text|here
+    we use>:>+<value|laplace>(a\<cdot\>u)<right|]> \<mathd\>x \<mathd\>t=0
+  </equation*>
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|<big|int><rsub|<wide|G|^>>a<rsub|i>u<rsub|j><frac|\<partial\>u<rsub|i>|\<partial\>x<rsub|j>>
+    \<mathd\>x \<mathd\>t>|<cell|=>|<cell|-<big|int><rsub|<wide|G|^>><frac|\<partial\>|\<partial\>x<rsub|j>>(a<rsub|i>u<rsub|j>)u<rsub|i>
+    \<mathd\>x \<mathd\>t>>|<row|<cell|>|<cell|=>|<cell|-<big|int><rsub|<wide|G|^>><frac|\<partial\>a<rsub|i>|\<partial\>x<rsub|j>>u<rsub|j>u<rsub|i>
+    \<mathd\>x \<mathd\>t-<neg|<big|int><rsub|<wide|G|^>>a<rsub|i><frac|\<partial\>u<rsub|j>|\<partial\>x<rsub|j>>u<rsub|i>
+    \<mathd\>x \<mathd\>t>.>>>>
+  </eqnarray*>
+
+  For the weak form, consider that
+
+  <\equation*>
+    <big|int><rsub|<wide|G|^>>a\<cdot\>\<nabla\>p=-<big|int><rsub|<wide|G|^>>(div
+    a)p \<mathd\>x \<mathd\>t=0
+  </equation*>
+
+  means we lose the pressure term. Also, recall
+
+  <\equation*>
+    u\<otimes\>u\<assign\>u<rsub|i>u<rsub|j>=u*u<rsup|T>.
+  </equation*>
+
+  If <with|mode|math|A,B\<in\>\<bbb-M\><rsup|n\<times\>n>>, then
+  <with|mode|math|A\<cdot\>B=tr<left|[>A<rsup|T>B]>. Similarly, weak form of
+  <with|mode|math|\<nabla\>u=0> is
+
+  <\equation*>
+    <big|int><rsub|<wide|G|^>>u\<cdot\>\<nabla\>\<varphi\> \<mathd\>x
+    \<mathd\>t=0<space|1em><with|mode|text|for every
+    <with|mode|math|\<varphi\>\<in\>C<rsup|\<infty\>><rsub|c>(<wide|G|^>>)>.
+  </equation*>
+
+  <\definition>
+    <with|mode|math|V=closure {a\<in\>C<rsup|\<infty\>><rsub|c>(<wide|G|^>,\<bbb-R\><rsup|n>),\<nabla\>\<cdot\>a=0}>
+    w.r.t. the space time norm
+
+    <\eqnarray*>
+      <tformat|<table|<row|<cell|<norm|a|V|>>|<cell|=>|<cell|<big|int><rsub|0><rsup|\<infty\>><big|int><rsub|G>(\|a\|<rsup|2>+\|\<nabla\>a\|<rsup|2>)
+      \<mathd\>x \<mathd\>t>>|<row|<cell|>|<cell|=>|<cell|<big|int><rsub|<wide|G|^>><left|[>a<rsub|i>a<rsub|i>+<frac|\<partial\>a<rsub|i>|\<partial\>x<rsub|j>>*<frac|\<partial\>a<rsub|i>|\<partial\>x<rsub|j>><right|]>\<mathd\>x
+      \<mathd\>t>>>>
+    </eqnarray*>
+  </definition>
+
+  Space for initial conditions:
+
+  <\equation*>
+    L<rsub|0><rsup|2>(G,\<bbb-R\><rsup|n>)=<with|mode|text|closure>{b\<in\>C<rsup|\<infty\>><rsub|c>(G,\<bbb-R\><rsup|n>)}
+  </equation*>
+
+  in <with|mode|math|L<rsup|2>(G,\<bbb-R\><rsup|n>)>. Observe that by the
+  Helmholtz projection,
+
+  <\equation*>
+    L<rsub|0><rsup|2>(G,\<bbb-R\><rsup|n>)=<wide*|P<rsub|0>|\<wide-underbrace\>><rsub|<with|mode|text|gradients>>\<oplus\><wide*|P<rsub|0><rsup|\<perp\>>|\<wide-underbrace\>><rsub|<with|mode|text|divergence
+    free vector fields with zero BC>>.
+  </equation*>
+
+  <\theorem>
+    <dueto|Leray, Hopf>Let <with|mode|math|G\<subset\>\<bbb-R\><rsup|n>> be
+    open. Suppose <with|mode|math|u<rsub|0>\<in\>P<rsub|0><rsup|\<perp\>>(G)>.
+    Then there exists a vector field <with|mode|math|u\<in\>V> that satisfies
+    the weak form <with|mode|math|(W<rsub|1>)>, <with|mode|math|(W<rsub|2>)>
+    of the Navier-Stokes equations (<with|color|red|Dead reference>).
+    Moreover,
+
+    <\itemize>
+      <item><with|mode|math|<norm|u(t,\<cdot\>)-u<rsub|0>|L<rsup|2>(G)|>\<rightarrow\>0>
+      as <with|mode|math|t\<downarrow\>0>.
+
+      <item>Energy inequality
+
+      <\equation*>
+        <frac|1|2><big|int><rsub|G>\|u(x,t)\|<rsup|2>\<mathd\>x+<big|int><rsub|0><rsup|t><big|int><rsub|G>\|\<nabla\>u(x,s)\|<rsup|2>
+        \<mathd\>x \<mathd\>s\<leqslant\><frac|1|2><big|int>\|u<rsub|0>(x)\|<rsup|2>\<mathd\>x
+      </equation*>
+
+      for <with|mode|math|t\<gtr\>0>.
+    </itemize>
+  </theorem>
+
+  <\remark>
+    <\enumerate>
+      <item>No assumptions on smoothness of <with|mode|math|\<partial\>G>.
+
+      <item>No assumptions on space dimension.
+    </enumerate>
+
+    (Yet there is a large gap between <with|mode|math|n=2> and
+    <with|mode|math|n\<gtr\>2>.)
+  </remark>
+
+  <\equation*>
+    \;
+  </equation*>
 </body>
 
 <\initial>
@@ -6233,6 +6417,10 @@
     <associate|auto-62|<tuple|6|66>>
     <associate|auto-63|<tuple|6.1|67>>
     <associate|auto-64|<tuple|6.1|67>>
+    <associate|auto-65|<tuple|6.2|67>>
+    <associate|auto-66|<tuple|6.2.1|68>>
+    <associate|auto-67|<tuple|6.2|68>>
+    <associate|auto-68|<tuple|6.2.2|68>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
     <associate|auto-9|<tuple|1.2|6>>
@@ -6275,7 +6463,7 @@
     <associate|lem:riesz-kernel-est|<tuple|3.14|34>>
     <associate|lem:touching|<tuple|2.27|29>>
     <associate|the:hopf-burgers|<tuple|1.6|7>>
-    <associate|thm:brouwer|<tuple|5.14|65>>
+    <associate|thm:brouwer|<tuple|5.14|64>>
     <associate|thm:c8-approx-compact|<tuple|3.5|31>>
     <associate|thm:hj-viscosity-hj-where-differentiable|<tuple|2.25|29>>
     <associate|thm:hopf-burgers|<tuple|1.6|10>>
@@ -6357,6 +6545,8 @@
       <tuple|normal||<pageref|auto-60>>
 
       <tuple|normal||<pageref|auto-63>>
+
+      <tuple|normal||<pageref|auto-67>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Table
@@ -6483,6 +6673,18 @@
       <with|par-left|<quote|1.5fn>|6.1<space|2spc>Energy Inequality
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-64>>
+
+      <with|par-left|<quote|1.5fn>|6.2<space|2spc>Existence through Hopf
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-65>>
+
+      <with|par-left|<quote|3fn>|6.2.1<space|2spc>Helmholtz projection
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-66>>
+
+      <with|par-left|<quote|3fn>|6.2.2<space|2spc>Weak Formulation
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-68>>
     </associate>
   </collection>
 </auxiliary>
