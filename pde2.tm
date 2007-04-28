@@ -3,8 +3,7 @@
 <style|<tuple|article|pdestyle|number-long-article>>
 
 <\body>
-  <doc-data|<doc-title|PDE, Part II>|<doc-author-data|<author-name|Govind
-  Menon>>>
+  <doc-data|<doc-title|PDE 2>|<doc-author-data|<author-name|Govind Menon>>>
 
   <\table-of-contents|toc>
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|Table of
@@ -537,7 +536,7 @@
     <with|mode|math|t\<gtr\>0>
 
     <\equation*>
-      <frac|x-a<rsub|+>(x,t)|t>\<leqslant\>limsup<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(x,t)\<leqslant\>liminf<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(x,t)\<leqslant\><frac|x-a<rsub|->(x,t)|t>.
+      <frac|x-a<rsub|+>(x,t)|t>\<leqslant\>liminf<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(x,t)\<leqslant\>limsup<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(x,t)\<leqslant\><frac|x-a<rsub|->(x,t)|t>.
     </equation*>
 
     In particular, for every <with|mode|math|t\<gtr\>0> except for
@@ -861,10 +860,10 @@
     continuous). Then
 
     <\equation*>
-      u(\<cdot\>,t)=lim<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(\<cdot\>,t)\<in\>BC(\<bbb-R\>).
+      u(\<cdot\>,t)=lim<rsub|\<varepsilon\>\<rightarrow\>0>u<rsup|\<varepsilon\>>(\<cdot\>,t)
     </equation*>
 
-    and <with|mode|math|u> is a weak solution to
+    is bounded and is a weak solution to
 
     <\equation*>
       u<rsub|t>+<left|(><frac|u<rsup|2>|2><right|)><rsub|x>=0.
@@ -1074,10 +1073,11 @@
   Then we have
 
   <\equation*>
-    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\>(u)\<mathd\>x=-<big|int><rsub|\<bbb-R\><rsup|n>>D<rsub|x>\<cdot\>(q(u))\<mathd\>x=0
+    <frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\>(u)\<mathd\>x=-<big|int><rsub|\<bbb-R\><rsup|n>>div
+    q(u)\<mathd\>x=-<big|int><rsub|<with|mode|text|``>\<partial\>\<bbb-R\><rsup|n><with|mode|text|''>>q(u)\<cdot\>\<b-n\>=0,
   </equation*>
 
-  provided <with|mode|math|q(u)=0>.
+  provided <with|mode|math|q(0)=0>.
 
   <\example>
     Suppose <with|mode|math|u<rsub|t>+u*u<rsub|x>=0>. Here
@@ -1109,7 +1109,7 @@
   In this case, we have
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\>(u<rsup|\<varepsilon\>>)\<mathd\>x>|<cell|=>|<cell|<big|int><rsub|\<bbb-R\><rsup|n>>\<eta\><rprime|'>*(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|t>\<mathd\>x=<wide*|-<big|int><rsub|\<bbb-R\><rsup|n>>D<rsub|x>\<cdot\>(q(u<rsup|\<varepsilon\>>))\<mathd\>x|\<wide-underbrace\>><rsub|=0>+\<varepsilon\><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\><rprime|'>(u<rsup|\<varepsilon\>>)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|-\<varepsilon\><big|int><rsub|\<bbb-R\><rsup|n>><wide*|\<eta\><rprime|'>(u<rsup|\<varepsilon\>>)|\<wide-underbrace\>><rsub|\<geqslant\>0>\|D
+    <tformat|<table|<row|<cell|<frac|\<mathd\>|\<mathd\>t><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\>(u<rsup|\<varepsilon\>>)\<mathd\>x>|<cell|=>|<cell|<big|int><rsub|\<bbb-R\><rsup|n>>\<eta\><rprime|'>*(u<rsup|\<varepsilon\>>)u<rsup|\<varepsilon\>><rsub|t>\<mathd\>x=<wide*|-<big|int><rsub|\<bbb-R\><rsup|n>>D<rsub|x>\<cdot\>(q(u<rsup|\<varepsilon\>>))\<mathd\>x|\<wide-underbrace\>><rsub|=0>+\<varepsilon\><big|int><rsub|\<bbb-R\><rsup|n>>\<eta\><rprime|'>(u<rsup|\<varepsilon\>>)D<rsub|x>\<cdot\>D<rsub|x>u<rsub|\<varepsilon\>>\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|-\<varepsilon\><big|int><rsub|\<bbb-R\><rsup|n>><wide*|\<eta\><rprime|''>(u<rsup|\<varepsilon\>>)|\<wide-underbrace\>><rsub|\<geqslant\>0>\|D
     u<rsup|\<varepsilon\>>\|<rsup|2>\<mathd\>x\<less\>0>>>>
   </eqnarray*>
 
@@ -1139,8 +1139,8 @@
         <label|eq:kruzkov-convex-cond><big|int><rsub|0><rsup|\<infty\>><big|int><rsub|\<bbb-R\>><left|[>\|u-k\|\<varphi\><rsub|t>+sgn(u-k)(f(u)-f(k))\<cdot\>D<rsub|x>\<varphi\><right|]>\<mathd\>x*\<mathd\>t\<geqslant\>0.
       </equation>
 
-      <item>There exists a set of measure zero such that for
-      <with|mode|math|t\<nin\>F>, <with|mode|math|u(\<cdot\>,t)\<in\>L<rsup|\<infty\>>(\<bbb-R\><rsup|n>)>
+      <item>There exists a set <with|mode|math|F> of measure zero such that
+      for <with|mode|math|t\<nin\>F>, <with|mode|math|u(\<cdot\>,t)\<in\>L<rsup|\<infty\>>(\<bbb-R\><rsup|n>)>
       and for any ball <with|mode|math|B(x,r)>
 
       <\equation*>
@@ -1790,7 +1790,7 @@
     and the solution is unique because of convexity.
 
     <\equation*>
-      H(x,p,t)=v(x,p,t)-L(x,v(x,p,t),t),
+      H(x,p,t)=v(x,p,t)p-L(x,v(x,p,t),t),
     </equation*>
 
     where <with|mode|math|v> solves (<reference|eq:hamilton-what-is-p>).
@@ -2770,7 +2770,7 @@
     </equation*>
 
     <\equation*>
-      osc<rsub|B> u=sup<rsub|x,y\<in\>B>(u(x)-u(y)),
+      osc<rsub|B> u=sup<rsub|x,y\<in\>B>(u(x)-u(y))=sup<rsub|x,y\<in\>B>\|u(x)-u(y)\|.
     </equation*>
 
     and finally <with|mode|math|C<rsup|0,\<alpha\>>> is the space of
@@ -2988,12 +2988,11 @@
     For any <with|mode|math|B(x,r)\<subset\>\<Omega\>>, Poincaré's Inequality
     gives
 
-    <\eqnarray*>
-      <tformat|<table|<row|<cell|<superpose|<big|int>|
-      ->\|u-<wide|u|\<bar\>><rsub|B>\|\<mathd\>x>|<cell|\<leqslant\>>|<cell|C*r<big|int><rsub|B>\|D
-      u\|=<frac|C*r|<left|(><frac|\<omega\><rsub|n>|n><right|)>r<rsup|n>><big|int><rsub|B>\|D
-      u\|\<leqslant\>C*M*r<rsup|\<alpha\>>.>>>>
-    </eqnarray*>
+    <\equation*>
+      <superpose|<big|int>| ->\|u-<wide|u|\<bar\>><rsub|B>\|\<mathd\>x\<leqslant\>C*r<superpose|<big|int>|
+      -><rsub|B>\|D u\|=<frac|C*r|<left|(><frac|\<omega\><rsub|n>|n><right|)>r<rsup|n>><big|int><rsub|B>\|D
+      u\|\<leqslant\>C*M*r<rsup|\<alpha\>>.
+    </equation*>
 
     Then use Campanato's Inequality.
   </proof>
@@ -3329,7 +3328,7 @@
     <with|mode|math|u\<in\>C<rsup|0,1-n/p><rsub|loc>(\<bbb-R\><rsup|n>)>. And
 
     <\equation*>
-      osc<rsub|B(x,r)>u\<leqslant\>r<rsup|1-n/p><norm|D u|L<rsup|p>|>.
+      osc<rsub|B(x,r)>u\<leqslant\>C*r<rsup|1-n/p><norm|D u|L<rsup|p>|>.
     </equation*>
 
     In particular, if <with|mode|math|p=\<infty\>>, <with|mode|math|u> is
@@ -3337,8 +3336,7 @@
   </theorem>
 
   <\proof>
-    Follows from Poincaré Inequality and Morrey's Inequality for
-    <with|mode|math|W<rsup|1,1><rsub|loc>>.
+    Poincaré's Inequality in <with|mode|math|W<rsup|1,1><rsub|loc>> reads
 
     <\equation*>
       <superpose|<big|int>| -><rsub|B(x,r)>\|u-<wide|u|\<bar\>><rsub|B>\|\<mathd\>x\<leqslant\>C*r<superpose|<big|int>|
@@ -3600,8 +3598,6 @@
   <big-figure|<with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.400001gw|0.3gh>>|gr-geometry|<tuple|geometry|0.576018par|0.266871par|center>|gr-line-arrows|<tuple|<with|dash-style|none|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<graphics|<text-at|<with|mode|math|BV\<subset\>W<rsup|1,1>>|<point|-3|2.3>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|-1.1|2.3>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|-0.8|2>|<point|-0.8|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.6|2>|<point|0.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|2.6|2>|<point|2.6|1.2>>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|4.8|2>|<point|4.8|1.2>>>|<text-at|<with|mode|math|L<rsup|p<rsup|\<ast\>>>>|<point|-1.1|0.7>>|<text-at|BMO|<point|0.5|0.8>>|<text-at|<with|mode|math|C<rsup|0,1-n/p>>|<point|2.4|0.8>>|<text-at|<with|mode|math|Lip(\<Omega\>)>|<point|4.7|0.8>>|<with|line-arrows|<tuple|<with|dash-style|<quote|none>|<line|<tuple|-10ln|6ln>|<tuple|0ln|0ln>|<tuple|-10ln|-6ln>>>>|<line|<point|0.9|0.4>|<point|0.9|0.5>|<point|0.7|0.5>|<point|0.7|-0.5>>>|<text-at|<with|mode|math|C<rsup|0>(<wide|\<Omega\>|\<bar\>>>)|<point|0.4|-0.9>>|<text-at|Also
   <with|mode|math|\<hookrightarrow\>L<rsup|q>>|<point|-1.5|0.1>>|<text-at|<with|mode|math|W<rsup|1,p>>|<point|2.3|2.3>>|<text-at|<with|mode|math|W<rsup|1,\<infty\>>>|<point|4.4|2.3>>|<text-at|<with|mode|math|W<rsup|1,n>>|<point|0.3|2.3>>>>|>
 
-  (<with|color|red|Contradicts HW4???>)
-
   <section|Scalar Elliptic Equations>
 
   Reference: Gilbarg/Trudinger, Chapter 3 and 8
@@ -3741,7 +3737,7 @@
       <item><with|mode|math|B[u,v]=F[v]\<assign\><big|int><rsub|\<Omega\>>[g*v-f*\<cdot\>D
       v]\<mathd\>x> for <with|mode|math|v\<in\>C<rsub|0><rsup|1>(\<Omega\>)>
 
-      <item><with|mode|math|u-\<varphi\>\<in\>W<rsup|1,2>(\<Omega\>)>.
+      <item><with|mode|math|u-\<varphi\>\<in\>W<rsup|1,2><rsub|0>(\<Omega\>)>.
     </enumerate>
   </definition>
 
@@ -3863,7 +3859,7 @@
     <with|mode|math|(E<rsub|3>)> hold. Then
 
     <\equation*>
-      sup<rsub|\<Omega\>>u\<leqslant\>sup<rsub|\<partial\>W>u<rsup|+>.
+      sup<rsub|\<Omega\>>u\<leqslant\>sup<rsub|\<partial\>\<Omega\>>u<rsup|+>.
     </equation*>
   </theorem>
 
@@ -3901,8 +3897,6 @@
     <\equation*>
       <big|int>\|D u(x)\|<rsup|2>\<less\>\<infty\><space|1em>\<Leftrightarrow\><space|1em>a=0,n\<geqslant\>3.
     </equation*>
-
-    (<with|color|red|What's going on here?>)
   </remark>
 
   <\proof>
@@ -3938,8 +3932,9 @@
     <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>.
 
     (applying step 1) But <with|mode|math|D(u*v)=u*D v+v*D u> holds for
-    <with|color|red|??> and <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)>
-    holds for <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> and
+    <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)> and
+    <with|mode|math|u*v\<in\>W<rsup|1,1><rsub|0>(\<Omega\>)> holds for
+    <with|mode|math|u\<in\>W<rsup|1,2>(\<Omega\>)> and
     <with|mode|math|v\<in\>C<rsup|1><rsub|c>(\<Omega\>)>, which is OK. (See
     the chain rule for <with|mode|math|W<rsup|1,p>> in Evans.)
 
@@ -3976,7 +3971,7 @@
       <tformat|<table|<row|<cell|\<lambda\><big|int><rsub|\<Omega\>>\|D
       v\|<rsup|2>\<mathd\>x<above|\<leqslant\>|<with|mode|text|strict
       ellip.>><big|int><rsub|\<Omega\>>D v<rsup|T>A*D
-      v\<mathd\>x>|<cell|<above|\<leqslant\>|(E<rsub|2>)>>|<cell|2\<nu\>\<lambda\><big|int><rsub|\<Gamma\>>v\|D
+      v\<mathd\>x>|<cell|<above|\<leqslant\>|(E<rsub|2>)<with|mode|text|+above>>>|<cell|2\<nu\>\<lambda\><big|int><rsub|\<Gamma\>>v\|D
       v(x)\|\<mathd\>x.>>>>
     </eqnarray*>
 
@@ -4065,14 +4060,14 @@
     <with|mode|math|v\<in\>\<cal-H\>> the map
     <with|mode|math|u\<mapsto\>B[u,v]> defines a bounded linear functional on
     <with|mode|math|\<cal-H\>>. By the Riesz Representation Theorem, there is
-    <with|mode|math|T v\<in\>\<cal-H\>> such that
+    <with|mode|math|T v\<in\>\<cal-H\><rsup|\<ast\>>> such that
 
     <\equation*>
       B[u,v]=T v(u)
     </equation*>
 
     for every <with|mode|math|u\<in\>\<cal-H\>>. Thus we obtain a linear map
-    <with|mode|math|\<cal-H\>\<rightarrow\>\<cal-H\>>,
+    <with|mode|math|\<cal-H\>\<rightarrow\>\<cal-H\><rsup|\<ast\>>>,
     <with|mode|math|v\<mapsto\>T v>.
 
     2) <with|mode|math|\|T v(u)\|=\|B[u,v]\|\<leqslant\>K<norm|u||><norm|v||>>,
@@ -4158,7 +4153,7 @@
       using the elementary inequality
 
       <\equation*>
-        2a*b\<leqslant\>\<lambda\>a<rsup|2>+<frac|b<rsup|2>|l>
+        2a*b\<leqslant\>\<lambda\>a<rsup|2>+<frac|b<rsup|2>|\<lambda\>>
       </equation*>
 
       for <with|mode|math|\<lambda\>\<gtr\>0>. By assumption
@@ -4270,21 +4265,17 @@
       u\|<rsup|2>\<mathd\>x+<big|int><rsub|\<Omega\>>\|u\|<rsup|2>\<mathd\>x<right|]>=\<lambda\><norm|u|\<cal-H\>|2>.>>|<row|<cell|\<sigma\>>|<cell|\<geqslant\>>|<cell|\<lambda\>\<nu\><rsup|2>+\<lambda\>/2.>>>>
     </eqnarray*>
 
-    So <with|mode|math|B<rsub|\<sigma\>>> is coercive.
+    So <with|mode|math|B<rsub|\<sigma\>>> is
+    coercive<with|mode|math|\<Rightarrow\>>Lax-Milgram:
+    <with|mode|math|L<rsup|-1><rsub|\<sigma\>>:\<cal-H\><rsup|\<ast\>>\<rightarrow\>\<cal-H\>>
+    is bounded.
 
     <\eqnarray*>
       <tformat|<table|<row|<cell|>|<cell|>|<cell|L u=g+div
       f<space|1em><with|mode|text|in> \<cal-H\><rsup|\<ast\>>>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|L<rsub|\<sigma\>>u+\<sigma\>I(u)=g+div
-      f<space|1em><with|mode|text|in> \<cal-H\><rsup|\<ast\>>.>>>>
+      f<space|1em><with|mode|text|in> \<cal-H\><rsup|\<ast\>>.>>|<row|<cell|>|<cell|\<Leftrightarrow\>>|<cell|u+\<sigma\><wide*|<wide*|L<rsub|\<sigma\>><rsup|-1>|\<wide-underbrace\>><rsub|<with|mode|text|continuous>>*<wide*|I(u)|\<wide-underbrace\>><rsub|<with|mode|text|compact>>|\<wide-underbrace\>><rsub|<with|mode|text|compact>>=L<rsup|-1><rsub|\<sigma\>>(g+div
+      f)<space|1em><with|mode|text|in> \<cal-H\>.>>>>
     </eqnarray*>
-
-    Lax-Milgram: <with|mode|math|L<rsup|-1><rsub|\<sigma\>>:\<cal-H\><rsup|\<ast\>>\<rightarrow\>\<cal-H\>>
-    is bounded<with|mode|math|\<Leftrightarrow\>>
-
-    <\equation*>
-      u+\<sigma\><wide*|<wide*|L<rsub|\<sigma\>><rsup|-1>|\<wide-underbrace\>><rsub|<with|mode|text|continuous>>*<wide*|I(u)|\<wide-underbrace\>><rsub|<with|mode|text|compact>>|\<wide-underbrace\>><rsub|<with|mode|text|compact>>=L<rsup|-1><rsub|\<sigma\>>(g+div
-      f)<space|1em><with|mode|text|in> \<cal-H\>.
-    </equation*>
 
     Weak maximum principle<with|mode|math|\<Rightarrow\>>if
     <with|mode|math|g=0,f=0>, then <with|mode|math|u=0>. By the Fredholm
@@ -4441,7 +4432,7 @@
     where
 
     <\equation*>
-      Lip(a<rsub|i,j>)=sup<rsub|x,y\<in\>\<Omega\>><frac|\|a<rsub|i,j>(x)-a<rsub|i,j>(y)\||\|x-y\|>.
+      \<alpha\>\<assign\>Lip(a<rsub|i,j>)=sup<rsub|x,y\<in\>\<Omega\>><frac|\|a<rsub|i,j>(x)-a<rsub|i,j>(y)\||\|x-y\|>.
     </equation*>
 
     <\equation*>
@@ -4710,7 +4701,7 @@
     and <with|mode|math|p\<gtr\>1>
 
     <\equation*>
-      sup<rsub|B(y,R)>\<leqslant\>C<left|(>R<rsup|-n/p><norm|u<rsup|+>|L<rsup|p>(B(y,2R))|>+k(R)<right|)>,
+      sup<rsub|B(y,R)>u\<leqslant\>C<left|(>R<rsup|-n/p><norm|u<rsup|+>|L<rsup|p>(B(y,2R))|>+k(R)<right|)>,
     </equation*>
 
     where
@@ -4779,8 +4770,8 @@
     </equation*>
 
     <with|mode|math|\<Rightarrow\>><with|mode|math|{u=M}> is open. Even
-    though <with|mode|math|u> is not continuous is not continuous, it is
-    still true that <with|mode|math|{u=M}> is relatively closed in
+    though <with|mode|math|u> is not continuous, it is still true that
+    <with|mode|math|{u=M}> is relatively closed in
     <with|mode|math|\<Omega\>>. Then <with|mode|math|{u=M}=\<Omega\>> since
     <with|mode|math|\<Omega\>> is connected.
   </proof>
@@ -4916,7 +4907,7 @@
       <item>Is <with|mode|math|inf<rsub|\<cal-A\>>I[u]\<gtr\>-\<infty\>>?
 
       <item>Is <with|mode|math|inf<rsub|\<cal-A\>>I[u]=min<rsub|\<cal-A\>>I[u]>?
-      (This will be resolved by the <em|``Direct Method''> due to Hilbert.
+      (This will be resolved by the <em|``Direct Method''> due to Hilbert.)
     </enumerate>
 
     To show 1.): Suppose <with|mode|math|g\<in\>L<rsup|2>(\<Omega\>)>. Then
@@ -5037,9 +5028,10 @@
   </theorem>
 
   <\proof>
-    From homework, we know that <with|mode|math|f(A)=lim<rsub|N\<rightarrow\>\<infty\>>f<rsub|N>(A)>
-    were <with|mode|math|f<rsub|N>> is an increasing sequence of piece affine
-    approximations. Since <with|mode|math|f<rsub|N>> is piecewise affine if
+    From homework, we know that <with|mode|math|F(A)=lim<rsub|N\<rightarrow\>\<infty\>>F<rsub|N>(A)>
+    where <with|mode|math|F<rsub|N>> is an increasing sequence of piecewise
+    affine approximations. Since <with|mode|math|f<rsub|N>> is piecewise
+    affine, if
 
     <\eqnarray*>
       <tformat|<table|<row|<cell|u<rsub|k>>|<cell|\<rightharpoonup\>>|<cell|u<space|1em><with|mode|text|in
@@ -5048,20 +5040,21 @@
       u<space|1em><with|mode|text|in <with|mode|math|L<rsup|p>(\<Omega\>)>>,>>>>
     </eqnarray*>
 
-    so that
+    we have
 
     <\equation*>
-      <big|int><rsub|\<Omega\>>f<rsub|N>(D
-      u<rsub|k>)\<mathd\>x\<rightarrow\><big|int><rsub|\<Omega\>>f<rsub|N>(D
+      <big|int><rsub|\<Omega\>>F<rsub|N>(D
+      u<rsub|k>)\<mathd\>x\<rightarrow\><big|int><rsub|\<Omega\>>F<rsub|N>(D
       u)\<mathd\>x.
     </equation*>
 
     Thus,
 
     <\eqnarray*>
-      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>f<rsub|N>(D
-      u)\<mathd\>x>|<cell|=>|<cell|lim<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>f<rsub|N>(D
-      u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|\<leqslant\>>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>f(D
+      <tformat|<table|<row|<cell|<big|int><rsub|\<Omega\>>F<rsub|N>(D
+      u)\<mathd\>x>|<cell|=>|<cell|lim<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>F<rsub|N>(D
+      u<rsub|k>)\<mathd\>x>>|<row|<cell|F<rsub|N>
+      <with|mode|text|increasing>\<rightarrow\><space|1em>>|<cell|\<leqslant\>>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>><big|int><rsub|\<Omega\>>F(D
       u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|liminf<rsub|k\<rightarrow\>\<infty\>>I[u<rsub|k><right|]>.>>>>
     </eqnarray*>
 
@@ -5384,7 +5377,7 @@
   This suggests that <with|mode|math|F> should satisfy
 
   <\equation>
-    <label|eq:quasiconvex-condition-rc>(\<rho\>\<otimes\>\<xi\>)<rsup|T>D<rsup|2>F(\<eta\>\<otimes\>\<xi\>)\<geqslant\>0
+    <label|eq:quasiconvex-condition-rc>(\<eta\>\<otimes\>\<xi\>)<rsup|T>D<rsup|2>F(\<eta\>\<otimes\>\<xi\>)\<geqslant\>0
   </equation>
 
   for every <with|mode|math|\<eta\>\<in\>\<bbb-R\><rsup|m>>,
@@ -5420,14 +5413,14 @@
   Subject the boundary of a cube to an affine deformation
   <with|mode|math|A(x)>. Then <with|mode|math|u=A x> for
   <with|mode|math|x\<in\>Q> satisfies the boundary condition
-  <with|mode|math|D u(x)=A> for <with|mode|math|x\<in\>Q>.
+  <with|mode|math|D u(x)=A> for <with|mode|math|x\<in\>\<partial\>Q>.
 
   <\equation*>
     I[u]=<big|int><rsub|Q>F( D u) \<mathd\>x=F(A).
   </equation*>
 
   Thus (QC) implies <with|mode|math|I[u]\<leqslant\>I[u+v]> for any
-  <with|mode|math|f\<in\>C<rsup|\<infty\>><rsub|c>(Q)><with|mode|math|\<Rightarrow\>>affine
+  <with|mode|math|v\<in\>C<rsup|\<infty\>><rsub|c>(Q)><with|mode|math|\<Rightarrow\>>affine
   deformation is the best.
 
   <em|Examples of QC functions>:
@@ -5510,8 +5503,8 @@
       f(t)=F(A+t(\<eta\>\<otimes\>\<xi\>))
     </equation*>
 
-    is convex. By homework, we know that <with|mode|math|f(t)> is
-    locally-Lipschitz and
+    is convex. By homework, we know that <with|mode|math|f(t)> is locally
+    Lipschitz and
 
     <\equation*>
       \|D F(A)(\<eta\>\<otimes\>\<xi\>)\|=\|f<rprime|'>(0)\|\<leqslant\><frac|C|r>max<rsub|t\<in\>[-r,r]>\|f(t)\|.
@@ -5526,7 +5519,7 @@
     Choose <with|mode|math|r=max(1,\|A\|)> to find
 
     <\equation*>
-      \|f<rprime|'>(0)\|\<leqslant\>C(1+\|A\|<rsup|p>).
+      \|f<rprime|'>(0)\|\<leqslant\>C(1+\|A\|<rsup|p-1>).
     </equation*>
   </proof>
 
@@ -5595,15 +5588,15 @@
       measure>>\<leqslant\>liminf<rsub|k\<rightarrow\>\<infty\>>\<mu\><rsub|k>(\<Omega\>).
     </equation*>
 
-    Suppose <with|mode|math|H> is a hyperplane perpendicular to
-    <with|mode|math|e<rsub|k>>. Therefore,
+    Suppose <with|mode|math|H> is a hyperplane perpendicular to the unit
+    vector <with|mode|math|e<rsub|k>>. Therefore,
     <with|mode|math|\<mu\>(\<Omega\>\<cap\>H)\<neq\>0> for at most countably
     many hyperplanes.
 
     <big-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.400001gh>>|gr-geometry|<tuple|geometry|0.242889par|0.357724par|center>|<graphics|<cspline|<point|-0.4|2.9>|<point|-1.3|2>|<point|-0.9|0.2>|<point|-1.4|-1>|<point|1|-1.3>|<point|1.6|0.9>|<point|0.4|2.1>>|<text-at|<with|mode|math|\<Omega\>>|<point|1.2|-1.8>>|<line|<point|-1.2|3>|<point|-1.2|-1.8>>|<line|<point|-0.9|3.2>|<point|-0.9|-1.6>>|<line|<point|-0.6|3.2>|<point|-0.6|-1.6>>|<line|<point|-0.1|3.2>|<point|-0.1|-1.6>>|<line|<point|0.4|3.0>|<point|0.4|-1.8>>|<line|<point|1.0|3.1>|<point|1.0|-1.7>>|<line|<point|1.4|3.4>|<point|1.4|-1.4>>|<text-at|<with|mode|math|H>|<point|1.6|2.4>>>>|>
 
     By translating the axes if necessary, we can assert that if
-    <with|mode|math|\<bbb-Q\><rsub|k>> denotes the dyadic lattice with side
+    <with|mode|math|\<bbb-Q\><rsub|i>> denotes the dyadic lattice with side
     length <with|mode|math|2<rsup|-i>>, then
     <with|mode|math|\<mu\>(\<partial\>Q<rsub|l>)=0> for every
     <with|mode|math|Q<rsub|l>\<in\>\<bbb-Q\><rsub|i>> and every
@@ -5654,7 +5647,7 @@
       u<rsub|k>)\<mathd\>x>>|<row|<cell|>|<cell|=>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(D
       u+(D u<rsub|k>-D u))\<mathd\>x>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(D
       u)\<mathd\>x+E<rsub|1>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|<big|sum><rsub|l=1><rsup|m><big|int><rsub|Q<rsub|l>>F(<wide*|(D
-      u)<rsub|i>|\<wide-underbrace\>><rsub|<with|mode|text|peicewise
+      u)<rsub|i>|\<wide-underbrace\>><rsub|<with|mode|text|piecewise
       affine>>)\<mathd\>x+E<rsub|1>+E<rsub|2>>>|<row|<cell|>|<cell|<above|\<geqslant\>|<with|mode|text|QC>>>|<cell|I[u]+E<rsub|1>+E<rsub|2>+E<rsub|3>.>>>>
     </eqnarray*>
 
@@ -5741,7 +5734,7 @@
       A)\<delta\><rsub|i,j>>>|<row|<cell|>|<cell|=>|<cell|<frac|\<partial\>|\<partial\>x<rsub|j>>(det
       A)>>|<row|<cell|>|<cell|=>|<cell|<frac|\<partial\>(det
       A)|\<partial\>A<rsub|l,m>>\<cdot\><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>>>|<row|<cell|>|<cell|<above|=|<with|mode|text|Claim
-      1>>>|<cell|B<rsub|l,m><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>,>>>>
+      1>>>|<cell|<tabular|<tformat|<cwith|1|1|1|1|cell-lborder|0.5pt>|<cwith|1|1|1|1|cell-rborder|0.5pt>|<cwith|1|1|1|1|cell-bborder|0.5pt>|<cwith|1|1|1|1|cell-tborder|0.5pt>|<table|<row|<cell|B<rsub|l,m><frac|\<partial\>A<rsub|l,m>|\<partial\>x<rsub|i>>>>>>>,>>>>
     </eqnarray*>
 
     where we have used summation over repeated indices.
@@ -5977,8 +5970,8 @@
     So by Hölder's Inequality, <with|mode|math|det(D
     u)\<in\>L<rsup|p/n>><with|mode|math|\<Rightarrow\>><with|mode|math|det(D
     u)\<in\>L<rsup|1>><with|mode|math|\<Rightarrow\>>We can define
-    <with|mode|math|deg(u)>. It turns out that we can always define the dgre
-    of <em|continuous> maps by approximation. Loosely,
+    <with|mode|math|deg(u)>. It turns out that we can always define the
+    degree of <em|continuous> maps by approximation. Loosely,
 
     <\enumerate-numeric>
       <item>Mollify <with|mode|math|u<rsub|\<varepsilon\>>=u\<ast\>\<eta\><rsub|\<varepsilon\>>>.
@@ -6035,7 +6028,7 @@
 
     <with|mode|math|\<Rightarrow\>> <with|mode|math|deg> is continuous. This
     is still true if <with|mode|math|n=p>, provided we know that
-    <with|mode|math|det(D u<rsub|k>)\<geqslant\>0>. (Muller, Bull, AMS 1987)
+    <with|mode|math|det(D u<rsub|k>)\<geqslant\>0>. (Muller, Bull. AMS 1987)
   </remark>
 
   <section|Navier-Stokes Equations>
@@ -6066,11 +6059,11 @@
   <with|mode|math|\<nu\>=1>.
 
   <em|<with|mode|math|\<nabla\>\<cdot\>u=0> is simply conservation of mass:>
-  (If the fluid had density <with|mode|math|\<rho\>>, we would have the
+  If the fluid had density <with|mode|math|\<rho\>>, we would have the
   balance law
 
   <\equation*>
-    \<partial\><rsub|t>\<rho\>+div(\<rho\>u)=0.
+    \<partial\><rsub|t>\<rho\>+div(\<rho\>u)=\<partial\><rsub|t>\<rho\>+(\<nabla\>\<cdot\>u)\<rho\>+u\<cdot\>\<nabla\>\<rho\>=0.
   </equation*>
 
   If we further assume
@@ -6092,13 +6085,13 @@
     \<partial\><rsub|t>u+u*\<partial\><rsub|x>u=0,<space|1em>x\<in\>\<bbb-R\>,t\<gtr\>0.
   </equation*>
 
-  It is clear that singularirties form for most smooth initial data.
+  It is clear that singularities form for most smooth initial data.
 
   The pressure has the role of maintaining incompressibility. Take the
   divergence of (NSE1):
 
   <\equation*>
-    \<nabla\>\<cdot\>(<neg|\<partial\><rsub|t>u>+u\<cdot\>\<nabla\>u)=\<nabla\>(-\<nabla\>p+<neg|<value|laplace>u>).
+    \<nabla\>\<cdot\>(<neg|\<partial\><rsub|t>u>+u\<cdot\>\<nabla\>u)=\<nabla\>\<cdot\>(-\<nabla\>p+<neg|<value|laplace>u>).
   </equation*>
 
   Then
@@ -6107,11 +6100,11 @@
     Tr(\<nabla\>u<rsup|T>\<nabla\>u)=-<value|laplace>p.
   </equation*>
 
-  Thus <with|mode|math|-\<triangle\>p\<geqslant\>0>. Flows ares steady if
-  they don't depend on <with|mode|math|t>. In this case we have
+  Thus <with|mode|math|-\<triangle\>p\<geqslant\>0>. Flows are steady if they
+  don't depend on <with|mode|math|t>. In this case we have
 
   <\eqnarray*>
-    <tformat|<table|<row|<cell|u+\<nabla\>u+\<nabla\>p>|<cell|=>|<cell|<value|laplace>p,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0.>>>>
+    <tformat|<table|<row|<cell|u\<cdot\>\<nabla\>u+\<nabla\>p>|<cell|=>|<cell|<value|laplace>u,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0.>>>>
   </eqnarray*>
 
   If <with|mode|math|\<nu\>=0>, we have ideal (i.e. no viscosity), steady
@@ -6129,7 +6122,9 @@
   less, <with|mode|math|p> more|<point|-1.2|-1>>>>|>
 
   <em|Vorticity:> <with|mode|math|\<omega\>=curl u>. This is a scalar when
-  <with|mode|math|n=2> vorticity equation:
+  <with|mode|math|n=2>.\ 
+
+  Vorticity equation:
 
   <\eqnarray*>
     <tformat|<table|<row|<cell|\<partial\><rsub|t>\<omega\>+\<nabla\>\<times\>(u\<cdot\>\<nabla\>u)>|<cell|=>|<cell|<value|laplace>\<omega\>,>>|<row|<cell|\<nabla\>\<cdot\>u>|<cell|=>|<cell|0,>>|<row|<cell|\<nabla\>\<times\>u>|<cell|=>|<cell|\<omega\>.>>>>
@@ -6237,7 +6232,7 @@
 
   <\equation*>
     \<partial\><rsub|t>u+<wide*|u\<cdot\>\<nabla\>u|\<wide-underbrace\>><rsub|<with|mode|text|read
-    as <with|mode|math|\<nabla\>(u\<otimes\>u)>>>=-\<nabla\>p+<value|laplace>u.
+    as <with|mode|math|<frac|1|2>\<nabla\>\<cdot\>(u\<otimes\>u)>>>=-\<nabla\>p+<value|laplace>u.
   </equation*>
 
   In coordinates,
@@ -6250,7 +6245,7 @@
 
   <\equation*>
     (W<rsub|1>)<space|1em>-<big|int><rsub|<wide|G|^>><left|[>\<partial\><rsub|t>a\<cdot\>u+<wide*|\<nabla\>a\<cdot\>(u\<otimes\>u)|\<wide-underbrace\>><rsub|<with|mode|text|here
-    we use>:>+<value|laplace>(a\<cdot\>u)<right|]> \<mathd\>x \<mathd\>t=0
+    we use>:>+<value|laplace>a\<cdot\>u<right|]> \<mathd\>x \<mathd\>t=0
   </equation*>
 
   <\eqnarray*>
@@ -6279,8 +6274,8 @@
   <with|mode|math|\<nabla\>u=0> is
 
   <\equation*>
-    <big|int><rsub|<wide|G|^>>u\<cdot\>\<nabla\>\<varphi\> \<mathd\>x
-    \<mathd\>t=0<space|1em><with|mode|text|for every
+    (W<rsub|2>)<space|1em><big|int><rsub|<wide|G|^>>u\<cdot\>\<nabla\>\<varphi\>
+    \<mathd\>x \<mathd\>t=0<space|1em><with|mode|text|for every
     <with|mode|math|\<varphi\>\<in\>C<rsup|\<infty\>><rsub|c>(<wide|G|^>>)>.
   </equation*>
 
@@ -6314,8 +6309,7 @@
     open. Suppose <with|mode|math|u<rsub|0>\<in\>P<rsub|0><rsup|\<perp\>>(G)>.
     Then there exists a vector field <with|mode|math|u\<in\>V> that satisfies
     the weak form <with|mode|math|(W<rsub|1>)>, <with|mode|math|(W<rsub|2>)>
-    of the Navier-Stokes equations (<with|color|red|Dead reference>).
-    Moreover,
+    of the Navier-Stokes equations. Moreover,
 
     <\itemize>
       <item><with|mode|math|<norm|u(t,\<cdot\>)-u<rsub|0>|L<rsup|2>(G)|>\<rightarrow\>0>
@@ -6387,39 +6381,39 @@
     <associate|auto-35|<tuple|2.4|28>>
     <associate|auto-36|<tuple|2.7|30>>
     <associate|auto-37|<tuple|2.8|30>>
-    <associate|auto-38|<tuple|3|31>>
+    <associate|auto-38|<tuple|3|30>>
     <associate|auto-39|<tuple|3.1|33>>
     <associate|auto-4|<tuple|1.2|3>>
     <associate|auto-40|<tuple|3.2|34>>
     <associate|auto-41|<tuple|3.3|37>>
     <associate|auto-42|<tuple|3.4|39>>
-    <associate|auto-43|<tuple|3.1|40>>
+    <associate|auto-43|<tuple|3.1|39>>
     <associate|auto-44|<tuple|3.2|42>>
     <associate|auto-45|<tuple|4|42>>
     <associate|auto-46|<tuple|4.1|43>>
     <associate|auto-47|<tuple|4.2|43>>
-    <associate|auto-48|<tuple|4.3|46>>
+    <associate|auto-48|<tuple|4.3|45>>
     <associate|auto-49|<tuple|4.4|48>>
     <associate|auto-5|<tuple|1.3|3>>
     <associate|auto-50|<tuple|4.4.1|48>>
-    <associate|auto-51|<tuple|4.1|51>>
+    <associate|auto-51|<tuple|4.1|50>>
     <associate|auto-52|<tuple|4.5|52>>
-    <associate|auto-53|<tuple|5|54>>
-    <associate|auto-54|<tuple|5.1|56>>
-    <associate|auto-55|<tuple|5.2|58>>
+    <associate|auto-53|<tuple|5|53>>
+    <associate|auto-54|<tuple|5.1|55>>
+    <associate|auto-55|<tuple|5.2|57>>
     <associate|auto-56|<tuple|5.3|58>>
     <associate|auto-57|<tuple|5.1|58>>
     <associate|auto-58|<tuple|5.4|59>>
-    <associate|auto-59|<tuple|5.5|60>>
+    <associate|auto-59|<tuple|5.5|59>>
     <associate|auto-6|<tuple|1.1|4>>
-    <associate|auto-60|<tuple|5.6|62>>
-    <associate|auto-61|<tuple|5.2|63>>
-    <associate|auto-62|<tuple|6|66>>
-    <associate|auto-63|<tuple|6.1|67>>
+    <associate|auto-60|<tuple|5.6|61>>
+    <associate|auto-61|<tuple|5.2|62>>
+    <associate|auto-62|<tuple|6|65>>
+    <associate|auto-63|<tuple|6.1|66>>
     <associate|auto-64|<tuple|6.1|67>>
     <associate|auto-65|<tuple|6.2|67>>
-    <associate|auto-66|<tuple|6.2.1|68>>
-    <associate|auto-67|<tuple|6.2|68>>
+    <associate|auto-66|<tuple|6.2.1|67>>
+    <associate|auto-67|<tuple|6.2|67>>
     <associate|auto-68|<tuple|6.2.2|68>>
     <associate|auto-7|<tuple|1.4|4>>
     <associate|auto-8|<tuple|1.5|5>>
@@ -6427,11 +6421,11 @@
     <associate|eq:atcof|<tuple|5.9|63>>
     <associate|eq:burgers-epsilon|<tuple|1.11|10>>
     <associate|eq:burgers-hj|<tuple|1.2|6>>
-    <associate|eq:cvar-convex-second|<tuple|5.2|57>>
-    <associate|eq:elliptic-equation-hstar|<tuple|4.2|48>>
-    <associate|eq:euler-lagrange|<tuple|5.1|57>>
-    <associate|eq:euler-lagrange-det|<tuple|5.8|63>>
-    <associate|eq:fundamental-sobolev|<tuple|3.1|38>>
+    <associate|eq:cvar-convex-second|<tuple|5.2|56>>
+    <associate|eq:elliptic-equation-hstar|<tuple|4.2|47>>
+    <associate|eq:euler-lagrange|<tuple|5.1|56>>
+    <associate|eq:euler-lagrange-det|<tuple|5.8|62>>
+    <associate|eq:fundamental-sobolev|<tuple|3.1|37>>
     <associate|eq:hamilton-special-case|<tuple|2.4|24>>
     <associate|eq:hamilton-what-is-p|<tuple|2.3|23>>
     <associate|eq:hamiltons|<tuple|2.2|23>>
@@ -6444,19 +6438,19 @@
     <associate|eq:kruzkov-convex-cond-2|<tuple|1.4|15>>
     <associate|eq:kruzkov-techstep1|<tuple|1.5|18>>
     <associate|eq:lagranges|<tuple|2.1|23>>
-    <associate|eq:maxprinciple-proof|<tuple|4.1|46>>
+    <associate|eq:maxprinciple-proof|<tuple|4.1|45>>
     <associate|eq:morrey-growth-condition|<tuple|5.6|60>>
-    <associate|eq:moser-main-inequality|<tuple|4.6|52>>
-    <associate|eq:moser-test-deriv|<tuple|4.5|51>>
-    <associate|eq:null-euler-lagrange|<tuple|5.7|63>>
-    <associate|eq:qc-euler-lagrange|<tuple|5.3|59>>
-    <associate|eq:quasiconvex-condition-rc|<tuple|5.5|60>>
-    <associate|eq:quasiconvex-i2prime|<tuple|5.4|59>>
+    <associate|eq:moser-main-inequality|<tuple|4.6|51>>
+    <associate|eq:moser-test-deriv|<tuple|4.5|50>>
+    <associate|eq:null-euler-lagrange|<tuple|5.7|62>>
+    <associate|eq:qc-euler-lagrange|<tuple|5.3|58>>
+    <associate|eq:quasiconvex-condition-rc|<tuple|5.5|59>>
+    <associate|eq:quasiconvex-i2prime|<tuple|5.4|58>>
     <associate|eq:reg-rewritten-fd|<tuple|4.4|49>>
     <associate|eq:reg-rewritten-weak|<tuple|4.3|49>>
-    <associate|eq:retract-null-lagrangian|<tuple|5.10|65>>
+    <associate|eq:retract-null-lagrangian|<tuple|5.10|64>>
     <associate|eq:weak-burgers|<tuple|1.1|4>>
-    <associate|lem:coercivity|<tuple|4.15|47>>
+    <associate|lem:coercivity|<tuple|4.15|46>>
     <associate|lem:hj-lipschitz|<tuple|2.15|25>>
     <associate|lem:hj-semigroup|<tuple|2.14|24>>
     <associate|lem:lagrangian-props|<tuple|1.5|7>>
@@ -6468,7 +6462,7 @@
     <associate|thm:hj-viscosity-hj-where-differentiable|<tuple|2.25|29>>
     <associate|thm:hopf-burgers|<tuple|1.6|10>>
     <associate|thm:morrey-wlsc-qc|<tuple|5.7|60>>
-    <associate|thm:no-retract|<tuple|5.15|65>>
+    <associate|thm:no-retract|<tuple|5.15|64>>
     <associate|thm:pick-ac-rep|<tuple|3.6|31>>
     <associate|thm:poincare-convex|<tuple|3.16|35>>
     <associate|thm:potential-estimate|<tuple|3.15|35>>

@@ -1,5 +1,2 @@
 #! /bin/sh
-vi `baz make-log`
-baz commit
-baz archive-mirror
-scp pde2.{tm,pdf} pdestyle.ts hopf-paper.{tm,pdf} hopfstyle.ts u36612815@tiker.net:data/site-codes/tiker.net/files/pde2
+scp pde2.{tm,pdf} pdestyle.ts hopf-paper.{tm,pdf} hopfstyle.ts tikernet@tiker.net:drupal-files/news.tiker.net/download/academic/notes/pde2
